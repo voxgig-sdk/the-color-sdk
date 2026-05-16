@@ -1,0 +1,859 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "The Color API",
+    "description": "Your fast, modern, swiss army knife for color. Pass in any valid color and get conversion into any other format, the name of the color, placeholder images and a multitude of schemes. Each endpoint is available in JSON[P], HTML & SVG format.",
+    "version": "1.0.0",
+    "contact": {
+      "email": "support@thecolorapi.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://www.thecolorapi.com",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/id": {
+      "get": {
+        "summary": "Get Color",
+        "description": "Return available identifying information on the given color. Get information for a single color including conversions, name, and image placeholders.",
+        "operationId": "getColorById",
+        "tags": [
+          "Colors"
+        ],
+        "parameters": [
+          {
+            "name": "hex",
+            "in": "query",
+            "description": "Valid hex code",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "0047AB"
+            }
+          },
+          {
+            "name": "rgb",
+            "in": "query",
+            "description": "Valid rgb color, also rgb(0,71,171)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "0,71,171"
+            }
+          },
+          {
+            "name": "hsl",
+            "in": "query",
+            "description": "Valid hsl color, also hsl(215,100%,34%)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "215,100%,34%"
+            }
+          },
+          {
+            "name": "cmyk",
+            "in": "query",
+            "description": "Valid cmyk color, also cmyk(100,58,0,33)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "100,58,0,33"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Return results as JSON, SVG or HTML page",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "html",
+                "svg"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "w",
+            "in": "query",
+            "description": "Height of resulting image, only applicable on SVG format",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "example": 350
+            }
+          },
+          {
+            "name": "named",
+            "in": "query",
+            "description": "Whether to print the color names on resulting image, only applicable on SVG format",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "example": false
+            }
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "JSONP callback function name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with color information",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ColorResponse"
+                },
+                "example": {
+                  "hex": {
+                    "value": "#0047AB",
+                    "clean": "0047AB"
+                  },
+                  "rgb": {
+                    "fraction": {
+                      "r": 0,
+                      "g": 0.2784313725490196,
+                      "b": 0.6705882352941176
+                    },
+                    "r": 0,
+                    "g": 71,
+                    "b": 171,
+                    "value": "rgb(0, 71, 171)"
+                  },
+                  "hsl": {
+                    "fraction": {
+                      "h": 0.5974658869395711,
+                      "s": 1,
+                      "l": 0.3352941176470588
+                    },
+                    "h": 215,
+                    "s": 100,
+                    "l": 34,
+                    "value": "hsl(215, 100%, 34%)"
+                  },
+                  "hsv": {
+                    "fraction": {
+                      "h": 0.5974658869395711,
+                      "s": 1,
+                      "v": 0.6705882352941176
+                    },
+                    "h": 215,
+                    "s": 100,
+                    "value": "hsv(215, 100%, 67%)",
+                    "v": 67
+                  },
+                  "name": {
+                    "value": "Cobalt",
+                    "closest_named_hex": "#0047AB",
+                    "exact_match_name": true,
+                    "distance": 0
+                  },
+                  "cmyk": {
+                    "fraction": {
+                      "c": 1,
+                      "m": 0.5847953216374269,
+                      "y": 0,
+                      "k": 0.3294117647058824
+                    },
+                    "value": "cmyk(100, 58, 0, 33)",
+                    "c": 100,
+                    "m": 58,
+                    "y": 0,
+                    "k": 33
+                  },
+                  "XYZ": {
+                    "fraction": {
+                      "X": 0.22060823529411763,
+                      "Y": 0.2475505882352941,
+                      "Z": 0.6705831372549019
+                    },
+                    "value": "XYZ(22, 25, 67)",
+                    "X": 22,
+                    "Y": 25,
+                    "Z": 67
+                  },
+                  "image": {
+                    "bare": "http://placehold.it/300x300.png/0047AB/000000",
+                    "named": "http://placehold.it/300x300.png/0047AB/000000&text=Cobalt"
+                  },
+                  "contrast": {
+                    "value": "#000000"
+                  },
+                  "_links": {
+                    "self": {
+                      "href": "/id?hex=0047AB"
+                    }
+                  },
+                  "_embedded": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid or missing color parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "The Color API doesn't understand what you mean. Please supply a query parameter of `rgb`, `hsl`, `cmyk` or `hex`.",
+                  "query": {},
+                  "params": [],
+                  "path": "/id",
+                  "example": "/id?hex=a674D3"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/scheme": {
+      "get": {
+        "summary": "Get Scheme",
+        "description": "Return a generated color scheme for the provided seed color and optional mode. Color schemes are multi-color combinations chosen according to color-wheel relationships.",
+        "operationId": "getColorScheme",
+        "tags": [
+          "Schemes"
+        ],
+        "parameters": [
+          {
+            "name": "hex",
+            "in": "query",
+            "description": "Valid hex code",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "0047AB"
+            }
+          },
+          {
+            "name": "rgb",
+            "in": "query",
+            "description": "Valid rgb color, also rgb(0,71,171)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "0,71,171"
+            }
+          },
+          {
+            "name": "hsl",
+            "in": "query",
+            "description": "Valid hsl color, also hsl(215,100%,34%)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "215,100%,34%"
+            }
+          },
+          {
+            "name": "cmyk",
+            "in": "query",
+            "description": "Valid cmyk color, also cmyk(100,58,0,33)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "100,58,0,33"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "description": "Return results as JSON, SVG or HTML page of results",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "json",
+                "html",
+                "svg"
+              ],
+              "default": "json"
+            }
+          },
+          {
+            "name": "mode",
+            "in": "query",
+            "description": "Define mode by which to generate the scheme from the seed color",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "monochrome",
+                "monochrome-dark",
+                "monochrome-light",
+                "analogic",
+                "complement",
+                "analogic-complement",
+                "triad",
+                "quad"
+              ],
+              "default": "monochrome"
+            }
+          },
+          {
+            "name": "count",
+            "in": "query",
+            "description": "Number of colors to return",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 5,
+              "example": 6
+            }
+          },
+          {
+            "name": "w",
+            "in": "query",
+            "description": "Height of resulting image, only applicable on SVG format",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "default": 100,
+              "example": 350
+            }
+          },
+          {
+            "name": "named",
+            "in": "query",
+            "description": "Whether to print the color names on resulting image, only applicable on SVG format",
+            "required": false,
+            "schema": {
+              "type": "boolean",
+              "default": true,
+              "example": false
+            }
+          },
+          {
+            "name": "callback",
+            "in": "query",
+            "description": "JSONP callback function name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with color scheme",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SchemeResponse"
+                },
+                "example": {
+                  "mode": "monochrome",
+                  "count": "2",
+                  "colors": [
+                    {
+                      "hex": {
+                        "value": "#01122A",
+                        "clean": "01122A"
+                      },
+                      "rgb": {
+                        "fraction": {
+                          "r": 0.00392156862745098,
+                          "g": 0.07058823529411765,
+                          "b": 0.16470588235294117
+                        },
+                        "r": 1,
+                        "g": 18,
+                        "b": 42,
+                        "value": "rgb(1, 18, 42)"
+                      },
+                      "hsl": {
+                        "fraction": {
+                          "h": 0.597560975609756,
+                          "s": 0.9534883720930231,
+                          "l": 0.08431372549019608
+                        },
+                        "h": 215,
+                        "s": 95,
+                        "l": 8,
+                        "value": "hsl(215, 95%, 8%)"
+                      },
+                      "hsv": {
+                        "fraction": {
+                          "h": 0.597560975609756,
+                          "s": 0.976190476190476,
+                          "v": 0.16470588235294117
+                        },
+                        "value": "hsv(215, 98%, 16%)",
+                        "h": 215,
+                        "s": 98,
+                        "v": 16
+                      },
+                      "name": {
+                        "value": "Midnight",
+                        "closest_named_hex": "#011635",
+                        "exact_match_name": false,
+                        "distance": 217
+                      },
+                      "cmyk": {
+                        "fraction": {
+                          "c": 0.9761904761904763,
+                          "m": 0.5714285714285715,
+                          "y": 0,
+                          "k": 0.8352941176470589
+                        },
+                        "value": "cmyk(98, 57, 0, 84)",
+                        "c": 98,
+                        "m": 57,
+                        "y": 0,
+                        "k": 84
+                      },
+                      "XYZ": {
+                        "fraction": {
+                          "X": 0.056589019607843134,
+                          "Y": 0.06321019607843137,
+                          "Z": 0.1650427450980392
+                        },
+                        "value": "XYZ(6, 6, 17)",
+                        "X": 6,
+                        "Y": 6,
+                        "Z": 17
+                      },
+                      "image": {
+                        "bare": "http://placehold.it/300x300.png/01122A/FFFFFF",
+                        "named": "http://placehold.it/300x300.png/01122A/FFFFFF&text=Midnight"
+                      },
+                      "contrast": {
+                        "value": "#FFFFFF"
+                      },
+                      "_links": {
+                        "self": {
+                          "href": "/id?hex=01122A"
+                        }
+                      },
+                      "_embedded": {}
+                    }
+                  ],
+                  "seed": {
+                    "hex": {
+                      "value": "#0047AB",
+                      "clean": "0047AB"
+                    },
+                    "rgb": {
+                      "fraction": {
+                        "r": 0,
+                        "g": 0.2784313725490196,
+                        "b": 0.6705882352941176
+                      },
+                      "r": 0,
+                      "g": 71,
+                      "b": 171,
+                      "value": "rgb(0, 71, 171)"
+                    },
+                    "name": {
+                      "value": "Cobalt",
+                      "closest_named_hex": "#0047AB",
+                      "exact_match_name": true,
+                      "distance": 0
+                    }
+                  },
+                  "_links": {
+                    "self": "/scheme?hex=0047AB&mode=monochrome&count=2",
+                    "schemes": {
+                      "monochrome": "/scheme?hex=0047AB&mode=monochrome&count=2",
+                      "monochrome-dark": "/scheme?hex=0047AB&mode=monochrome-dark&count=2",
+                      "monochrome-light": "/scheme?hex=0047AB&mode=monochrome-light&count=2",
+                      "analogic": "/scheme?hex=0047AB&mode=analogic&count=2",
+                      "complement": "/scheme?hex=0047AB&mode=complement&count=2",
+                      "analogic-complement": "/scheme?hex=0047AB&mode=analogic-complement&count=2",
+                      "triad": "/scheme?hex=0047AB&mode=triad&count=2",
+                      "quad": "/scheme?hex=0047AB&mode=quad&count=2"
+                    }
+                  },
+                  "_embedded": {}
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request - Invalid or missing color parameter",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                },
+                "example": {
+                  "code": 400,
+                  "message": "The Color API doesn't understand what you mean. Please supply a query parameter of `rgb`, `hsl`, `cmyk` or `hex`.",
+                  "query": {},
+                  "params": [],
+                  "path": "/scheme",
+                  "example": "/scheme?hex=FF0&mode=monochrome&count=5"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ColorResponse": {
+        "type": "object",
+        "properties": {
+          "hex": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Hex color value with hash prefix"
+              },
+              "clean": {
+                "type": "string",
+                "description": "Hex color value without hash prefix"
+              }
+            }
+          },
+          "rgb": {
+            "type": "object",
+            "properties": {
+              "fraction": {
+                "type": "object",
+                "properties": {
+                  "r": {
+                    "type": "number"
+                  },
+                  "g": {
+                    "type": "number"
+                  },
+                  "b": {
+                    "type": "number"
+                  }
+                }
+              },
+              "r": {
+                "type": "integer"
+              },
+              "g": {
+                "type": "integer"
+              },
+              "b": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          "hsl": {
+            "type": "object",
+            "properties": {
+              "fraction": {
+                "type": "object",
+                "properties": {
+                  "h": {
+                    "type": "number"
+                  },
+                  "s": {
+                    "type": "number"
+                  },
+                  "l": {
+                    "type": "number"
+                  }
+                }
+              },
+              "h": {
+                "type": "integer"
+              },
+              "s": {
+                "type": "integer"
+              },
+              "l": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          "hsv": {
+            "type": "object",
+            "properties": {
+              "fraction": {
+                "type": "object",
+                "properties": {
+                  "h": {
+                    "type": "number"
+                  },
+                  "s": {
+                    "type": "number"
+                  },
+                  "v": {
+                    "type": "number"
+                  }
+                }
+              },
+              "h": {
+                "type": "integer"
+              },
+              "s": {
+                "type": "integer"
+              },
+              "v": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          "name": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Human-readable color name"
+              },
+              "closest_named_hex": {
+                "type": "string",
+                "description": "Hex value of the closest named color"
+              },
+              "exact_match_name": {
+                "type": "boolean",
+                "description": "Whether the name is an exact match"
+              },
+              "distance": {
+                "type": "integer",
+                "description": "Distance from the closest named color"
+              }
+            }
+          },
+          "cmyk": {
+            "type": "object",
+            "properties": {
+              "fraction": {
+                "type": "object",
+                "properties": {
+                  "c": {
+                    "type": "number"
+                  },
+                  "m": {
+                    "type": "number"
+                  },
+                  "y": {
+                    "type": "number"
+                  },
+                  "k": {
+                    "type": "number"
+                  }
+                }
+              },
+              "c": {
+                "type": "integer"
+              },
+              "m": {
+                "type": "integer"
+              },
+              "y": {
+                "type": "integer"
+              },
+              "k": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          "XYZ": {
+            "type": "object",
+            "properties": {
+              "fraction": {
+                "type": "object",
+                "properties": {
+                  "X": {
+                    "type": "number"
+                  },
+                  "Y": {
+                    "type": "number"
+                  },
+                  "Z": {
+                    "type": "number"
+                  }
+                }
+              },
+              "X": {
+                "type": "integer"
+              },
+              "Y": {
+                "type": "integer"
+              },
+              "Z": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              }
+            }
+          },
+          "image": {
+            "type": "object",
+            "properties": {
+              "bare": {
+                "type": "string",
+                "description": "URL to placeholder image without text"
+              },
+              "named": {
+                "type": "string",
+                "description": "URL to placeholder image with color name"
+              }
+            }
+          },
+          "contrast": {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string",
+                "description": "Contrasting color hex value"
+              }
+            }
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "object",
+                "properties": {
+                  "href": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "_embedded": {
+            "type": "object"
+          }
+        }
+      },
+      "SchemeResponse": {
+        "type": "object",
+        "properties": {
+          "mode": {
+            "type": "string",
+            "description": "The scheme mode used to generate colors"
+          },
+          "count": {
+            "type": "string",
+            "description": "Number of colors in the scheme"
+          },
+          "colors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ColorResponse"
+            }
+          },
+          "seed": {
+            "$ref": "#/components/schemas/ColorResponse"
+          },
+          "_links": {
+            "type": "object",
+            "properties": {
+              "self": {
+                "type": "string"
+              },
+              "schemes": {
+                "type": "object",
+                "properties": {
+                  "monochrome": {
+                    "type": "string"
+                  },
+                  "monochrome-dark": {
+                    "type": "string"
+                  },
+                  "monochrome-light": {
+                    "type": "string"
+                  },
+                  "analogic": {
+                    "type": "string"
+                  },
+                  "complement": {
+                    "type": "string"
+                  },
+                  "analogic-complement": {
+                    "type": "string"
+                  },
+                  "triad": {
+                    "type": "string"
+                  },
+                  "quad": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "_embedded": {
+            "type": "object"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "type": "integer",
+            "description": "HTTP error code"
+          },
+          "message": {
+            "type": "string",
+            "description": "Error message description"
+          },
+          "query": {
+            "type": "object",
+            "description": "Query parameters received"
+          },
+          "params": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Parameters that were processed"
+          },
+          "path": {
+            "type": "string",
+            "description": "API path that was called"
+          },
+          "example": {
+            "type": "string",
+            "description": "Example of a correct API call"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Colors",
+      "description": "Color identification and conversion operations"
+    },
+    {
+      "name": "Schemes",
+      "description": "Color scheme generation operations"
+    }
+  ]
+}

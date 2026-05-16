@@ -1,0 +1,20 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 2
+  metrics: count: path: 2
+  metrics: count: method: 2
+
+  entity: idn: {
+    path: "/id": {
+      op: load: method: *GET
+    }
+  }
+
+  entity: scheme: {
+    path: "/scheme": {
+      op: list: method: *GET
+    }
+  }
+
+}

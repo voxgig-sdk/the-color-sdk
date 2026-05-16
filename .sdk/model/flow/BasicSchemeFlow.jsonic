@@ -1,0 +1,22 @@
+# BasicSchemeFlow
+
+main: kit: flow: BasicSchemeFlow:
+{
+  entity: "scheme",
+  kind: "basic",
+  name: "BasicSchemeFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "scheme_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicSchemeFlow"
+}

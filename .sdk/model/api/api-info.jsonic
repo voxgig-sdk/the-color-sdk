@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        email: "support@thecolorapi.com"
+      }
+      description: "Your fast, modern, swiss army knife for color. Pass in any valid color and get conversion into any other format, the name of the color, placeholder images and a multitude of schemes. Each endpoint is available in JSON[P], HTML & SVG format."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://www.thecolorapi.com"
+        }
+      ]
+      title: "The Color API"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

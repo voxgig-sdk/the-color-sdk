@@ -1,0 +1,62 @@
+{
+  "existing": {
+    "scheme": {
+      "SCHEME00": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      },
+      "SCHEME01": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      },
+      "SCHEME02": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      }
+    }
+  },
+  "new": {
+    "scheme": {
+      "scheme_ref01": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      }
+    }
+  }
+}

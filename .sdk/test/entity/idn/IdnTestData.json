@@ -1,0 +1,62 @@
+{
+  "existing": {
+    "idn": {
+      "IDN00": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      },
+      "IDN01": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      },
+      "IDN02": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      }
+    }
+  },
+  "new": {
+    "idn": {
+      "idn_ref01": {
+        "cmyk": {},
+        "contrast": {},
+        "embedded": {},
+        "hex": {},
+        "hsl": {},
+        "hsv": {},
+        "image": {},
+        "link": {},
+        "name": {},
+        "rgb": {},
+        "xyz": {}
+      }
+    }
+  }
+}
