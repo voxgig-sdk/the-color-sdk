@@ -1,10 +1,10 @@
 package voxgigthecolorsdk
 
 import (
-	"github.com/voxgig-sdk/the-color-sdk/core"
-	"github.com/voxgig-sdk/the-color-sdk/entity"
-	"github.com/voxgig-sdk/the-color-sdk/feature"
-	_ "github.com/voxgig-sdk/the-color-sdk/utility"
+	"github.com/voxgig-sdk/the-color-sdk/go/core"
+	"github.com/voxgig-sdk/the-color-sdk/go/entity"
+	"github.com/voxgig-sdk/the-color-sdk/go/feature"
+	_ "github.com/voxgig-sdk/the-color-sdk/go/utility"
 )
 
 // Type aliases preserve external API.

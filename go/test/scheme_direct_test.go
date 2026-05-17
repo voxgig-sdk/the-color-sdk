@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/the-color-sdk"
-	"github.com/voxgig-sdk/the-color-sdk/core"
+	sdk "github.com/voxgig-sdk/the-color-sdk/go"
+	"github.com/voxgig-sdk/the-color-sdk/go/core"
 )
 
 func TestSchemeDirect(t *testing.T) {

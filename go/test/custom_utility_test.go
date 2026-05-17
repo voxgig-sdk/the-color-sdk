@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/the-color-sdk"
+	sdk "github.com/voxgig-sdk/the-color-sdk/go"
 )
 
 func TestCustomUtility(t *testing.T) {
