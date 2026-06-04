@@ -83,7 +83,6 @@ def scheme_basic_setup(extra)
     "THECOLOR_TEST_SCHEME_ENTID" => idmap,
     "THECOLOR_TEST_LIVE" => "FALSE",
     "THECOLOR_TEST_EXPLAIN" => "FALSE",
-    "THECOLOR_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +94,6 @@ def scheme_basic_setup(extra)
   if env["THECOLOR_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["THECOLOR_APIKEY"],
       },
       extra || {},
     ])

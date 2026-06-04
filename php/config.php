@@ -20,9 +20,6 @@ class TheColorConfig
             ],
             "options" => [
                 "base" => "https://www.thecolorapi.com",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

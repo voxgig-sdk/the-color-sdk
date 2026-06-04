@@ -67,14 +67,12 @@ function idn_direct_setup($mockres)
     $env = Runner::env_override([
         "THECOLOR_TEST_IDN_ENTID" => [],
         "THECOLOR_TEST_LIVE" => "FALSE",
-        "THECOLOR_APIKEY" => "NONE",
     ]);
 
     $live = $env["THECOLOR_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
-            "apikey" => $env["THECOLOR_APIKEY"],
         ];
         $client = new TheColorSDK($merged_opts);
         return [

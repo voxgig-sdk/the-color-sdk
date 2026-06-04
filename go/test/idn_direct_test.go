@@ -99,14 +99,12 @@ func idnDirectSetup(mockres any) *idnDirectSetupResult {
 	env := envOverride(map[string]any{
 		"THECOLOR_TEST_IDN_ENTID": map[string]any{},
 		"THECOLOR_TEST_LIVE":    "FALSE",
-		"THECOLOR_APIKEY":       "NONE",
 	})
 
 	live := env["THECOLOR_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["THECOLOR_APIKEY"],
 		}
 		client := sdk.NewTheColorSDK(mergedOpts)
 

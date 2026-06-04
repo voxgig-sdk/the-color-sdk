@@ -61,14 +61,12 @@ def _scheme_direct_setup(mockres):
     env = runner.env_override({
         "THECOLOR_TEST_SCHEME_ENTID": {},
         "THECOLOR_TEST_LIVE": "FALSE",
-        "THECOLOR_APIKEY": "NONE",
     })
 
     live = env.get("THECOLOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("THECOLOR_APIKEY"),
         }
         client = TheColorSDK(merged_opts)
         return {

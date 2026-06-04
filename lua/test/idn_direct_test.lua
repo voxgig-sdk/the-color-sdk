@@ -62,14 +62,12 @@ function idn_direct_setup(mockres)
   local env = runner.env_override({
     ["THECOLOR_TEST_IDN_ENTID"] = {},
     ["THECOLOR_TEST_LIVE"] = "FALSE",
-    ["THECOLOR_APIKEY"] = "NONE",
   })
 
   local live = env["THECOLOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
-      apikey = env["THECOLOR_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {
