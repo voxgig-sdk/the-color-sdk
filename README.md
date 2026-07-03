@@ -1,21 +1,8 @@
 # TheColor SDK
 
-Convert any color between formats, look up its name, and generate harmonic schemes
+The Color API client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About The Color API
-
-[The Color API](https://www.thecolorapi.com) is a small, free HTTP service created by [Josh Beckman](https://github.com/andjosh) that converts colors between formats, identifies the closest named color, and generates harmonic color schemes from a seed color.
-
-What you get from the API:
-
-- Color identification via `GET /id` accepting `hex`, `rgb`, `hsl`, or `cmyk` query parameters.
-- Scheme generation via `GET /scheme` with `mode` set to one of `monochrome`, `monochrome-dark`, `monochrome-light`, `analogic`, `analogic-complement`, `complement`, `triad`, or `quad`, plus a `count`.
-- Each color response includes hex, RGB, HSL, HSV, CMYK, and XYZ representations, the nearest named color (drawn from a dataset of around 2000 names) with distance metric, a best-contrast text color, and image URLs.
-- Responses are available as JSON (default), HTML, or SVG via the `format` parameter; SVG and HTML support an optional `w` width and a name-label toggle.
-
-The service does not document authentication or rate limits, and CORS is reported as enabled. Treat published behaviour as best-effort and consult the GitHub repository for current details.
 
 ## Try it
 
@@ -49,27 +36,31 @@ gem install the-color-sdk
 luarocks install the-color-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { TheColorSDK } from 'the-color'
 
-const client = new TheColorSDK({})
+const client = new TheColorSDK({
+  apikey: process.env.THE-COLOR_APIKEY,
+})
 
+// Load idn data
+const idn = await client.Idn().load({})
+console.log(idn.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -99,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Idn** | A single identified color resource returned by `GET /id`, carrying hex/RGB/HSL/HSV/CMYK/XYZ values, the closest named color, and a contrast color. | `/id` |
-| **Scheme** | A generated palette of colors derived from a seed color via `GET /scheme`, parameterised by `mode` (e.g. `complement`, `triad`, `analogic`) and `count`. | `/scheme` |
+| **Idn** |  | `/id` |
+| **Scheme** |  | `/scheme` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -110,15 +101,17 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from thecolor_sdk import TheColorSDK
 
-client = TheColorSDK({})
+client = TheColorSDK({
+    "apikey": os.environ.get("THE-COLOR_APIKEY"),
+})
 
 
 # Load a specific idn
-idn, err = client.Idn(None).load(
-    {"id": "example_id"}, None
-)
+idn, err = client.Idn().load({"id": "example_id"})
+print(idn)
 ```
 
 ### PHP
@@ -127,13 +120,14 @@ idn, err = client.Idn(None).load(
 <?php
 require_once 'thecolor_sdk.php';
 
-$client = new TheColorSDK([]);
+$client = new TheColorSDK([
+    "apikey" => getenv("THE-COLOR_APIKEY"),
+]);
 
 
 // Load a specific idn
-[$idn, $err] = $client->Idn(null)->load(
-    ["id" => "example_id"], null
-);
+[$idn, $err] = $client->Idn()->load(["id" => "example_id"]);
+print_r($idn);
 ```
 
 ### Golang
@@ -141,8 +135,13 @@ $client = new TheColorSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/the-color-sdk/go"
 
-client := sdk.NewTheColorSDK(map[string]any{})
+client := sdk.NewTheColorSDK(map[string]any{
+    "apikey": os.Getenv("THE-COLOR_APIKEY"),
+})
 
+// Load idn data
+idn, err := client.Idn(nil).Load(map[string]any{}, nil)
+fmt.Println(idn)
 ```
 
 ### Ruby
@@ -150,13 +149,14 @@ client := sdk.NewTheColorSDK(map[string]any{})
 ```ruby
 require_relative "TheColor_sdk"
 
-client = TheColorSDK.new({})
+client = TheColorSDK.new({
+  "apikey" => ENV["THE-COLOR_APIKEY"],
+})
 
 
 # Load a specific idn
-idn, err = client.Idn(nil).load(
-  { "id" => "example_id" }, nil
-)
+idn, err = client.Idn().load({ "id" => "example_id" })
+puts idn
 ```
 
 ### Lua
@@ -164,13 +164,14 @@ idn, err = client.Idn(nil).load(
 ```lua
 local sdk = require("the-color_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("THE-COLOR_APIKEY"),
+})
 
 
 -- Load a specific idn
-local idn, err = client:Idn(nil):load(
-  { id = "example_id" }, nil
-)
+local idn, err = client:Idn():load({ id = "example_id" })
+print(idn)
 ```
 
 ## Unit testing in offline mode
@@ -189,25 +190,21 @@ const result = await client.Idn().load({ id: 'test01' })
 ### Python
 
 ```python
-client = TheColorSDK.test(None, None)
-result, err = client.Idn(None).load(
-    {"id": "test01"}, None
-)
+client = TheColorSDK.test()
+result, err = client.Idn().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = TheColorSDK::test(null, null);
-[$result, $err] = $client->Idn(null)->load(
-    ["id" => "test01"], null
-);
+$client = TheColorSDK::test();
+[$result, $err] = $client->Idn()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Idn(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -216,19 +213,15 @@ result, err := client.Idn(nil).Load(
 ### Ruby
 
 ```ruby
-client = TheColorSDK.test(nil, nil)
-result, err = client.Idn(nil).load(
-  { "id" => "test01" }, nil
-)
+client = TheColorSDK.test
+result, err = client.Idn().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Idn(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Idn():load({ id = "test01" })
 ```
 
 ## How it works
@@ -332,15 +325,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the The Color API
-
-- Upstream: [https://www.thecolorapi.com](https://www.thecolorapi.com)
-- API docs: [https://www.thecolorapi.com/docs](https://www.thecolorapi.com/docs)
-
-- The Color API is described as open source, with source code at [github.com/andjosh/thecolorapi](https://github.com/andjosh/thecolorapi).
-- The public service does not publish an explicit licence, rate limit, or attribution requirement.
-- Check the upstream repository for the canonical licence and any terms before commercial use.
 
 ---
 

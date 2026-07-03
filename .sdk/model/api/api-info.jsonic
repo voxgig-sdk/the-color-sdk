@@ -16,28 +16,7 @@ main: {
       ]
       title: "The Color API"
       version: "1.0.0"
-      tagline: "Convert any color between formats, look up its name, and generate harmonic schemes"
-      homepage: "https://www.thecolorapi.com"
-      docs_url: "https://www.thecolorapi.com/docs"
-      license_short: "Open source (see github.com/andjosh/thecolorapi); no explicit terms published on the service."
-      license_md: `- The Color API is described as open source, with source code at [github.com/andjosh/thecolorapi](https://github.com/andjosh/thecolorapi).
-- The public service does not publish an explicit licence, rate limit, or attribution requirement.
-- Check the upstream repository for the canonical licence and any terms before commercial use.`
-      about_md: `[The Color API](https://www.thecolorapi.com) is a small, free HTTP service created by [Josh Beckman](https://github.com/andjosh) that converts colors between formats, identifies the closest named color, and generates harmonic color schemes from a seed color.
-
-What you get from the API:
-
-- Color identification via \`GET /id\` accepting \`hex\`, \`rgb\`, \`hsl\`, or \`cmyk\` query parameters.
-- Scheme generation via \`GET /scheme\` with \`mode\` set to one of \`monochrome\`, \`monochrome-dark\`, \`monochrome-light\`, \`analogic\`, \`analogic-complement\`, \`complement\`, \`triad\`, or \`quad\`, plus a \`count\`.
-- Each color response includes hex, RGB, HSL, HSV, CMYK, and XYZ representations, the nearest named color (drawn from a dataset of around 2000 names) with distance metric, a best-contrast text color, and image URLs.
-- Responses are available as JSON (default), HTML, or SVG via the \`format\` parameter; SVG and HTML support an optional \`w\` width and a name-label toggle.
-
-The service does not document authentication or rate limits, and CORS is reported as enabled. Treat published behaviour as best-effort and consult the GitHub repository for current details.`
-      entity_desc: {
-        idn: "A single identified color resource returned by `GET /id`, carrying hex/RGB/HSL/HSV/CMYK/XYZ values, the closest named color, and a contrast color."
-        scheme: "A generated palette of colors derived from a seed color via `GET /scheme`, parameterised by `mode` (e.g. `complement`, `triad`, `analogic`) and `count`."
-      }
-      auth: false
     }
   }
 }
+

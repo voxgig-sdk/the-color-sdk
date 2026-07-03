@@ -1,40 +1,13 @@
 {
-  "name": "the-color",
-  "origin": "voxgig-sdk",
   "def": "the-color_0.1.0.json",
   "main": {
+    "def": {
+      "desc": ""
+    },
     "kit": {
-      "info": {
-        "contact": {
-          "email": "support@thecolorapi.com"
-        },
-        "description": "Your fast, modern, swiss army knife for color. Pass in any valid color and get conversion into any other format, the name of the color, placeholder images and a multitude of schemes. Each endpoint is available in JSON[P], HTML & SVG format.",
-        "servers": [
-          {
-            "description": "Production server",
-            "url": "https://www.thecolorapi.com"
-          }
-        ],
-        "title": "The Color API",
-        "version": "1.0.0",
-        "tagline": "Convert any color between formats, look up its name, and generate harmonic schemes",
-        "homepage": "https://www.thecolorapi.com",
-        "docs_url": "https://www.thecolorapi.com/docs",
-        "license_short": "Open source (see github.com/andjosh/thecolorapi); no explicit terms published on the service.",
-        "license_md": "- The Color API is described as open source, with source code at [github.com/andjosh/thecolorapi](https://github.com/andjosh/thecolorapi).\n- The public service does not publish an explicit licence, rate limit, or attribution requirement.\n- Check the upstream repository for the canonical licence and any terms before commercial use.",
-        "about_md": "[The Color API](https://www.thecolorapi.com) is a small, free HTTP service created by [Josh Beckman](https://github.com/andjosh) that converts colors between formats, identifies the closest named color, and generates harmonic color schemes from a seed color.\n\nWhat you get from the API:\n\n- Color identification via `GET /id` accepting `hex`, `rgb`, `hsl`, or `cmyk` query parameters.\n- Scheme generation via `GET /scheme` with `mode` set to one of `monochrome`, `monochrome-dark`, `monochrome-light`, `analogic`, `analogic-complement`, `complement`, `triad`, or `quad`, plus a `count`.\n- Each color response includes hex, RGB, HSL, HSV, CMYK, and XYZ representations, the nearest named color (drawn from a dataset of around 2000 names) with distance metric, a best-contrast text color, and image URLs.\n- Responses are available as JSON (default), HTML, or SVG via the `format` parameter; SVG and HTML support an optional `w` width and a name-label toggle.\n\nThe service does not document authentication or rate limits, and CORS is reported as enabled. Treat published behaviour as best-effort and consult the GitHub repository for current details.",
-        "entity_desc": {
-          "idn": "A single identified color resource returned by `GET /id`, carrying hex/RGB/HSL/HSV/CMYK/XYZ values, the closest named color, and a contrast color.",
-          "scheme": "A generated palette of colors derived from a seed color via `GET /scheme`, parameterised by `mode` (e.g. `complement`, `triad`, `analogic`) and `count`."
-        },
-        "auth": false
-      },
       "config": {
         "auth": {
           "prefix": "Bearer"
-        },
-        "headers": {
-          "content-type": "application/json"
         },
         "docs_order": [
           "ts",
@@ -43,159 +16,165 @@
           "go",
           "rb",
           "lua"
-        ]
+        ],
+        "headers": {
+          "content-type": "application/json"
+        }
       },
       "entity": {
         "idn": {
+          "active": true,
           "alias": {
             "field": {}
           },
           "fields": [
             {
+              "active": true,
               "name": "cmyk",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "contrast",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "embedded",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "hex",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "hsl",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "hsv",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "image",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "link",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "name",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "rgb",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "xyz",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             }
           ],
           "name": "idn",
           "op": {
             "load": {
+              "input": "data",
               "name": "load",
               "points": [
                 {
+                  "active": true,
                   "args": {
                     "query": [
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "callback",
                         "orig": "callback",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "100,58,0,33",
                         "kind": "query",
                         "name": "cmyk",
                         "orig": "cmyk",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "json",
                         "kind": "query",
                         "name": "format",
                         "orig": "format",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "0047AB",
                         "kind": "query",
                         "name": "hex",
                         "orig": "hex",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "215,100%,34%",
                         "kind": "query",
                         "name": "hsl",
                         "orig": "hsl",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": false,
                         "kind": "query",
                         "name": "named",
                         "orig": "named",
                         "reqd": false,
-                        "type": "`$BOOLEAN`",
-                        "active": true
+                        "type": "`$BOOLEAN`"
                       },
                       {
+                        "active": true,
                         "example": "0,71,171",
                         "kind": "query",
                         "name": "rgb",
                         "orig": "rgb",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": 350,
                         "kind": "query",
                         "name": "w",
                         "orig": "w",
                         "reqd": false,
-                        "type": "`$INTEGER`",
-                        "active": true
+                        "type": "`$INTEGER`"
                       }
                     ]
                   },
@@ -219,186 +198,186 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             }
           },
-          "active": true,
           "relations": {
             "ancestors": []
           }
         },
         "scheme": {
+          "active": true,
           "alias": {
             "field": {}
           },
           "fields": [
             {
+              "active": true,
               "name": "cmyk",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "contrast",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "embedded",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "hex",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "hsl",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "hsv",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "image",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "link",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "name",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "rgb",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             },
             {
+              "active": true,
               "name": "xyz",
               "req": false,
-              "type": "`$OBJECT`",
-              "active": true
+              "type": "`$OBJECT`"
             }
           ],
           "name": "scheme",
           "op": {
             "list": {
+              "input": "data",
               "name": "list",
               "points": [
                 {
+                  "active": true,
                   "args": {
                     "query": [
                       {
+                        "active": true,
                         "kind": "query",
                         "name": "callback",
                         "orig": "callback",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "100,58,0,33",
                         "kind": "query",
                         "name": "cmyk",
                         "orig": "cmyk",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": 6,
                         "kind": "query",
                         "name": "count",
                         "orig": "count",
                         "reqd": false,
-                        "type": "`$INTEGER`",
-                        "active": true
+                        "type": "`$INTEGER`"
                       },
                       {
+                        "active": true,
                         "example": "json",
                         "kind": "query",
                         "name": "format",
                         "orig": "format",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "0047AB",
                         "kind": "query",
                         "name": "hex",
                         "orig": "hex",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "215,100%,34%",
                         "kind": "query",
                         "name": "hsl",
                         "orig": "hsl",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": "monochrome",
                         "kind": "query",
                         "name": "mode",
                         "orig": "mode",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": false,
                         "kind": "query",
                         "name": "named",
                         "orig": "named",
                         "reqd": false,
-                        "type": "`$BOOLEAN`",
-                        "active": true
+                        "type": "`$BOOLEAN`"
                       },
                       {
+                        "active": true,
                         "example": "0,71,171",
                         "kind": "query",
                         "name": "rgb",
                         "orig": "rgb",
                         "reqd": false,
-                        "type": "`$STRING`",
-                        "active": true
+                        "type": "`$STRING`"
                       },
                       {
+                        "active": true,
                         "example": 350,
                         "kind": "query",
                         "name": "w",
                         "orig": "w",
                         "reqd": false,
-                        "type": "`$INTEGER`",
-                        "active": true
+                        "type": "`$INTEGER`"
                       }
                     ]
                   },
@@ -424,14 +403,11 @@
                   "transform": {
                     "req": "`reqdata`",
                     "res": "`body`"
-                  },
-                  "active": true
+                  }
                 }
-              ],
-              "input": "data"
+              ]
             }
           },
-          "active": true,
           "relations": {
             "ancestors": []
           }
@@ -439,9 +415,6 @@
       },
       "feature": {
         "test": {
-          "name": "test",
-          "title": "In-memory mock transport for testing without a live server",
-          "version": "0.0.1",
           "active": true,
           "config": {
             "options": {
@@ -449,6 +422,14 @@
             }
           },
           "hook": {
+            "GetData": {
+              "active": true,
+              "await": false
+            },
+            "GetMatch": {
+              "active": true,
+              "await": false
+            },
             "PostConstruct": {
               "active": true,
               "await": false
@@ -457,25 +438,11 @@
               "active": true,
               "await": false
             },
-            "SetData": {
-              "active": true,
-              "await": false
-            },
-            "GetData": {
-              "active": true,
-              "await": false
-            },
-            "SetMatch": {
-              "active": true
-            },
-            "GetMatch": {
-              "active": true,
+            "PostOperation": {
+              "active": false,
               "await": false
             },
             "PrePoint": {
-              "active": true
-            },
-            "PreSpec": {
               "active": true,
               "await": false
             },
@@ -491,20 +458,32 @@
               "active": true,
               "await": false
             },
+            "PreSpec": {
+              "active": true,
+              "await": false
+            },
             "PreTarget": {
               "active": false,
               "await": false
             },
-            "PostOperation": {
-              "active": false,
+            "SetData": {
+              "active": true,
+              "await": false
+            },
+            "SetMatch": {
+              "active": true,
               "await": false
             }
           },
+          "name": "test",
           "target": {
-            "ts": {
+            "go": {
               "deps": {}
             },
-            "go": {
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
               "deps": {}
             },
             "lua": {
@@ -519,28 +498,34 @@
             "rb": {
               "deps": {}
             },
-            "go-cli": {
-              "deps": {}
-            },
-            "go-mcp": {
+            "ts": {
               "deps": {}
             }
-          }
+          },
+          "title": "In-memory mock transport for testing without a live server",
+          "version": "0.0.1"
         }
       },
       "flow": {
         "BasicIdnFlow": {
+          "active": true,
           "entity": "idn",
+          "key$": "BasicIdnFlow",
           "kind": "basic",
           "name": "BasicIdnFlow",
+          "param": {},
           "step": [
             {
+              "active": true,
+              "data": {},
               "input": {
                 "ref": "idn_ref01",
                 "srcdatavar": "idn_ref01_data",
                 "suffix": "_dt0"
               },
+              "match": {},
               "op": "load",
+              "spec": [],
               "valid": [
                 {
                   "apply": "TextFieldMark",
@@ -548,24 +533,25 @@
                     "mark": "Mark01-idn_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "match": {},
-              "data": {},
-              "spec": []
+              ]
             }
-          ],
-          "key$": "BasicIdnFlow",
-          "active": true,
-          "param": {}
+          ]
         },
         "BasicSchemeFlow": {
+          "active": true,
           "entity": "scheme",
+          "key$": "BasicSchemeFlow",
           "kind": "basic",
           "name": "BasicSchemeFlow",
+          "param": {},
           "step": [
             {
+              "active": true,
+              "data": {},
+              "input": {},
+              "match": {},
               "op": "list",
+              "spec": [],
               "valid": [
                 {
                   "apply": "ItemExists",
@@ -573,29 +559,52 @@
                     "ref": "scheme_ref01"
                   }
                 }
-              ],
-              "active": true,
-              "match": {},
-              "data": {},
-              "input": {},
-              "spec": []
+              ]
             }
-          ],
-          "key$": "BasicSchemeFlow",
-          "active": true,
-          "param": {}
+          ]
         }
       },
+      "info": {
+        "contact": {
+          "email": "support@thecolorapi.com"
+        },
+        "description": "Your fast, modern, swiss army knife for color. Pass in any valid color and get conversion into any other format, the name of the color, placeholder images and a multitude of schemes. Each endpoint is available in JSON[P], HTML & SVG format.",
+        "servers": [
+          {
+            "description": "Production server",
+            "url": "https://www.thecolorapi.com"
+          }
+        ],
+        "title": "The Color API",
+        "version": "1.0.0"
+      },
+      "option": {},
       "target": {
-        "go-cli": {
-          "title": "Go CLI",
-          "ext": "go",
+        "go": {
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "the-color"
           },
+          "name": "go",
+          "srcfeature": false,
+          "title": "Golang"
+        },
+        "go-cli": {
+          "active": true,
+          "comment": {
+            "line": "//"
+          },
+          "deps": {},
+          "ext": "go",
+          "module": {
+            "name": "the-color"
+          },
+          "name": "go-cli",
           "phase": {
             "entity": {
               "active": false
@@ -610,19 +619,19 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-cli",
-          "active": true
+          "title": "Go CLI"
         },
         "go-mcp": {
-          "title": "Go MCP server",
-          "ext": "go",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "go",
           "module": {
             "name": "the-color"
           },
+          "name": "go-mcp",
           "phase": {
             "entity": {
               "active": false
@@ -637,138 +646,120 @@
               "active": false
             }
           },
-          "deps": {},
-          "name": "go-mcp",
-          "active": true
-        },
-        "ts": {
-          "title": "TypeScript",
-          "ext": "ts",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "the-color"
-          },
-          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
-          "deps": {
-            "dotenv": {
-              "active": true,
-              "version": "^17.4.2",
-              "kind": "dev"
-            },
-            "typescript": {
-              "active": true,
-              "version": "^5.9.3",
-              "kind": "dev"
-            },
-            "@types/node": {
-              "active": true,
-              "version": "^25.6.0",
-              "kind": "dev"
-            }
-          },
-          "name": "ts",
-          "active": true
-        },
-        "go": {
-          "title": "Golang",
-          "ext": "go",
-          "comment": {
-            "line": "//"
-          },
-          "module": {
-            "name": "the-color"
-          },
-          "srcfeature": false,
-          "deps": {},
-          "name": "go",
-          "active": true
+          "title": "Go MCP server"
         },
         "lua": {
-          "title": "Lua",
-          "ext": "lua",
+          "active": true,
           "comment": {
             "line": "--"
           },
-          "module": {
-            "name": "the-color"
-          },
-          "srcfeature": false,
           "deps": {
             "dkjson": {
               "active": true,
-              "version": "2.5",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.5"
             }
           },
+          "ext": "lua",
+          "module": {
+            "name": "the-color"
+          },
           "name": "lua",
-          "active": true
+          "srcfeature": false,
+          "title": "Lua"
         },
         "php": {
-          "title": "PHP",
-          "ext": "php",
+          "active": true,
           "comment": {
             "line": "//"
           },
+          "deps": {},
+          "ext": "php",
           "module": {
             "name": "the-color"
           },
-          "srcfeature": false,
-          "deps": {},
           "name": "php",
-          "active": true
+          "srcfeature": false,
+          "title": "PHP"
         },
         "py": {
-          "title": "Python",
-          "ext": "py",
+          "active": true,
           "comment": {
             "line": "#"
           },
-          "module": {
-            "name": "the-color"
-          },
-          "srcfeature": false,
           "deps": {
             "requests": {
               "active": true,
-              "version": "2.33",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "2.33"
             }
           },
-          "name": "py",
-          "active": true
-        },
-        "rb": {
-          "title": "Ruby",
-          "ext": "rb",
-          "comment": {
-            "line": "#"
-          },
+          "ext": "py",
           "module": {
             "name": "the-color"
           },
+          "name": "py",
           "srcfeature": false,
+          "title": "Python"
+        },
+        "rb": {
+          "active": true,
+          "comment": {
+            "line": "#"
+          },
           "deps": {
-            "voxgig-struct": {
-              "active": true,
-              "version": "0.0.10",
-              "kind": "prod"
-            },
             "json": {
               "active": true,
-              "version": "0",
-              "kind": "prod"
+              "kind": "prod",
+              "version": "0"
+            },
+            "voxgig-struct": {
+              "active": true,
+              "kind": "prod",
+              "version": "0.0.10"
             }
           },
+          "ext": "rb",
+          "module": {
+            "name": "the-color"
+          },
           "name": "rb",
-          "active": true
+          "srcfeature": false,
+          "title": "Ruby"
+        },
+        "ts": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "comment": {
+            "line": "//"
+          },
+          "deps": {
+            "@types/node": {
+              "active": true,
+              "kind": "dev",
+              "version": "^25.6.0"
+            },
+            "dotenv": {
+              "active": true,
+              "kind": "dev",
+              "version": "^17.4.2"
+            },
+            "typescript": {
+              "active": true,
+              "kind": "dev",
+              "version": "^5.9.3"
+            }
+          },
+          "ext": "ts",
+          "module": {
+            "name": "the-color"
+          },
+          "name": "ts",
+          "title": "TypeScript"
         }
-      },
-      "option": {}
-    },
-    "def": {
-      "desc": ""
+      }
     }
-  }
+  },
+  "name": "the-color",
+  "origin": "voxgig-sdk"
 }

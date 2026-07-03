@@ -91,6 +91,7 @@ function idn_basic_setup(extra)
     ["THECOLOR_TEST_IDN_ENTID"] = idmap,
     ["THECOLOR_TEST_LIVE"] = "FALSE",
     ["THECOLOR_TEST_EXPLAIN"] = "FALSE",
+    ["THECOLOR_APIKEY"] = "NONE",
   })
 
   local idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ function idn_basic_setup(extra)
   if env["THECOLOR_TEST_LIVE"] == "TRUE" then
     local merged_opts = vs.merge({
       {
+        apikey = env["THECOLOR_APIKEY"],
       },
       extra or {},
     })

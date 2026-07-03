@@ -38,6 +38,10 @@ class Config {
   options = {
     base: 'https://www.thecolorapi.com',
 
+    auth: {
+      prefix: 'Bearer',
+    },
+
     headers: {
       "content-type": "application/json"
     },
@@ -58,161 +62,163 @@ class Config {
     "idn": {
       "fields": [
         {
+          "active": true,
           "name": "cmyk",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "contrast",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "embedded",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "hex",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "hsl",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "hsv",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 5
         },
         {
+          "active": true,
           "name": "image",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 6
         },
         {
+          "active": true,
           "name": "link",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 7
         },
         {
+          "active": true,
           "name": "name",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 8
         },
         {
+          "active": true,
           "name": "rgb",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 9
         },
         {
+          "active": true,
           "name": "xyz",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 10
         }
       ],
       "name": "idn",
       "op": {
         "load": {
+          "input": "data",
           "name": "load",
           "points": [
             {
+              "active": true,
               "args": {
                 "query": [
                   {
+                    "active": true,
                     "kind": "query",
                     "name": "callback",
                     "orig": "callback",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "100,58,0,33",
                     "kind": "query",
                     "name": "cmyk",
                     "orig": "cmyk",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "json",
                     "kind": "query",
                     "name": "format",
                     "orig": "format",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "0047AB",
                     "kind": "query",
                     "name": "hex",
                     "orig": "hex",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "215,100%,34%",
                     "kind": "query",
                     "name": "hsl",
                     "orig": "hsl",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": false,
                     "kind": "query",
                     "name": "named",
                     "orig": "named",
                     "reqd": false,
-                    "type": "`$BOOLEAN`",
-                    "active": true
+                    "type": "`$BOOLEAN`"
                   },
                   {
+                    "active": true,
                     "example": "0,71,171",
                     "kind": "query",
                     "name": "rgb",
                     "orig": "rgb",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": 350,
                     "kind": "query",
                     "name": "w",
                     "orig": "w",
                     "reqd": false,
-                    "type": "`$INTEGER`",
-                    "active": true
+                    "type": "`$INTEGER`"
                   }
                 ]
               },
@@ -237,11 +243,9 @@ class Config {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "load"
         }
       },
@@ -252,179 +256,181 @@ class Config {
     "scheme": {
       "fields": [
         {
+          "active": true,
           "name": "cmyk",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 0
         },
         {
+          "active": true,
           "name": "contrast",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 1
         },
         {
+          "active": true,
           "name": "embedded",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 2
         },
         {
+          "active": true,
           "name": "hex",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 3
         },
         {
+          "active": true,
           "name": "hsl",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 4
         },
         {
+          "active": true,
           "name": "hsv",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 5
         },
         {
+          "active": true,
           "name": "image",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 6
         },
         {
+          "active": true,
           "name": "link",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 7
         },
         {
+          "active": true,
           "name": "name",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 8
         },
         {
+          "active": true,
           "name": "rgb",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 9
         },
         {
+          "active": true,
           "name": "xyz",
           "req": false,
           "type": "`$OBJECT`",
-          "active": true,
           "index$": 10
         }
       ],
       "name": "scheme",
       "op": {
         "list": {
+          "input": "data",
           "name": "list",
           "points": [
             {
+              "active": true,
               "args": {
                 "query": [
                   {
+                    "active": true,
                     "kind": "query",
                     "name": "callback",
                     "orig": "callback",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "100,58,0,33",
                     "kind": "query",
                     "name": "cmyk",
                     "orig": "cmyk",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": 6,
                     "kind": "query",
                     "name": "count",
                     "orig": "count",
                     "reqd": false,
-                    "type": "`$INTEGER`",
-                    "active": true
+                    "type": "`$INTEGER`"
                   },
                   {
+                    "active": true,
                     "example": "json",
                     "kind": "query",
                     "name": "format",
                     "orig": "format",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "0047AB",
                     "kind": "query",
                     "name": "hex",
                     "orig": "hex",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "215,100%,34%",
                     "kind": "query",
                     "name": "hsl",
                     "orig": "hsl",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": "monochrome",
                     "kind": "query",
                     "name": "mode",
                     "orig": "mode",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": false,
                     "kind": "query",
                     "name": "named",
                     "orig": "named",
                     "reqd": false,
-                    "type": "`$BOOLEAN`",
-                    "active": true
+                    "type": "`$BOOLEAN`"
                   },
                   {
+                    "active": true,
                     "example": "0,71,171",
                     "kind": "query",
                     "name": "rgb",
                     "orig": "rgb",
                     "reqd": false,
-                    "type": "`$STRING`",
-                    "active": true
+                    "type": "`$STRING`"
                   },
                   {
+                    "active": true,
                     "example": 350,
                     "kind": "query",
                     "name": "w",
                     "orig": "w",
                     "reqd": false,
-                    "type": "`$INTEGER`",
-                    "active": true
+                    "type": "`$INTEGER`"
                   }
                 ]
               },
@@ -451,11 +457,9 @@ class Config {
                 "req": "`reqdata`",
                 "res": "`body`"
               },
-              "active": true,
               "index$": 0
             }
           ],
-          "input": "data",
           "key$": "list"
         }
       },
