@@ -10,7 +10,7 @@ The Python SDK for the TheColor API — an entity-oriented client following Pyth
 
 ## Install
 ```bash
-pip install the-color-sdk
+pip install voxgig-sdk-the-color
 ```
 
 Or install from source:

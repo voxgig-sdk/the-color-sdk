@@ -10,7 +10,7 @@ The TypeScript SDK for the TheColor API — a type-safe, entity-oriented client 
 
 ## Install
 ```bash
-npm install the-color
+npm install @voxgig-sdk/the-color
 ```
 ## Tutorial: your first API call
 

@@ -10,7 +10,7 @@ The Lua SDK for the TheColor API — an entity-oriented client using Lua convent
 
 ## Install
 ```bash
-luarocks install the-color-sdk
+luarocks install voxgig-sdk-the-color
 ```
 
 If the module is not yet published, add the source directory to

@@ -10,13 +10,13 @@ The Ruby SDK for the TheColor API — an entity-oriented client using idiomatic 
 
 ## Install
 ```bash
-gem install the-color-sdk
+gem install voxgig-sdk-the-color
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "the-color-sdk"
+gem "voxgig-sdk-the-color"
 ```
 
 Then run:
