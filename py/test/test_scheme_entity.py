@@ -50,8 +50,7 @@ class TestSchemeEntity:
         scheme_ref01_ent = client.Scheme(None)
         scheme_ref01_match = {}
 
-        scheme_ref01_list_result, err = scheme_ref01_ent.list(scheme_ref01_match, None)
-        assert err is None
+        scheme_ref01_list_result = scheme_ref01_ent.list(scheme_ref01_match, None)
         assert isinstance(scheme_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _scheme_basic_setup(extra):
         "THECOLOR_TEST_SCHEME_ENTID": idmap,
         "THECOLOR_TEST_LIVE": "FALSE",
         "THECOLOR_TEST_EXPLAIN": "FALSE",
-        "THECOLOR_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _scheme_basic_setup(extra):
     if env.get("THECOLOR_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("THECOLOR_APIKEY"),
             },
             extra or {},
         ])

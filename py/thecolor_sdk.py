@@ -144,16 +144,23 @@ class TheColorSDK:
 
         _, err = utility.prepare_auth(ctx)
         if err is not None:
-            return None, err
+            raise err
 
-        return utility.make_fetch_def(ctx)
+        fetchdef, err = utility.make_fetch_def(ctx)
+        if err is not None:
+            raise err
+
+        return fetchdef
 
     def direct(self, fetchargs=None):
         utility = self._utility
 
-        fetchdef, err = self.prepare(fetchargs)
-        if err is not None:
-            return {"ok": False, "err": err}, None
+        try:
+            fetchdef = self.prepare(fetchargs)
+        except Exception as err:
+            # direct() is the raw-HTTP escape hatch: it never raises, it
+            # returns a result object callers branch on via result["ok"].
+            return {"ok": False, "err": err}
 
         if fetchargs is None:
             fetchargs = {}
@@ -170,13 +177,13 @@ class TheColorSDK:
         fetched, fetch_err = utility.fetcher(ctx, url, fetchdef)
 
         if fetch_err is not None:
-            return {"ok": False, "err": fetch_err}, None
+            return {"ok": False, "err": fetch_err}
 
         if fetched is None:
             return {
                 "ok": False,
                 "err": ctx.make_error("direct_no_response", "response: undefined"),
-            }, None
+            }
 
         if isinstance(fetched, dict):
             status = helpers.to_int(vs.getprop(fetched, "status"))
@@ -205,20 +212,42 @@ class TheColorSDK:
                 "status": status,
                 "headers": headers,
                 "data": json_data,
-            }, None
+            }
 
         return {
             "ok": False,
             "err": ctx.make_error("direct_invalid", "invalid response type"),
-        }, None
+        }
 
+
+    @property
+    def idn(self):
+        """Idiomatic facade: client.idn.list() / client.idn.load({"id": ...})."""
+        from entity.idn_entity import IdnEntity
+        cached = getattr(self, "_idn", None)
+        if cached is None:
+            cached = IdnEntity(self, None)
+            self._idn = cached
+        return cached
 
     def Idn(self, data=None):
+        # Deprecated: use client.idn instead.
         from entity.idn_entity import IdnEntity
         return IdnEntity(self, data)
 
 
+    @property
+    def scheme(self):
+        """Idiomatic facade: client.scheme.list() / client.scheme.load({"id": ...})."""
+        from entity.scheme_entity import SchemeEntity
+        cached = getattr(self, "_scheme", None)
+        if cached is None:
+            cached = SchemeEntity(self, None)
+            self._scheme = cached
+        return cached
+
     def Scheme(self, data=None):
+        # Deprecated: use client.scheme instead.
         from entity.scheme_entity import SchemeEntity
         return SchemeEntity(self, data)
 

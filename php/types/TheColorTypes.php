@@ -1,0 +1,78 @@
+<?php
+declare(strict_types=1);
+
+// Typed models for the TheColor SDK.
+//
+// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// params (op.<name>.points[].args.params[]). Field/param types come from the
+// canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+// @voxgig/apidef VALID_CANON). Do not edit by hand.
+//
+// These are documentation-grade value objects (PHP 8 typed properties),
+// registered on the composer classmap autoload. The SDK boundary exchanges
+// assoc-arrays; these classes name the shapes for tooling and typed callers.
+
+/** Idn entity data model. */
+class Idn
+{
+    public ?array $cmyk = null;
+    public ?array $contrast = null;
+    public ?array $embedded = null;
+    public ?array $hex = null;
+    public ?array $hsl = null;
+    public ?array $hsv = null;
+    public ?array $image = null;
+    public ?array $link = null;
+    public ?array $name = null;
+    public ?array $rgb = null;
+    public ?array $xyz = null;
+}
+
+/** Match filter for Idn#load (any subset of Idn fields). */
+class IdnLoadMatch
+{
+    public ?array $cmyk = null;
+    public ?array $contrast = null;
+    public ?array $embedded = null;
+    public ?array $hex = null;
+    public ?array $hsl = null;
+    public ?array $hsv = null;
+    public ?array $image = null;
+    public ?array $link = null;
+    public ?array $name = null;
+    public ?array $rgb = null;
+    public ?array $xyz = null;
+}
+
+/** Scheme entity data model. */
+class Scheme
+{
+    public ?array $cmyk = null;
+    public ?array $contrast = null;
+    public ?array $embedded = null;
+    public ?array $hex = null;
+    public ?array $hsl = null;
+    public ?array $hsv = null;
+    public ?array $image = null;
+    public ?array $link = null;
+    public ?array $name = null;
+    public ?array $rgb = null;
+    public ?array $xyz = null;
+}
+
+/** Match filter for Scheme#list (any subset of Scheme fields). */
+class SchemeListMatch
+{
+    public ?array $cmyk = null;
+    public ?array $contrast = null;
+    public ?array $embedded = null;
+    public ?array $hex = null;
+    public ?array $hsl = null;
+    public ?array $hsv = null;
+    public ?array $image = null;
+    public ?array $link = null;
+    public ?array $name = null;
+    public ?array $rgb = null;
+    public ?array $xyz = null;
+}
+

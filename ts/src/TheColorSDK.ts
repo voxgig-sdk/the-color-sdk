@@ -3,6 +3,8 @@
 import { IdnEntity } from './entity/IdnEntity'
 import { SchemeEntity } from './entity/SchemeEntity'
 
+export type * from './TheColorTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class TheColorSDK {
 
 
 
+  _idn?: IdnEntity
+
+  // Idiomatic facade: `client.idn.list()` / `client.idn.load({ id })`.
+  get idn(): IdnEntity {
+    return (this._idn ??= new IdnEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.idn` instead. */
   Idn(data?: any) {
     const self = this
     return new IdnEntity(self,data)
   }
 
 
+  _scheme?: SchemeEntity
+
+  // Idiomatic facade: `client.scheme.list()` / `client.scheme.load({ id })`.
+  get scheme(): SchemeEntity {
+    return (this._scheme ??= new SchemeEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.scheme` instead. */
   Scheme(data?: any) {
     const self = this
     return new SchemeEntity(self,data)

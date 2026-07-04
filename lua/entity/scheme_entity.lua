@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch SchemeListMatch
+---@param ctrl? table
+---@return Scheme[]
+---@return string? err
 function SchemeEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

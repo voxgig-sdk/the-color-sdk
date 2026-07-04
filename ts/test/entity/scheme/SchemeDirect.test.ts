@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'THECOLOR_TEST_SCHEME_ENTID': {},
     'THECOLOR_TEST_LIVE': 'FALSE',
-    'THECOLOR_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.THECOLOR_TEST_LIVE
 
   if (live) {
     const client = new TheColorSDK({
-      apikey: env.THECOLOR_APIKEY,
     })
 
     let idmap: any = env['THECOLOR_TEST_SCHEME_ENTID']

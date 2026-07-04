@@ -245,11 +245,17 @@ func (sdk *TheColorSDK) Direct(fetchargs map[string]any) (map[string]any, error)
 }
 
 
+// Idn returns a Idn entity bound to this client.
+// Idiomatic usage: client.Idn(nil).List(nil, nil) or
+// client.Idn(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *TheColorSDK) Idn(data map[string]any) TheColorEntity {
 	return NewIdnEntityFunc(sdk, data)
 }
 
 
+// Scheme returns a Scheme entity bound to this client.
+// Idiomatic usage: client.Scheme(nil).List(nil, nil) or
+// client.Scheme(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *TheColorSDK) Scheme(data map[string]any) TheColorEntity {
 	return NewSchemeEntityFunc(sdk, data)
 }

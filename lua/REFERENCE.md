@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -88,7 +87,7 @@ same parameters as `direct()`.
 ## IdnEntity
 
 ```lua
-local idn = client:Idn(nil)
+local idn = client:idn(nil)
 ```
 
 ### Fields
@@ -114,7 +113,7 @@ local idn = client:Idn(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Idn():load({ id = "idn_id" })
+local result, err = client:idn():load({ id = "idn_id" })
 ```
 
 ### Common Methods
@@ -150,7 +149,7 @@ Return the entity name.
 ## SchemeEntity
 
 ```lua
-local scheme = client:Scheme(nil)
+local scheme = client:scheme(nil)
 ```
 
 ### Fields
@@ -176,7 +175,7 @@ local scheme = client:Scheme(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Scheme():list()
+local results, err = client:scheme():list()
 ```
 
 ### Common Methods

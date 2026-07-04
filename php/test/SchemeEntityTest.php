@@ -50,8 +50,7 @@ class SchemeEntityTest extends TestCase
         $scheme_ref01_ent = $client->Scheme(null);
         $scheme_ref01_match = [];
 
-        [$scheme_ref01_list_result, $err] = $scheme_ref01_ent->list($scheme_ref01_match, null);
-        $this->assertNull($err);
+        $scheme_ref01_list_result = $scheme_ref01_ent->list($scheme_ref01_match, null);
         $this->assertIsArray($scheme_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function scheme_basic_setup($extra)
         "THECOLOR_TEST_SCHEME_ENTID" => $idmap,
         "THECOLOR_TEST_LIVE" => "FALSE",
         "THECOLOR_TEST_EXPLAIN" => "FALSE",
-        "THECOLOR_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function scheme_basic_setup($extra)
     if ($env["THECOLOR_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["THECOLOR_APIKEY"],
             ],
             $extra ?? [],
         ]);

@@ -9,9 +9,12 @@ The TypeScript SDK for the TheColor API — a type-safe, entity-oriented client 
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/the-color
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/the-color-sdk/releases](https://github.com/voxgig-sdk/the-color-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { TheColorSDK } from 'the-color'
+import { TheColorSDK } from '@voxgig-sdk/the-color'
 
-const client = new TheColorSDK({
-  apikey: process.env.THE-COLOR_APIKEY,
-})
+const client = new TheColorSDK()
 ```
 
-### 3. Load a idn
+### 3. Load an idn
 
 ```ts
-const result = await client.Idn().load({ id: 'example_id' })
+const result = await client.idn.load({ id: 'example_id' })
 
 if (result.ok) {
   console.log(result.data)
@@ -79,7 +80,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = TheColorSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.idn.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -87,7 +88,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new TheColorSDK({ apikey: '...' })
+const client = new TheColorSDK()
 const testClient = client.tester()
 ```
 
@@ -96,7 +97,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.idn
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -123,7 +124,6 @@ const logger = {
 }
 
 const client = new TheColorSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -133,8 +133,7 @@ const client = new TheColorSDK({
 Create a `.env.local` file at the project root:
 
 ```
-THE-COLOR_TEST_LIVE=TRUE
-THE-COLOR_APIKEY=<your-key>
+THE_COLOR_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -152,7 +151,6 @@ cd ts && npm test
 
 ```ts
 new TheColorSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -163,7 +161,6 @@ new TheColorSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -297,7 +294,7 @@ API path: `/scheme`
 
 ### Idn
 
-Create an instance: `const idn = client.Idn()`
+Create an instance: `const idn = client.idn`
 
 #### Operations
 
@@ -324,13 +321,13 @@ Create an instance: `const idn = client.Idn()`
 #### Example: Load
 
 ```ts
-const idn = await client.Idn().load({ id: 'idn_id' })
+const idn = await client.idn.load({ id: 'idn_id' })
 ```
 
 
 ### Scheme
 
-Create an instance: `const scheme = client.Scheme()`
+Create an instance: `const scheme = client.scheme`
 
 #### Operations
 
@@ -357,7 +354,7 @@ Create an instance: `const scheme = client.Scheme()`
 #### Example: List
 
 ```ts
-const schemes = await client.Scheme().list()
+const schemes = await client.scheme.list()
 ```
 
 
@@ -418,7 +415,7 @@ the-color/
 Import the SDK from the package root:
 
 ```ts
-import { TheColorSDK } from 'the-color'
+import { TheColorSDK } from '@voxgig-sdk/the-color'
 ```
 
 ### Entity state
@@ -428,11 +425,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const idn = client.idn
+await idn.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// idn.data() now returns the loaded idn data
+// idn.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -122,7 +121,7 @@ Alias for `TheColorSDK.test()`.
 ## IdnEntity
 
 ```ts
-const idn = client.Idn()
+const idn = client.idn
 ```
 
 ### Fields
@@ -148,7 +147,7 @@ const idn = client.Idn()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Idn().load({ id: 'idn_id' })
+const result = await client.idn.load({ id: 'idn_id' })
 ```
 
 ### Common Methods
@@ -182,7 +181,7 @@ Return a copy of the entity options.
 ## SchemeEntity
 
 ```ts
-const scheme = client.Scheme()
+const scheme = client.scheme
 ```
 
 ### Fields
@@ -208,7 +207,7 @@ const scheme = client.Scheme()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Scheme().list()
+const results = await client.scheme.list()
 ```
 
 ### Common Methods

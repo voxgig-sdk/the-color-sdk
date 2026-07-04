@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'THE_COLOR_TEST_SCHEME_ENTID': idmap,
     'THE_COLOR_TEST_LIVE': 'FALSE',
     'THE_COLOR_TEST_EXPLAIN': 'FALSE',
-    'THE_COLOR_APIKEY': 'NONE',
   })
 
   idmap = env['THE_COLOR_TEST_SCHEME_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new TheColorSDK(merge([
       {
-        apikey: env.THE_COLOR_APIKEY,
       },
       extra
     ]))

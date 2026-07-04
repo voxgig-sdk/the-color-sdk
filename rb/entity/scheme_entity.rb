@@ -45,6 +45,7 @@ class SchemeEntity
     end
   end
 
+  # @return [Scheme, Hash] the current Scheme data
   def data_get
     @_utility.feature_hook.call(@_entctx, "GetData")
     VoxgigStruct.clone(@_data)
@@ -57,6 +58,7 @@ class SchemeEntity
     end
   end
 
+  # @return [Hash] the current match filter (any subset of Scheme fields)
   def match_get
     @_utility.feature_hook.call(@_entctx, "GetMatch")
     VoxgigStruct.clone(@_match)
@@ -65,6 +67,11 @@ class SchemeEntity
   
 
   
+  # List Scheme items matching the given filter.
+  #
+  # @param reqmatch [SchemeListMatch, Hash, nil] match filter (any subset of Scheme fields)
+  # @param ctrl [Object, nil] optional per-call control
+  # @return [Array<Scheme>, Array] the matching Scheme items; raises TheColorError on failure
   def list(reqmatch, ctrl = nil)
     utility = @_utility
     ctx = utility.make_context.call({

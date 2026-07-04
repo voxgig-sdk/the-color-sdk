@@ -9,12 +9,9 @@ The Lua SDK for the TheColor API — an entity-oriented client using Lua convent
 
 
 ## Install
-```bash
-luarocks install voxgig-sdk-the-color
-```
-
-If the module is not yet published, add the source directory to
-your `LUA_PATH`:
+This package is not yet published to LuaRocks. Install it from the
+GitHub release tag (`lua/vX.Y.Z`, see [Releases](https://github.com/voxgig-sdk/the-color-sdk/releases)),
+or add the source directory to your `LUA_PATH`:
 
 ```bash
 export LUA_PATH="path/to/lua/?.lua;path/to/lua/?/init.lua;;"
@@ -31,15 +28,13 @@ loading a specific record.
 ```lua
 local sdk = require("the-color_sdk")
 
-local client = sdk.new({
-  apikey = os.getenv("THE-COLOR_APIKEY"),
-})
+local client = sdk.new()
 ```
 
-### 3. Load a idn
+### 3. Load an idn
 
 ```lua
-local result, err = client:Idn():load({ id = "example_id" })
+local result, err = client:idn():load({ id = "example_id" })
 if err then error(err) end
 print(result)
 ```
@@ -87,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:TheColor():load({ id = "test01" })
+local result, err = client:idn():load({ id = "test01" })
 -- result contains mock response data
 ```
 
@@ -120,8 +115,7 @@ local client = sdk.new({
 Create a `.env.local` file at the project root:
 
 ```
-THE-COLOR_TEST_LIVE=TRUE
-THE-COLOR_APIKEY=<your-key>
+THE_COLOR_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -144,7 +138,6 @@ Creates a new SDK client.
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -252,7 +245,7 @@ API path: `/scheme`
 
 ### Idn
 
-Create an instance: `const idn = client.Idn()`
+Create an instance: `const idn = client.idn`
 
 #### Operations
 
@@ -279,13 +272,13 @@ Create an instance: `const idn = client.Idn()`
 #### Example: Load
 
 ```ts
-const idn = await client.Idn().load({ id: 'idn_id' })
+const idn = await client.idn.load({ id: 'idn_id' })
 ```
 
 
 ### Scheme
 
-Create an instance: `const scheme = client.Scheme()`
+Create an instance: `const scheme = client.scheme`
 
 #### Operations
 
@@ -312,7 +305,7 @@ Create an instance: `const scheme = client.Scheme()`
 #### Example: List
 
 ```ts
-const schemes = await client.Scheme().list()
+const schemes = await client.scheme.list()
 ```
 
 
@@ -387,11 +380,11 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local moon = client:Moon(nil)
-moon:load({ planet_id = "earth", id = "luna" }, nil)
+local idn = client:idn()
+idn:load({ id = "example_id" })
 
--- moon:data_get() now returns the loaded moon data
--- moon:match_get() returns the last match criteria
+-- idn:data_get() now returns the loaded idn data
+-- idn:match_get() returns the last match criteria
 ```
 
 Call `make()` to create a fresh instance with the same configuration

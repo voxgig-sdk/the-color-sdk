@@ -43,8 +43,7 @@ class SchemeEntityTest < Minitest::Test
     scheme_ref01_ent = client.Scheme(nil)
     scheme_ref01_match = {}
 
-    scheme_ref01_list_result, err = scheme_ref01_ent.list(scheme_ref01_match, nil)
-    assert_nil err
+    scheme_ref01_list_result = scheme_ref01_ent.list(scheme_ref01_match, nil)
     assert scheme_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def scheme_basic_setup(extra)
     "THECOLOR_TEST_SCHEME_ENTID" => idmap,
     "THECOLOR_TEST_LIVE" => "FALSE",
     "THECOLOR_TEST_EXPLAIN" => "FALSE",
-    "THECOLOR_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def scheme_basic_setup(extra)
   if env["THECOLOR_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["THECOLOR_APIKEY"],
       },
       extra || {},
     ])

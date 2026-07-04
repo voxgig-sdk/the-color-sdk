@@ -244,12 +244,38 @@ end
 
 
 
+-- Idiomatic facade: client:idn():list() / client:idn():load({ id = ... })
+function TheColorSDK:idn(data)
+  local EntityMod = require("entity.idn_entity")
+  if data == nil then
+    if self._idn == nil then
+      self._idn = EntityMod.new(self, nil)
+    end
+    return self._idn
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:idn() instead.
 function TheColorSDK:Idn(data)
   local EntityMod = require("entity.idn_entity")
   return EntityMod.new(self, data)
 end
 
 
+-- Idiomatic facade: client:scheme():list() / client:scheme():load({ id = ... })
+function TheColorSDK:scheme(data)
+  local EntityMod = require("entity.scheme_entity")
+  if data == nil then
+    if self._scheme == nil then
+      self._scheme = EntityMod.new(self, nil)
+    end
+    return self._scheme
+  end
+  return EntityMod.new(self, data)
+end
+
+-- Deprecated: use client:scheme() instead.
 function TheColorSDK:Scheme(data)
   local EntityMod = require("entity.scheme_entity")
   return EntityMod.new(self, data)

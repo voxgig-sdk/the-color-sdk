@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Idn,
+  IdnLoadMatch,
+} from '../TheColorTypes'
 
 // TODO: needs Entity superclass
-class IdnEntity extends TheColorEntityBase {
+class IdnEntity extends TheColorEntityBase<Idn> {
 
   constructor(client: TheColorSDK, entopts: any) {
     super(client, entopts)
@@ -32,7 +36,7 @@ class IdnEntity extends TheColorEntityBase {
 
 
 
-  async load(this: any, reqmatch?: any, ctrl?: Control) {
+  async load(this: any, reqmatch?: IdnLoadMatch, ctrl?: Control): Promise<Idn> {
 
     const utility = this._utility
 
@@ -136,7 +140,9 @@ class IdnEntity extends TheColorEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Idn> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }
