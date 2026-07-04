@@ -205,28 +205,14 @@ class TheColorSDK {
 
 
 
-  _idn?: IdnEntity
-
-  // Idiomatic facade: `client.idn.list()` / `client.idn.load({ id })`.
-  get idn(): IdnEntity {
-    return (this._idn ??= new IdnEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.idn` instead. */
+  // Entity access: `client.Idn().list()` / `client.Idn().load({ id })`.
   Idn(data?: any) {
     const self = this
     return new IdnEntity(self,data)
   }
 
 
-  _scheme?: SchemeEntity
-
-  // Idiomatic facade: `client.scheme.list()` / `client.scheme.load({ id })`.
-  get scheme(): SchemeEntity {
-    return (this._scheme ??= new SchemeEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.scheme` instead. */
+  // Entity access: `client.Scheme().list()` / `client.Scheme().load({ id })`.
   Scheme(data?: any) {
     const self = this
     return new SchemeEntity(self,data)

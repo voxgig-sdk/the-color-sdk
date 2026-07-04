@@ -32,8 +32,9 @@ client = TheColorSDK.new
 
 ```ruby
 begin
-  result = client.idn.load({ "id" => "example_id" })
-  puts result
+  # load returns the bare Idn record (raises on error).
+  idn = client.Idn.load({ "id" => "example_id" })
+  puts idn
 rescue => err
   warn "load failed: #{err}"
 end
@@ -80,13 +81,17 @@ end
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```ruby
-client = TheColorSDK.test
+client = TheColorSDK.test({
+  "entity" => { "idn" => { "test01" => { "id" => "test01" } } },
+})
 
-result = client.idn.load({ "id" => "test01" })
-# result contains mock response data
+# load returns the bare mock record (raises on error).
+idn = client.Idn.load({ "id" => "test01" })
+puts idn
 ```
 
 ### Use a custom fetch function
@@ -162,7 +167,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> Hash` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> Hash` | Build and send an HTTP request. Returns a result hash (`result["ok"]`); does not raise. |
-| `Idn` | `(data) -> IdnEntity` | Create a Idn entity instance. |
+| `Idn` | `(data) -> IdnEntity` | Create an Idn entity instance. |
 | `Scheme` | `(data) -> SchemeEntity` | Create a Scheme entity instance. |
 
 ### Entity interface
@@ -249,7 +254,7 @@ API path: `/scheme`
 
 ### Idn
 
-Create an instance: `const idn = client.idn`
+Create an instance: `idn = client.Idn`
 
 #### Operations
 
@@ -275,14 +280,15 @@ Create an instance: `const idn = client.idn`
 
 #### Example: Load
 
-```ts
-const idn = await client.idn.load({ id: 'idn_id' })
+```ruby
+# load returns the bare Idn record (raises on error).
+idn = client.Idn.load({ "id" => "idn_id" })
 ```
 
 
 ### Scheme
 
-Create an instance: `const scheme = client.scheme`
+Create an instance: `scheme = client.Scheme`
 
 #### Operations
 
@@ -308,8 +314,9 @@ Create an instance: `const scheme = client.scheme`
 
 #### Example: List
 
-```ts
-const schemes = await client.scheme.list()
+```ruby
+# list returns an Array of Scheme records (raises on error).
+schemes = client.Scheme.list
 ```
 
 
@@ -384,7 +391,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```ruby
-idn = client.idn
+idn = client.Idn
 idn.load({ "id" => "example_id" })
 
 # idn.data_get now returns the loaded idn data

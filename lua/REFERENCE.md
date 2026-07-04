@@ -87,7 +87,7 @@ same parameters as `direct()`.
 ## IdnEntity
 
 ```lua
-local idn = client:idn(nil)
+local idn = client:Idn(nil)
 ```
 
 ### Fields
@@ -113,7 +113,7 @@ local idn = client:idn(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:idn():load({ id = "idn_id" })
+local result, err = client:Idn():load({ id = "idn_id" })
 ```
 
 ### Common Methods
@@ -149,7 +149,7 @@ Return the entity name.
 ## SchemeEntity
 
 ```lua
-local scheme = client:scheme(nil)
+local scheme = client:Scheme(nil)
 ```
 
 ### Fields
@@ -175,7 +175,7 @@ local scheme = client:scheme(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:scheme():list()
+local results, err = client:Scheme():list()
 ```
 
 ### Common Methods

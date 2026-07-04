@@ -4,69 +4,69 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Idn:
-    cmyk: Optional[dict] = None
-    contrast: Optional[dict] = None
-    embedded: Optional[dict] = None
-    hex: Optional[dict] = None
-    hsl: Optional[dict] = None
-    hsv: Optional[dict] = None
-    image: Optional[dict] = None
-    link: Optional[dict] = None
-    name: Optional[dict] = None
-    rgb: Optional[dict] = None
-    xyz: Optional[dict] = None
+class Idn(TypedDict, total=False):
+    cmyk: dict
+    contrast: dict
+    embedded: dict
+    hex: dict
+    hsl: dict
+    hsv: dict
+    image: dict
+    link: dict
+    name: dict
+    rgb: dict
+    xyz: dict
 
 
-@dataclass
-class IdnLoadMatch:
-    cmyk: Optional[dict] = None
-    contrast: Optional[dict] = None
-    embedded: Optional[dict] = None
-    hex: Optional[dict] = None
-    hsl: Optional[dict] = None
-    hsv: Optional[dict] = None
-    image: Optional[dict] = None
-    link: Optional[dict] = None
-    name: Optional[dict] = None
-    rgb: Optional[dict] = None
-    xyz: Optional[dict] = None
+class IdnLoadMatch(TypedDict, total=False):
+    cmyk: dict
+    contrast: dict
+    embedded: dict
+    hex: dict
+    hsl: dict
+    hsv: dict
+    image: dict
+    link: dict
+    name: dict
+    rgb: dict
+    xyz: dict
 
 
-@dataclass
-class Scheme:
-    cmyk: Optional[dict] = None
-    contrast: Optional[dict] = None
-    embedded: Optional[dict] = None
-    hex: Optional[dict] = None
-    hsl: Optional[dict] = None
-    hsv: Optional[dict] = None
-    image: Optional[dict] = None
-    link: Optional[dict] = None
-    name: Optional[dict] = None
-    rgb: Optional[dict] = None
-    xyz: Optional[dict] = None
+class Scheme(TypedDict, total=False):
+    cmyk: dict
+    contrast: dict
+    embedded: dict
+    hex: dict
+    hsl: dict
+    hsv: dict
+    image: dict
+    link: dict
+    name: dict
+    rgb: dict
+    xyz: dict
 
 
-@dataclass
-class SchemeListMatch:
-    cmyk: Optional[dict] = None
-    contrast: Optional[dict] = None
-    embedded: Optional[dict] = None
-    hex: Optional[dict] = None
-    hsl: Optional[dict] = None
-    hsv: Optional[dict] = None
-    image: Optional[dict] = None
-    link: Optional[dict] = None
-    name: Optional[dict] = None
-    rgb: Optional[dict] = None
-    xyz: Optional[dict] = None
-
+class SchemeListMatch(TypedDict, total=False):
+    cmyk: dict
+    contrast: dict
+    embedded: dict
+    hex: dict
+    hsl: dict
+    hsv: dict
+    image: dict
+    link: dict
+    name: dict
+    rgb: dict
+    xyz: dict

@@ -233,10 +233,10 @@ class TheColorSDK
 
     private $_idn = null;
 
-    // Idiomatic facade: $client->idn()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Idn() (PHP method
-    // names are case-insensitive).
-    public function idn($data = null)
+    // Canonical facade: $client->Idn()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->idn()
+    // resolves here too.
+    public function Idn($data = null)
     {
         require_once __DIR__ . '/entity/idn_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class TheColorSDK
 
     private $_scheme = null;
 
-    // Idiomatic facade: $client->scheme()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Scheme() (PHP method
-    // names are case-insensitive).
-    public function scheme($data = null)
+    // Canonical facade: $client->Scheme()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->scheme()
+    // resolves here too.
+    public function Scheme($data = null)
     {
         require_once __DIR__ . '/entity/scheme_entity.php';
         if ($data === null) {

@@ -121,7 +121,7 @@ Alias for `TheColorSDK.test()`.
 ## IdnEntity
 
 ```ts
-const idn = client.idn
+const idn = client.Idn()
 ```
 
 ### Fields
@@ -147,7 +147,7 @@ const idn = client.idn
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.idn.load({ id: 'idn_id' })
+const result = await client.Idn().load({ id: 'idn_id' })
 ```
 
 ### Common Methods
@@ -181,7 +181,7 @@ Return a copy of the entity options.
 ## SchemeEntity
 
 ```ts
-const scheme = client.scheme
+const scheme = client.Scheme()
 ```
 
 ### Fields
@@ -207,7 +207,7 @@ const scheme = client.scheme
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.scheme.list()
+const results = await client.Scheme().list()
 ```
 
 ### Common Methods

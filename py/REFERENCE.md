@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## IdnEntity
 
 ```python
-idn = client.idn
+idn = client.Idn()
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ idn = client.idn
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.idn.load({"id": "idn_id"})
+result = client.Idn().load({"id": "idn_id"})
 ```
 
 ### Common Methods
@@ -145,7 +145,7 @@ Return the entity name.
 ## SchemeEntity
 
 ```python
-scheme = client.scheme
+scheme = client.Scheme()
 ```
 
 ### Fields
@@ -171,7 +171,9 @@ scheme = client.scheme
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.scheme.list({})
+results = client.Scheme().list({})
+for scheme in results:
+    print(scheme)
 ```
 
 ### Common Methods

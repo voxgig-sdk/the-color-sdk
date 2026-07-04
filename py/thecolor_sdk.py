@@ -220,41 +220,21 @@ class TheColorSDK:
         }
 
 
-    @property
-    def idn(self):
-        """Idiomatic facade: client.idn.list() / client.idn.load({"id": ...})."""
-        from entity.idn_entity import IdnEntity
-        cached = getattr(self, "_idn", None)
-        if cached is None:
-            cached = IdnEntity(self, None)
-            self._idn = cached
-        return cached
-
-    def Idn(self, data=None):
-        # Deprecated: use client.idn instead.
+    def Idn(self, data=None) -> "IdnEntity":
+        """Entity factory: client.Idn().list({}) / client.Idn().load({"id": ...})."""
         from entity.idn_entity import IdnEntity
         return IdnEntity(self, data)
 
 
-    @property
-    def scheme(self):
-        """Idiomatic facade: client.scheme.list() / client.scheme.load({"id": ...})."""
-        from entity.scheme_entity import SchemeEntity
-        cached = getattr(self, "_scheme", None)
-        if cached is None:
-            cached = SchemeEntity(self, None)
-            self._scheme = cached
-        return cached
-
-    def Scheme(self, data=None):
-        # Deprecated: use client.scheme instead.
+    def Scheme(self, data=None) -> "SchemeEntity":
+        """Entity factory: client.Scheme().list({}) / client.Scheme().load({"id": ...})."""
         from entity.scheme_entity import SchemeEntity
         return SchemeEntity(self, data)
 
 
 
     @classmethod
-    def test(cls, testopts=None, sdkopts=None):
+    def test(cls, testopts=None, sdkopts=None) -> "TheColorSDK":
         if sdkopts is None:
             sdkopts = {}
         sdkopts = vs.clone(sdkopts)
@@ -274,3 +254,10 @@ class TheColorSDK:
         sdk.mode = "test"
 
         return sdk
+
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from entity.idn_entity import IdnEntity
+    from entity.scheme_entity import SchemeEntity

@@ -90,7 +90,7 @@ same parameters as `direct()`. Raises on error.
 ## IdnEntity
 
 ```ruby
-idn = client.idn
+idn = client.Idn
 ```
 
 ### Fields
@@ -116,7 +116,7 @@ idn = client.idn
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.idn.load({ "id" => "idn_id" })
+result = client.Idn.load({ "id" => "idn_id" })
 ```
 
 ### Common Methods
@@ -152,7 +152,7 @@ Return the entity name.
 ## SchemeEntity
 
 ```ruby
-scheme = client.scheme
+scheme = client.Scheme
 ```
 
 ### Fields
@@ -178,7 +178,7 @@ scheme = client.scheme
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.scheme.list(nil)
+results = client.Scheme.list(nil)
 ```
 
 ### Common Methods

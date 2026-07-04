@@ -33,10 +33,12 @@ client = TheColorSDK()
 
 ### 3. Load an idn
 
+`load()` returns the bare record (a `dict`) and raises on error.
+
 ```python
 try:
-    result = client.idn.load({"id": "example_id"})
-    print(result)
+    idn = client.Idn().load({"id": "example_id"})
+    print(idn)
 except Exception as err:
     print(f"load failed: {err}")
 ```
@@ -84,8 +86,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = TheColorSDK.test()
 
-result = client.idn.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+idn = client.Idn().load({"id": "test01"})
+# idn contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -161,7 +164,7 @@ Creates a test-mode client with mock transport. Both arguments may be `None`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> dict` | Build an HTTP request definition without sending. Raises on error. |
 | `direct` | `(fetchargs) -> dict` | Build and send an HTTP request. Returns a result dict (branch on `ok`). |
-| `Idn` | `(data) -> IdnEntity` | Create a Idn entity instance. |
+| `Idn` | `(data) -> IdnEntity` | Create an Idn entity instance. |
 | `Scheme` | `(data) -> SchemeEntity` | Create a Scheme entity instance. |
 
 ### Entity interface
@@ -249,7 +252,7 @@ API path: `/scheme`
 
 ### Idn
 
-Create an instance: `const idn = client.idn`
+Create an instance: `idn = client.Idn()`
 
 #### Operations
 
@@ -275,14 +278,14 @@ Create an instance: `const idn = client.idn`
 
 #### Example: Load
 
-```ts
-const idn = await client.idn.load({ id: 'idn_id' })
+```python
+idn = client.Idn().load({"id": "idn_id"})
 ```
 
 
 ### Scheme
 
-Create an instance: `const scheme = client.scheme`
+Create an instance: `scheme = client.Scheme()`
 
 #### Operations
 
@@ -308,8 +311,8 @@ Create an instance: `const scheme = client.scheme`
 
 #### Example: List
 
-```ts
-const schemes = await client.scheme.list()
+```python
+schemes = client.Scheme().list({})
 ```
 
 
@@ -383,7 +386,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-idn = client.idn
+idn = client.Idn()
 idn.load({"id": "example_id"})
 
 # idn.data_get() now returns the loaded idn data

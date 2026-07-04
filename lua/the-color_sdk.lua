@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:idn():list() / client:idn():load({ id = ... })
-function TheColorSDK:idn(data)
+-- Idiomatic facade: client:Idn():list() / client:Idn():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function TheColorSDK:Idn(data)
   local EntityMod = require("entity.idn_entity")
   if data == nil then
     if self._idn == nil then
@@ -256,15 +257,10 @@ function TheColorSDK:idn(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:idn() instead.
-function TheColorSDK:Idn(data)
-  local EntityMod = require("entity.idn_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:scheme():list() / client:scheme():load({ id = ... })
-function TheColorSDK:scheme(data)
+-- Idiomatic facade: client:Scheme():list() / client:Scheme():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function TheColorSDK:Scheme(data)
   local EntityMod = require("entity.scheme_entity")
   if data == nil then
     if self._scheme == nil then
@@ -272,12 +268,6 @@ function TheColorSDK:scheme(data)
     end
     return self._scheme
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:scheme() instead.
-function TheColorSDK:Scheme(data)
-  local EntityMod = require("entity.scheme_entity")
   return EntityMod.new(self, data)
 end
 

@@ -208,26 +208,14 @@ class TheColorSDK
   end
 
 
-  # Idiomatic facade: client.idn.list / client.idn.load({ "id" => ... })
-  def idn
-    require_relative 'entity/idn_entity'
-    @idn ||= IdnEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.idn instead.
+  # Canonical facade: client.Idn.list / client.Idn.load({ "id" => ... })
   def Idn(data = nil)
     require_relative 'entity/idn_entity'
     IdnEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.scheme.list / client.scheme.load({ "id" => ... })
-  def scheme
-    require_relative 'entity/scheme_entity'
-    @scheme ||= SchemeEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.scheme instead.
+  # Canonical facade: client.Scheme.list / client.Scheme.load({ "id" => ... })
   def Scheme(data = nil)
     require_relative 'entity/scheme_entity'
     SchemeEntity.new(self, data)

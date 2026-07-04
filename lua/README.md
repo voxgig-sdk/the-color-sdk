@@ -34,9 +34,9 @@ local client = sdk.new()
 ### 3. Load an idn
 
 ```lua
-local result, err = client:idn():load({ id = "example_id" })
+local idn, err = client:Idn():load({ id = "example_id" })
 if err then error(err) end
-print(result)
+print(idn)
 ```
 
 
@@ -82,8 +82,8 @@ Create a mock client for unit testing — no server required:
 ```lua
 local client = sdk.test()
 
-local result, err = client:idn():load({ id = "test01" })
--- result contains mock response data
+local result, err = client:Idn():load({ id = "test01" })
+-- result is the loaded data; err is set on failure
 ```
 
 ### Use a custom fetch function
@@ -161,7 +161,7 @@ Creates a test-mode client with mock transport. Both arguments may be `nil`.
 | `get_utility` | `() -> Utility` | Copy of the SDK utility object. |
 | `prepare` | `(fetchargs) -> table, err` | Build an HTTP request definition without sending. |
 | `direct` | `(fetchargs) -> table, err` | Build and send an HTTP request. |
-| `Idn` | `(data) -> IdnEntity` | Create a Idn entity instance. |
+| `Idn` | `(data) -> IdnEntity` | Create an Idn entity instance. |
 | `Scheme` | `(data) -> SchemeEntity` | Create a Scheme entity instance. |
 
 ### Entity interface
@@ -184,17 +184,22 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return `(any, err)`. The first value is a
-`table` with these keys:
+Entity operations return `(value, err)`. The `value` is the operation's
+data **directly** — there is no wrapper:
 
-| Key | Type | Description |
-| --- | --- | --- |
-| `ok` | `boolean` | `true` if the HTTP status is 2xx. |
-| `status` | `number` | HTTP status code. |
-| `headers` | `table` | Response headers. |
-| `data` | `any` | Parsed JSON response body. |
+| Operation | `value` |
+| --- | --- |
+| `load` / `create` / `update` / `remove` | the entity record (a `table`) |
+| `list` | an array (`table`) of entity records |
 
-On error, `ok` is `false` and `err` contains the error value.
+Check `err` first (it is non-`nil` on failure), then use `value`:
+
+    local idn, err = client:Idn():load({ id = "example_id" })
+    if err then error(err) end
+    -- idn is the loaded record
+
+Only `direct()` returns a response envelope — a `table` with `ok`,
+`status`, `headers`, and `data` keys.
 
 ### Entities
 
@@ -245,7 +250,7 @@ API path: `/scheme`
 
 ### Idn
 
-Create an instance: `const idn = client.idn`
+Create an instance: `local idn = client:Idn(nil)`
 
 #### Operations
 
@@ -271,14 +276,14 @@ Create an instance: `const idn = client.idn`
 
 #### Example: Load
 
-```ts
-const idn = await client.idn.load({ id: 'idn_id' })
+```lua
+local idn, err = client:Idn():load({ id = "idn_id" })
 ```
 
 
 ### Scheme
 
-Create an instance: `const scheme = client.scheme`
+Create an instance: `local scheme = client:Scheme(nil)`
 
 #### Operations
 
@@ -304,8 +309,8 @@ Create an instance: `const scheme = client.scheme`
 
 #### Example: List
 
-```ts
-const schemes = await client.scheme.list()
+```lua
+local schemes, err = client:Scheme():list()
 ```
 
 
@@ -380,7 +385,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```lua
-local idn = client:idn()
+local idn = client:Idn()
 idn:load({ id = "example_id" })
 
 -- idn:data_get() now returns the loaded idn data
