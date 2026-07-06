@@ -57,7 +57,7 @@ Idn = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Idn#load (any subset of Idn fields).
+# Request payload for Idn#load.
 #
 # @!attribute [rw] cmyk
 #   @return [Hash, nil]
@@ -155,7 +155,7 @@ Scheme = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Scheme#list (any subset of Scheme fields).
+# Request payload for Scheme#list.
 #
 # @!attribute [rw] cmyk
 #   @return [Hash, nil]

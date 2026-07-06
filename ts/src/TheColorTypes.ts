@@ -19,7 +19,19 @@ export interface Idn {
   xyz?: Record<string, any>
 }
 
-export type IdnLoadMatch = Partial<Idn>
+export interface IdnLoadMatch {
+  cmyk?: Record<string, any>
+  contrast?: Record<string, any>
+  embedded?: Record<string, any>
+  hex?: Record<string, any>
+  hsl?: Record<string, any>
+  hsv?: Record<string, any>
+  image?: Record<string, any>
+  link?: Record<string, any>
+  name?: Record<string, any>
+  rgb?: Record<string, any>
+  xyz?: Record<string, any>
+}
 
 export interface Scheme {
   cmyk?: Record<string, any>
@@ -35,5 +47,17 @@ export interface Scheme {
   xyz?: Record<string, any>
 }
 
-export type SchemeListMatch = Partial<Scheme>
+export interface SchemeListMatch {
+  cmyk?: Record<string, any>
+  contrast?: Record<string, any>
+  embedded?: Record<string, any>
+  hex?: Record<string, any>
+  hsl?: Record<string, any>
+  hsv?: Record<string, any>
+  image?: Record<string, any>
+  link?: Record<string, any>
+  name?: Record<string, any>
+  rgb?: Record<string, any>
+  xyz?: Record<string, any>
+}
 

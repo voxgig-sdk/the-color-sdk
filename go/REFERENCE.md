@@ -101,17 +101,17 @@ idn := client.Idn(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `map[string]any` | No |  |
+| `contrast` | `map[string]any` | No |  |
+| `embedded` | `map[string]any` | No |  |
+| `hex` | `map[string]any` | No |  |
+| `hsl` | `map[string]any` | No |  |
+| `hsv` | `map[string]any` | No |  |
+| `image` | `map[string]any` | No |  |
+| `link` | `map[string]any` | No |  |
+| `name` | `map[string]any` | No |  |
+| `rgb` | `map[string]any` | No |  |
+| `xyz` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -120,7 +120,7 @@ idn := client.Idn(nil)
 Load a single entity matching the given criteria.
 
 ```go
-result, err := client.Idn(nil).Load(map[string]any{"id": "idn_id"}, nil)
+result, err := client.Idn(nil).Load(nil, nil)
 ```
 
 ### Common Methods
@@ -157,17 +157,17 @@ scheme := client.Scheme(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `map[string]any` | No |  |
+| `contrast` | `map[string]any` | No |  |
+| `embedded` | `map[string]any` | No |  |
+| `hex` | `map[string]any` | No |  |
+| `hsl` | `map[string]any` | No |  |
+| `hsv` | `map[string]any` | No |  |
+| `image` | `map[string]any` | No |  |
+| `link` | `map[string]any` | No |  |
+| `name` | `map[string]any` | No |  |
+| `rgb` | `map[string]any` | No |  |
+| `xyz` | `map[string]any` | No |  |
 
 ### Operations
 

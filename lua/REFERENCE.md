@@ -94,17 +94,17 @@ local idn = client:Idn(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `table` | No |  |
+| `contrast` | `table` | No |  |
+| `embedded` | `table` | No |  |
+| `hex` | `table` | No |  |
+| `hsl` | `table` | No |  |
+| `hsv` | `table` | No |  |
+| `image` | `table` | No |  |
+| `link` | `table` | No |  |
+| `name` | `table` | No |  |
+| `rgb` | `table` | No |  |
+| `xyz` | `table` | No |  |
 
 ### Operations
 
@@ -113,7 +113,7 @@ local idn = client:Idn(nil)
 Load a single entity matching the given criteria.
 
 ```lua
-local result, err = client:Idn():load({ id = "idn_id" })
+local result, err = client:Idn():load()
 ```
 
 ### Common Methods
@@ -156,17 +156,17 @@ local scheme = client:Scheme(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `table` | No |  |
+| `contrast` | `table` | No |  |
+| `embedded` | `table` | No |  |
+| `hex` | `table` | No |  |
+| `hsl` | `table` | No |  |
+| `hsv` | `table` | No |  |
+| `image` | `table` | No |  |
+| `link` | `table` | No |  |
+| `name` | `table` | No |  |
+| `rgb` | `table` | No |  |
+| `xyz` | `table` | No |  |
 
 ### Operations
 

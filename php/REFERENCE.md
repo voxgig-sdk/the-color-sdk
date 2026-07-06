@@ -8,7 +8,7 @@ Complete API reference for the TheColor PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/the-color_sdk.php';
+require_once __DIR__ . '/thecolor_sdk.php';
 
 $client = new TheColorSDK($options);
 ```
@@ -49,11 +49,11 @@ Create a new `IdnEntity` instance. Pass `null` for no initial data.
 
 Create a new `SchemeEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): TheColorUtility`
 
 Return a copy of the SDK utility object.
 
@@ -96,17 +96,17 @@ $idn = $client->Idn();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `array` | No |  |
+| `contrast` | `array` | No |  |
+| `embedded` | `array` | No |  |
+| `hex` | `array` | No |  |
+| `hsl` | `array` | No |  |
+| `hsv` | `array` | No |  |
+| `image` | `array` | No |  |
+| `link` | `array` | No |  |
+| `name` | `array` | No |  |
+| `rgb` | `array` | No |  |
+| `xyz` | `array` | No |  |
 
 ### Operations
 
@@ -115,24 +115,24 @@ $idn = $client->Idn();
 Load a single entity matching the given criteria. Throws on error.
 
 ```php
-$result = $client->Idn()->load(["id" => "idn_id"]);
+$result = $client->Idn()->load();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -141,7 +141,7 @@ Set the entity match criteria.
 Create a new `IdnEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -158,43 +158,43 @@ $scheme = $client->Scheme();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `array` | No |  |
+| `contrast` | `array` | No |  |
+| `embedded` | `array` | No |  |
+| `hex` | `array` | No |  |
+| `hsl` | `array` | No |  |
+| `hsv` | `array` | No |  |
+| `image` | `array` | No |  |
+| `link` | `array` | No |  |
+| `name` | `array` | No |  |
+| `rgb` | `array` | No |  |
+| `xyz` | `array` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Scheme()->list([]);
+$results = $client->Scheme()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -203,7 +203,7 @@ Set the entity match criteria.
 Create a new `SchemeEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

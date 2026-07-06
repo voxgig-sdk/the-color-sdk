@@ -128,17 +128,17 @@ const idn = client.Idn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `Record<string, any>` | No |  |
+| `contrast` | `Record<string, any>` | No |  |
+| `embedded` | `Record<string, any>` | No |  |
+| `hex` | `Record<string, any>` | No |  |
+| `hsl` | `Record<string, any>` | No |  |
+| `hsv` | `Record<string, any>` | No |  |
+| `image` | `Record<string, any>` | No |  |
+| `link` | `Record<string, any>` | No |  |
+| `name` | `Record<string, any>` | No |  |
+| `rgb` | `Record<string, any>` | No |  |
+| `xyz` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -147,7 +147,7 @@ const idn = client.Idn()
 Load a single entity matching the given criteria.
 
 ```ts
-const result = await client.Idn().load({ id: 'idn_id' })
+const result = await client.Idn().load()
 ```
 
 ### Common Methods
@@ -188,17 +188,17 @@ const scheme = client.Scheme()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `Record<string, any>` | No |  |
+| `contrast` | `Record<string, any>` | No |  |
+| `embedded` | `Record<string, any>` | No |  |
+| `hex` | `Record<string, any>` | No |  |
+| `hsl` | `Record<string, any>` | No |  |
+| `hsv` | `Record<string, any>` | No |  |
+| `image` | `Record<string, any>` | No |  |
+| `link` | `Record<string, any>` | No |  |
+| `name` | `Record<string, any>` | No |  |
+| `rgb` | `Record<string, any>` | No |  |
+| `xyz` | `Record<string, any>` | No |  |
 
 ### Operations
 

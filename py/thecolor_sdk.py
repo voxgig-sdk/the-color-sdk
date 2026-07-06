@@ -221,13 +221,13 @@ class TheColorSDK:
 
 
     def Idn(self, data=None) -> "IdnEntity":
-        """Entity factory: client.Idn().list({}) / client.Idn().load({"id": ...})."""
+        """Entity factory: client.Idn().list() / client.Idn().load({"id": ...})."""
         from entity.idn_entity import IdnEntity
         return IdnEntity(self, data)
 
 
     def Scheme(self, data=None) -> "SchemeEntity":
-        """Entity factory: client.Scheme().list({}) / client.Scheme().load({"id": ...})."""
+        """Entity factory: client.Scheme().list() / client.Scheme().load({"id": ...})."""
         from entity.scheme_entity import SchemeEntity
         return SchemeEntity(self, data)
 

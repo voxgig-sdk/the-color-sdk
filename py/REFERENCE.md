@@ -8,7 +8,7 @@ Complete API reference for the TheColor Python SDK.
 ### Constructor
 
 ```python
-from the-color_sdk import TheColorSDK
+from thecolor_sdk import TheColorSDK
 
 client = TheColorSDK(options)
 ```
@@ -91,17 +91,17 @@ idn = client.Idn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `dict` | No |  |
+| `contrast` | `dict` | No |  |
+| `embedded` | `dict` | No |  |
+| `hex` | `dict` | No |  |
+| `hsl` | `dict` | No |  |
+| `hsv` | `dict` | No |  |
+| `image` | `dict` | No |  |
+| `link` | `dict` | No |  |
+| `name` | `dict` | No |  |
+| `rgb` | `dict` | No |  |
+| `xyz` | `dict` | No |  |
 
 ### Operations
 
@@ -110,7 +110,7 @@ idn = client.Idn()
 Load a single entity matching the given criteria. Returns the entity data and raises on error.
 
 ```python
-result = client.Idn().load({"id": "idn_id"})
+result = client.Idn().load()
 ```
 
 ### Common Methods
@@ -152,26 +152,26 @@ scheme = client.Scheme()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `dict` | No |  |
+| `contrast` | `dict` | No |  |
+| `embedded` | `dict` | No |  |
+| `hex` | `dict` | No |  |
+| `hsl` | `dict` | No |  |
+| `hsv` | `dict` | No |  |
+| `image` | `dict` | No |  |
+| `link` | `dict` | No |  |
+| `name` | `dict` | No |  |
+| `rgb` | `dict` | No |  |
+| `xyz` | `dict` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Scheme().list({})
+results = client.Scheme().list()
 for scheme in results:
     print(scheme)
 ```

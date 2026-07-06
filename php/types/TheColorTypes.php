@@ -28,7 +28,7 @@ class Idn
     public ?array $xyz = null;
 }
 
-/** Match filter for Idn#load (any subset of Idn fields). */
+/** Request payload for Idn#load. */
 class IdnLoadMatch
 {
     public ?array $cmyk = null;
@@ -60,7 +60,7 @@ class Scheme
     public ?array $xyz = null;
 }
 
-/** Match filter for Scheme#list (any subset of Scheme fields). */
+/** Request payload for Scheme#list. */
 class SchemeListMatch
 {
     public ?array $cmyk = null;

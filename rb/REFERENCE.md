@@ -8,7 +8,7 @@ Complete API reference for the TheColor Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'the-color_sdk'
+require_relative 'TheColor_sdk'
 
 client = TheColorSDK.new(options)
 ```
@@ -97,17 +97,17 @@ idn = client.Idn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `Hash` | No |  |
+| `contrast` | `Hash` | No |  |
+| `embedded` | `Hash` | No |  |
+| `hex` | `Hash` | No |  |
+| `hsl` | `Hash` | No |  |
+| `hsv` | `Hash` | No |  |
+| `image` | `Hash` | No |  |
+| `link` | `Hash` | No |  |
+| `name` | `Hash` | No |  |
+| `rgb` | `Hash` | No |  |
+| `xyz` | `Hash` | No |  |
 
 ### Operations
 
@@ -116,7 +116,7 @@ idn = client.Idn
 Load a single entity matching the given criteria. Raises on error.
 
 ```ruby
-result = client.Idn.load({ "id" => "idn_id" })
+result = client.Idn.load()
 ```
 
 ### Common Methods
@@ -159,26 +159,26 @@ scheme = client.Scheme
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `cmyk` | ``$OBJECT`` | No |  |
-| `contrast` | ``$OBJECT`` | No |  |
-| `embedded` | ``$OBJECT`` | No |  |
-| `hex` | ``$OBJECT`` | No |  |
-| `hsl` | ``$OBJECT`` | No |  |
-| `hsv` | ``$OBJECT`` | No |  |
-| `image` | ``$OBJECT`` | No |  |
-| `link` | ``$OBJECT`` | No |  |
-| `name` | ``$OBJECT`` | No |  |
-| `rgb` | ``$OBJECT`` | No |  |
-| `xyz` | ``$OBJECT`` | No |  |
+| `cmyk` | `Hash` | No |  |
+| `contrast` | `Hash` | No |  |
+| `embedded` | `Hash` | No |  |
+| `hex` | `Hash` | No |  |
+| `hsl` | `Hash` | No |  |
+| `hsv` | `Hash` | No |  |
+| `image` | `Hash` | No |  |
+| `link` | `Hash` | No |  |
+| `name` | `Hash` | No |  |
+| `rgb` | `Hash` | No |  |
+| `xyz` | `Hash` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Scheme.list(nil)
+results = client.Scheme.list
 ```
 
 ### Common Methods

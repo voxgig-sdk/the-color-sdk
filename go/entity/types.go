@@ -23,8 +23,7 @@ type Idn struct {
 	Xyz *map[string]any `json:"xyz,omitempty"`
 }
 
-// IdnLoadMatch mirrors the idn fields as an all-optional match
-// filter (Go analog of Partial<Idn>).
+// IdnLoadMatch is the typed request payload for Idn.LoadTyped.
 type IdnLoadMatch struct {
 	Cmyk *map[string]any `json:"cmyk,omitempty"`
 	Contrast *map[string]any `json:"contrast,omitempty"`
@@ -54,8 +53,7 @@ type Scheme struct {
 	Xyz *map[string]any `json:"xyz,omitempty"`
 }
 
-// SchemeListMatch mirrors the scheme fields as an all-optional match
-// filter (Go analog of Partial<Scheme>).
+// SchemeListMatch is the typed request payload for Scheme.ListTyped.
 type SchemeListMatch struct {
 	Cmyk *map[string]any `json:"cmyk,omitempty"`
 	Contrast *map[string]any `json:"contrast,omitempty"`
