@@ -15,9 +15,9 @@ main: {
           url: "https://www.thecolorapi.com"
         }
       ]
+      summary: "Your fast, modern, swiss army knife for color."
       title: "The Color API"
       version: "1.0.0"
+      website: "https://thecolorapi.com"
     }
   }
-}
-

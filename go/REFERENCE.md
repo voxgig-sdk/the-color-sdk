@@ -95,6 +95,7 @@ same parameters as `Direct()`.
 
 ```go
 idn := client.Idn(nil)
+fmt.Println(idn.GetName()) // "idn"
 ```
 
 ### Fields
@@ -121,6 +122,10 @@ Load a single entity matching the given criteria.
 
 ```go
 result, err := client.Idn(nil).Load(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(result)
 ```
 
 ### Common Methods
@@ -151,6 +156,7 @@ Return the entity name.
 
 ```go
 scheme := client.Scheme(nil)
+fmt.Println(scheme.GetName()) // "scheme"
 ```
 
 ### Fields
@@ -177,6 +183,10 @@ List entities matching the given criteria. Returns an array.
 
 ```go
 results, err := client.Scheme(nil).List(nil, nil)
+if err != nil {
+    panic(err)
+}
+fmt.Println(results)
 ```
 
 ### Common Methods

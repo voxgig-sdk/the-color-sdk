@@ -6,9 +6,6 @@
     },
     "kit": {
       "config": {
-        "auth": {
-          "prefix": "Bearer"
-        },
         "docs_order": [
           "ts",
           "py",
@@ -570,14 +567,17 @@
           "email": "support@thecolorapi.com"
         },
         "description": "Your fast, modern, swiss army knife for color. Pass in any valid color and get conversion into any other format, the name of the color, placeholder images and a multitude of schemes. Each endpoint is available in JSON[P], HTML & SVG format.",
+        "meta_source": "https://www.freepublicapis.com",
         "servers": [
           {
             "description": "Production server",
             "url": "https://www.thecolorapi.com"
           }
         ],
+        "summary": "Your fast, modern, swiss army knife for color.",
         "title": "The Color API",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "website": "https://thecolorapi.com"
       },
       "option": {},
       "target": {
@@ -630,6 +630,9 @@
           },
           "name": "go-cli",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
@@ -680,6 +683,9 @@
           },
           "name": "go-mcp",
           "phase": {
+            "agentguide": {
+              "active": false
+            },
             "entity": {
               "active": false
             },
