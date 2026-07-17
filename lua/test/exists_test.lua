@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- TheColor SDK exists test
 
 local sdk = require("the-color_sdk")
 

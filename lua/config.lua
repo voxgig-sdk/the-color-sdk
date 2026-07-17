@@ -1,4 +1,4 @@
--- ProjectName SDK configuration
+-- TheColor SDK configuration
 
 local function make_config()
   return {
