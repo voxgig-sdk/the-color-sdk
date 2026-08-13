@@ -62,7 +62,7 @@ class SchemeEntityTest < Minitest::Test
     # The basic flow consumes synthetic IDs from the fixture. In live mode
     # without an *_ENTID env override, those IDs hit the live API and 4xx.
     if setup[:synthetic_only]
-      skip "live entity test uses synthetic IDs from fixture — set THECOLOR_TEST_SCHEME_ENTID JSON to run live"
+      skip "live entity test uses synthetic IDs from fixture — set THE_COLOR_TEST_SCHEME_ENTID JSON to run live"
       return
     end
     client = setup[:client]
@@ -111,22 +111,22 @@ def scheme_basic_setup(extra)
   # Detect ENTID env override before envOverride consumes it. When live
   # mode is on without a real override, the basic test runs against synthetic
   # IDs from the fixture and 4xx's. Surface this so the test can skip.
-  entid_env_raw = ENV["THECOLOR_TEST_SCHEME_ENTID"]
+  entid_env_raw = ENV["THE_COLOR_TEST_SCHEME_ENTID"]
   idmap_overridden = !entid_env_raw.nil? && entid_env_raw.strip.start_with?("{")
 
   env = Runner.env_override({
-    "THECOLOR_TEST_SCHEME_ENTID" => idmap,
-    "THECOLOR_TEST_LIVE" => "FALSE",
-    "THECOLOR_TEST_EXPLAIN" => "FALSE",
+    "THE_COLOR_TEST_SCHEME_ENTID" => idmap,
+    "THE_COLOR_TEST_LIVE" => "FALSE",
+    "THE_COLOR_TEST_EXPLAIN" => "FALSE",
   })
 
   idmap_resolved = Helpers.to_map(
-    env["THECOLOR_TEST_SCHEME_ENTID"])
+    env["THE_COLOR_TEST_SCHEME_ENTID"])
   if idmap_resolved.nil?
     idmap_resolved = Helpers.to_map(idmap)
   end
 
-  if env["THECOLOR_TEST_LIVE"] == "TRUE"
+  if env["THE_COLOR_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
       },
@@ -135,13 +135,13 @@ def scheme_basic_setup(extra)
     client = TheColorSDK.new(Helpers.to_map(merged_opts))
   end
 
-  live = env["THECOLOR_TEST_LIVE"] == "TRUE"
+  live = env["THE_COLOR_TEST_LIVE"] == "TRUE"
   {
     client: client,
     data: entity_data,
     idmap: idmap_resolved,
     env: env,
-    explain: env["THECOLOR_TEST_EXPLAIN"] == "TRUE",
+    explain: env["THE_COLOR_TEST_EXPLAIN"] == "TRUE",
     live: live,
     synthetic_only: live && !idmap_overridden,
     now: (Time.now.to_f * 1000).to_i,

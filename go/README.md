@@ -261,6 +261,7 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
+| `"XYZ"` |  |
 | `"cmyk"` |  |
 | `"contrast"` |  |
 | `"embedded"` |  |
@@ -268,10 +269,9 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | `"hsl"` |  |
 | `"hsv"` |  |
 | `"image"` |  |
-| `"link"` |  |
+| `"links"` |  |
 | `"name"` |  |
 | `"rgb"` |  |
-| `"xyz"` |  |
 
 Operations: Load.
 
@@ -281,6 +281,7 @@ API path: `/id`
 
 | Field | Description |
 | --- | --- |
+| `"XYZ"` |  |
 | `"cmyk"` |  |
 | `"contrast"` |  |
 | `"embedded"` |  |
@@ -288,10 +289,9 @@ API path: `/id`
 | `"hsl"` |  |
 | `"hsv"` |  |
 | `"image"` |  |
-| `"link"` |  |
+| `"links"` |  |
 | `"name"` |  |
 | `"rgb"` |  |
-| `"xyz"` |  |
 
 Operations: List.
 
@@ -316,6 +316,7 @@ Create an instance: `idn := client.Idn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `map[string]any` |  |
 | `cmyk` | `map[string]any` |  |
 | `contrast` | `map[string]any` |  |
 | `embedded` | `map[string]any` |  |
@@ -323,10 +324,9 @@ Create an instance: `idn := client.Idn(nil)`
 | `hsl` | `map[string]any` |  |
 | `hsv` | `map[string]any` |  |
 | `image` | `map[string]any` |  |
-| `link` | `map[string]any` |  |
+| `links` | `map[string]any` |  |
 | `name` | `map[string]any` |  |
 | `rgb` | `map[string]any` |  |
-| `xyz` | `map[string]any` |  |
 
 #### Example: Load
 
@@ -353,6 +353,7 @@ Create an instance: `scheme := client.Scheme(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `map[string]any` |  |
 | `cmyk` | `map[string]any` |  |
 | `contrast` | `map[string]any` |  |
 | `embedded` | `map[string]any` |  |
@@ -360,10 +361,9 @@ Create an instance: `scheme := client.Scheme(nil)`
 | `hsl` | `map[string]any` |  |
 | `hsv` | `map[string]any` |  |
 | `image` | `map[string]any` |  |
-| `link` | `map[string]any` |  |
+| `links` | `map[string]any` |  |
 | `name` | `map[string]any` |  |
 | `rgb` | `map[string]any` |  |
-| `xyz` | `map[string]any` |  |
 
 #### Example: List
 

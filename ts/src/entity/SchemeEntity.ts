@@ -37,7 +37,7 @@ class SchemeEntity extends TheColorEntityBase<Scheme> {
 
 
 
-  async list(this: any, reqmatch?: SchemeListMatch, ctrl?: Control): Promise<Scheme[]> {
+  async list(this: any, reqmatch?: SchemeListMatch, ctrl?: Control): Promise<SchemeEntity[]> {
 
     const utility = this._utility
 

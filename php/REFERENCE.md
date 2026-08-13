@@ -96,6 +96,7 @@ $idn = $client->Idn();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `array` | No |  |
 | `cmyk` | `array` | No |  |
 | `contrast` | `array` | No |  |
 | `embedded` | `array` | No |  |
@@ -103,10 +104,9 @@ $idn = $client->Idn();
 | `hsl` | `array` | No |  |
 | `hsv` | `array` | No |  |
 | `image` | `array` | No |  |
-| `link` | `array` | No |  |
+| `links` | `array` | No |  |
 | `name` | `array` | No |  |
 | `rgb` | `array` | No |  |
-| `xyz` | `array` | No |  |
 
 ### Operations
 
@@ -158,6 +158,7 @@ $scheme = $client->Scheme();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `array` | No |  |
 | `cmyk` | `array` | No |  |
 | `contrast` | `array` | No |  |
 | `embedded` | `array` | No |  |
@@ -165,10 +166,9 @@ $scheme = $client->Scheme();
 | `hsl` | `array` | No |  |
 | `hsv` | `array` | No |  |
 | `image` | `array` | No |  |
-| `link` | `array` | No |  |
+| `links` | `array` | No |  |
 | `name` | `array` | No |  |
 | `rgb` | `array` | No |  |
-| `xyz` | `array` | No |  |
 
 ### Operations
 

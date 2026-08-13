@@ -60,11 +60,11 @@ function idn_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["THECOLOR_TEST_IDN_ENTID"] = {},
-    ["THECOLOR_TEST_LIVE"] = "FALSE",
+    ["THE_COLOR_TEST_IDN_ENTID"] = {},
+    ["THE_COLOR_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["THECOLOR_TEST_LIVE"] == "TRUE"
+  local live = env["THE_COLOR_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

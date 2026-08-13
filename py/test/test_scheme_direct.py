@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from thecolor_sdk.utility.voxgig_struct import voxgig_struct as vs
 from thecolor_sdk import TheColorSDK
-from core import helpers
+from thecolor_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _scheme_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "THECOLOR_TEST_SCHEME_ENTID": {},
-        "THECOLOR_TEST_LIVE": "FALSE",
+        "THE_COLOR_TEST_SCHEME_ENTID": {},
+        "THE_COLOR_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("THECOLOR_TEST_LIVE") == "TRUE"
+    live = env.get("THE_COLOR_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

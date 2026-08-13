@@ -21,7 +21,7 @@ class Config {
 
 
   main = {
-    name: 'ProjectName',
+    name: 'TheColor',
   }
 
 
@@ -59,77 +59,77 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "cmyk",
+          "name": "XYZ",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "contrast",
+          "name": "cmyk",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "embedded",
+          "name": "contrast",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "hex",
+          "name": "embedded",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "hsl",
+          "name": "hex",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "hsv",
+          "name": "hsl",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "image",
+          "name": "hsv",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "link",
+          "name": "image",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "name",
+          "name": "links",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "rgb",
+          "name": "name",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "xyz",
+          "name": "rgb",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 10
@@ -218,6 +218,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/id",
               "parts": [
@@ -253,77 +254,77 @@ class Config {
       "fields": [
         {
           "active": true,
-          "name": "cmyk",
+          "name": "XYZ",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 0
         },
         {
           "active": true,
-          "name": "contrast",
+          "name": "cmyk",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 1
         },
         {
           "active": true,
-          "name": "embedded",
+          "name": "contrast",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 2
         },
         {
           "active": true,
-          "name": "hex",
+          "name": "embedded",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 3
         },
         {
           "active": true,
-          "name": "hsl",
+          "name": "hex",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 4
         },
         {
           "active": true,
-          "name": "hsv",
+          "name": "hsl",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 5
         },
         {
           "active": true,
-          "name": "image",
+          "name": "hsv",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 6
         },
         {
           "active": true,
-          "name": "link",
+          "name": "image",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 7
         },
         {
           "active": true,
-          "name": "name",
+          "name": "links",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 8
         },
         {
           "active": true,
-          "name": "rgb",
+          "name": "name",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 9
         },
         {
           "active": true,
-          "name": "xyz",
+          "name": "rgb",
           "req": false,
           "type": "`$OBJECT`",
           "index$": 10
@@ -430,6 +431,7 @@ class Config {
                   }
                 ]
               },
+              "kind": "http",
               "method": "GET",
               "orig": "/scheme",
               "parts": [

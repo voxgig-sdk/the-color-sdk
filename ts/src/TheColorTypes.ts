@@ -6,6 +6,7 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Idn {
+  XYZ?: Record<string, any>
   cmyk?: Record<string, any>
   contrast?: Record<string, any>
   embedded?: Record<string, any>
@@ -13,13 +14,13 @@ export interface Idn {
   hsl?: Record<string, any>
   hsv?: Record<string, any>
   image?: Record<string, any>
-  link?: Record<string, any>
+  links?: Record<string, any>
   name?: Record<string, any>
   rgb?: Record<string, any>
-  xyz?: Record<string, any>
 }
 
 export interface IdnLoadMatch {
+  XYZ?: Record<string, any>
   cmyk?: Record<string, any>
   contrast?: Record<string, any>
   embedded?: Record<string, any>
@@ -27,13 +28,13 @@ export interface IdnLoadMatch {
   hsl?: Record<string, any>
   hsv?: Record<string, any>
   image?: Record<string, any>
-  link?: Record<string, any>
+  links?: Record<string, any>
   name?: Record<string, any>
   rgb?: Record<string, any>
-  xyz?: Record<string, any>
 }
 
 export interface Scheme {
+  XYZ?: Record<string, any>
   cmyk?: Record<string, any>
   contrast?: Record<string, any>
   embedded?: Record<string, any>
@@ -41,13 +42,13 @@ export interface Scheme {
   hsl?: Record<string, any>
   hsv?: Record<string, any>
   image?: Record<string, any>
-  link?: Record<string, any>
+  links?: Record<string, any>
   name?: Record<string, any>
   rgb?: Record<string, any>
-  xyz?: Record<string, any>
 }
 
 export interface SchemeListMatch {
+  XYZ?: Record<string, any>
   cmyk?: Record<string, any>
   contrast?: Record<string, any>
   embedded?: Record<string, any>
@@ -55,9 +56,8 @@ export interface SchemeListMatch {
   hsl?: Record<string, any>
   hsv?: Record<string, any>
   image?: Record<string, any>
-  link?: Record<string, any>
+  links?: Record<string, any>
   name?: Record<string, any>
   rgb?: Record<string, any>
-  xyz?: Record<string, any>
 }
 

@@ -121,7 +121,8 @@ Create a mock client for unit testing — no server required:
 const client = TheColorSDK.test()
 
 const idn = await client.Idn().load()
-// idn is a bare entity populated with mock response data
+// idn is the entity, populated with mock response data
+// — call idn.data() for the record itself
 console.log(idn)
 ```
 
@@ -288,6 +289,7 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -295,10 +297,9 @@ The `prepare()` method returns:
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: load.
 
@@ -308,6 +309,7 @@ API path: `/id`
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -315,10 +317,9 @@ API path: `/id`
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: list.
 
@@ -343,6 +344,7 @@ Create an instance: `const idn = client.Idn()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `Record<string, any>` |  |
 | `cmyk` | `Record<string, any>` |  |
 | `contrast` | `Record<string, any>` |  |
 | `embedded` | `Record<string, any>` |  |
@@ -350,10 +352,9 @@ Create an instance: `const idn = client.Idn()`
 | `hsl` | `Record<string, any>` |  |
 | `hsv` | `Record<string, any>` |  |
 | `image` | `Record<string, any>` |  |
-| `link` | `Record<string, any>` |  |
+| `links` | `Record<string, any>` |  |
 | `name` | `Record<string, any>` |  |
 | `rgb` | `Record<string, any>` |  |
-| `xyz` | `Record<string, any>` |  |
 
 #### Example: Load
 
@@ -376,6 +377,7 @@ Create an instance: `const scheme = client.Scheme()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `Record<string, any>` |  |
 | `cmyk` | `Record<string, any>` |  |
 | `contrast` | `Record<string, any>` |  |
 | `embedded` | `Record<string, any>` |  |
@@ -383,10 +385,9 @@ Create an instance: `const scheme = client.Scheme()`
 | `hsl` | `Record<string, any>` |  |
 | `hsv` | `Record<string, any>` |  |
 | `image` | `Record<string, any>` |  |
-| `link` | `Record<string, any>` |  |
+| `links` | `Record<string, any>` |  |
 | `name` | `Record<string, any>` |  |
 | `rgb` | `Record<string, any>` |  |
-| `xyz` | `Record<string, any>` |  |
 
 #### Example: List
 

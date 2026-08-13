@@ -128,6 +128,7 @@ const idn = client.Idn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `Record<string, any>` | No |  |
 | `cmyk` | `Record<string, any>` | No |  |
 | `contrast` | `Record<string, any>` | No |  |
 | `embedded` | `Record<string, any>` | No |  |
@@ -135,10 +136,9 @@ const idn = client.Idn()
 | `hsl` | `Record<string, any>` | No |  |
 | `hsv` | `Record<string, any>` | No |  |
 | `image` | `Record<string, any>` | No |  |
-| `link` | `Record<string, any>` | No |  |
+| `links` | `Record<string, any>` | No |  |
 | `name` | `Record<string, any>` | No |  |
 | `rgb` | `Record<string, any>` | No |  |
-| `xyz` | `Record<string, any>` | No |  |
 
 ### Operations
 
@@ -188,6 +188,7 @@ const scheme = client.Scheme()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `Record<string, any>` | No |  |
 | `cmyk` | `Record<string, any>` | No |  |
 | `contrast` | `Record<string, any>` | No |  |
 | `embedded` | `Record<string, any>` | No |  |
@@ -195,10 +196,9 @@ const scheme = client.Scheme()
 | `hsl` | `Record<string, any>` | No |  |
 | `hsv` | `Record<string, any>` | No |  |
 | `image` | `Record<string, any>` | No |  |
-| `link` | `Record<string, any>` | No |  |
+| `links` | `Record<string, any>` | No |  |
 | `name` | `Record<string, any>` | No |  |
 | `rgb` | `Record<string, any>` | No |  |
-| `xyz` | `Record<string, any>` | No |  |
 
 ### Operations
 

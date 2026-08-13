@@ -102,6 +102,7 @@ fmt.Println(idn.GetName()) // "idn"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `map[string]any` | No |  |
 | `cmyk` | `map[string]any` | No |  |
 | `contrast` | `map[string]any` | No |  |
 | `embedded` | `map[string]any` | No |  |
@@ -109,10 +110,9 @@ fmt.Println(idn.GetName()) // "idn"
 | `hsl` | `map[string]any` | No |  |
 | `hsv` | `map[string]any` | No |  |
 | `image` | `map[string]any` | No |  |
-| `link` | `map[string]any` | No |  |
+| `links` | `map[string]any` | No |  |
 | `name` | `map[string]any` | No |  |
 | `rgb` | `map[string]any` | No |  |
-| `xyz` | `map[string]any` | No |  |
 
 ### Operations
 
@@ -163,6 +163,7 @@ fmt.Println(scheme.GetName()) // "scheme"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `map[string]any` | No |  |
 | `cmyk` | `map[string]any` | No |  |
 | `contrast` | `map[string]any` | No |  |
 | `embedded` | `map[string]any` | No |  |
@@ -170,10 +171,9 @@ fmt.Println(scheme.GetName()) // "scheme"
 | `hsl` | `map[string]any` | No |  |
 | `hsv` | `map[string]any` | No |  |
 | `image` | `map[string]any` | No |  |
-| `link` | `map[string]any` | No |  |
+| `links` | `map[string]any` | No |  |
 | `name` | `map[string]any` | No |  |
 | `rgb` | `map[string]any` | No |  |
-| `xyz` | `map[string]any` | No |  |
 
 ### Operations
 

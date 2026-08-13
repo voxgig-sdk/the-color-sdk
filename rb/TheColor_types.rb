@@ -10,6 +10,9 @@
 
 # Idn entity data model.
 #
+# @!attribute [rw] XYZ
+#   @return [Hash, nil]
+#
 # @!attribute [rw] cmyk
 #   @return [Hash, nil]
 #
@@ -31,7 +34,7 @@
 # @!attribute [rw] image
 #   @return [Hash, nil]
 #
-# @!attribute [rw] link
+# @!attribute [rw] links
 #   @return [Hash, nil]
 #
 # @!attribute [rw] name
@@ -39,10 +42,8 @@
 #
 # @!attribute [rw] rgb
 #   @return [Hash, nil]
-#
-# @!attribute [rw] xyz
-#   @return [Hash, nil]
 Idn = Struct.new(
+  :XYZ,
   :cmyk,
   :contrast,
   :embedded,
@@ -50,15 +51,17 @@ Idn = Struct.new(
   :hsl,
   :hsv,
   :image,
-  :link,
+  :links,
   :name,
   :rgb,
-  :xyz,
   keyword_init: true
 )
 
 # Request payload for Idn#load.
 #
+# @!attribute [rw] XYZ
+#   @return [Hash, nil]
+#
 # @!attribute [rw] cmyk
 #   @return [Hash, nil]
 #
@@ -80,7 +83,7 @@ Idn = Struct.new(
 # @!attribute [rw] image
 #   @return [Hash, nil]
 #
-# @!attribute [rw] link
+# @!attribute [rw] links
 #   @return [Hash, nil]
 #
 # @!attribute [rw] name
@@ -88,10 +91,8 @@ Idn = Struct.new(
 #
 # @!attribute [rw] rgb
 #   @return [Hash, nil]
-#
-# @!attribute [rw] xyz
-#   @return [Hash, nil]
 IdnLoadMatch = Struct.new(
+  :XYZ,
   :cmyk,
   :contrast,
   :embedded,
@@ -99,15 +100,17 @@ IdnLoadMatch = Struct.new(
   :hsl,
   :hsv,
   :image,
-  :link,
+  :links,
   :name,
   :rgb,
-  :xyz,
   keyword_init: true
 )
 
 # Scheme entity data model.
 #
+# @!attribute [rw] XYZ
+#   @return [Hash, nil]
+#
 # @!attribute [rw] cmyk
 #   @return [Hash, nil]
 #
@@ -129,7 +132,7 @@ IdnLoadMatch = Struct.new(
 # @!attribute [rw] image
 #   @return [Hash, nil]
 #
-# @!attribute [rw] link
+# @!attribute [rw] links
 #   @return [Hash, nil]
 #
 # @!attribute [rw] name
@@ -137,10 +140,8 @@ IdnLoadMatch = Struct.new(
 #
 # @!attribute [rw] rgb
 #   @return [Hash, nil]
-#
-# @!attribute [rw] xyz
-#   @return [Hash, nil]
 Scheme = Struct.new(
+  :XYZ,
   :cmyk,
   :contrast,
   :embedded,
@@ -148,15 +149,17 @@ Scheme = Struct.new(
   :hsl,
   :hsv,
   :image,
-  :link,
+  :links,
   :name,
   :rgb,
-  :xyz,
   keyword_init: true
 )
 
 # Request payload for Scheme#list.
 #
+# @!attribute [rw] XYZ
+#   @return [Hash, nil]
+#
 # @!attribute [rw] cmyk
 #   @return [Hash, nil]
 #
@@ -178,7 +181,7 @@ Scheme = Struct.new(
 # @!attribute [rw] image
 #   @return [Hash, nil]
 #
-# @!attribute [rw] link
+# @!attribute [rw] links
 #   @return [Hash, nil]
 #
 # @!attribute [rw] name
@@ -186,10 +189,8 @@ Scheme = Struct.new(
 #
 # @!attribute [rw] rgb
 #   @return [Hash, nil]
-#
-# @!attribute [rw] xyz
-#   @return [Hash, nil]
 SchemeListMatch = Struct.new(
+  :XYZ,
   :cmyk,
   :contrast,
   :embedded,
@@ -197,10 +198,9 @@ SchemeListMatch = Struct.new(
   :hsl,
   :hsv,
   :image,
-  :link,
+  :links,
   :name,
   :rgb,
-  :xyz,
   keyword_init: true
 )
 

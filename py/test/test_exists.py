@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# TheColor SDK exists test
 
 import pytest
 from thecolor_sdk import TheColorSDK

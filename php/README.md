@@ -35,7 +35,7 @@ $client = new TheColorSDK();
 
 ```php
 try {
-    // load() returns the bare Idn record (throws on error).
+    // load() returns the ENTITY — call data_get() for the Idn record (throws on error).
     $idn = $client->Idn()->load();
     print_r($idn);
 } catch (\Throwable $err) {
@@ -123,7 +123,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = TheColorSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $idn = $client->Idn()->load();
 print_r($idn);
 ```
@@ -224,7 +225,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -246,6 +247,7 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -253,10 +255,9 @@ On error, `ok` is `false` and `$err` contains the error value.
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: Load.
 
@@ -266,6 +267,7 @@ API path: `/id`
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -273,10 +275,9 @@ API path: `/id`
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: List.
 
@@ -301,6 +302,7 @@ Create an instance: `$idn = $client->Idn();`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `array` |  |
 | `cmyk` | `array` |  |
 | `contrast` | `array` |  |
 | `embedded` | `array` |  |
@@ -308,15 +310,14 @@ Create an instance: `$idn = $client->Idn();`
 | `hsl` | `array` |  |
 | `hsv` | `array` |  |
 | `image` | `array` |  |
-| `link` | `array` |  |
+| `links` | `array` |  |
 | `name` | `array` |  |
 | `rgb` | `array` |  |
-| `xyz` | `array` |  |
 
 #### Example: Load
 
 ```php
-// load() returns the bare Idn record (throws on error).
+// load() returns the ENTITY — call data_get() for the Idn record (throws on error).
 $idn = $client->Idn()->load();
 ```
 
@@ -335,6 +336,7 @@ Create an instance: `$scheme = $client->Scheme();`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `array` |  |
 | `cmyk` | `array` |  |
 | `contrast` | `array` |  |
 | `embedded` | `array` |  |
@@ -342,10 +344,9 @@ Create an instance: `$scheme = $client->Scheme();`
 | `hsl` | `array` |  |
 | `hsv` | `array` |  |
 | `image` | `array` |  |
-| `link` | `array` |  |
+| `links` | `array` |  |
 | `name` | `array` |  |
 | `rgb` | `array` |  |
-| `xyz` | `array` |  |
 
 #### Example: List
 

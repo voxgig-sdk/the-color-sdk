@@ -7,6 +7,7 @@
 -- edit by hand.
 
 ---@class Idn
+---@field XYZ? table
 ---@field cmyk? table
 ---@field contrast? table
 ---@field embedded? table
@@ -14,12 +15,12 @@
 ---@field hsl? table
 ---@field hsv? table
 ---@field image? table
----@field link? table
+---@field links? table
 ---@field name? table
 ---@field rgb? table
----@field xyz? table
 
 ---@class IdnLoadMatch
+---@field XYZ? table
 ---@field cmyk? table
 ---@field contrast? table
 ---@field embedded? table
@@ -27,12 +28,12 @@
 ---@field hsl? table
 ---@field hsv? table
 ---@field image? table
----@field link? table
+---@field links? table
 ---@field name? table
 ---@field rgb? table
----@field xyz? table
 
 ---@class Scheme
+---@field XYZ? table
 ---@field cmyk? table
 ---@field contrast? table
 ---@field embedded? table
@@ -40,12 +41,12 @@
 ---@field hsl? table
 ---@field hsv? table
 ---@field image? table
----@field link? table
+---@field links? table
 ---@field name? table
 ---@field rgb? table
----@field xyz? table
 
 ---@class SchemeListMatch
+---@field XYZ? table
 ---@field cmyk? table
 ---@field contrast? table
 ---@field embedded? table
@@ -53,10 +54,9 @@
 ---@field hsl? table
 ---@field hsv? table
 ---@field image? table
----@field link? table
+---@field links? table
 ---@field name? table
 ---@field rgb? table
----@field xyz? table
 
 local M = {}
 

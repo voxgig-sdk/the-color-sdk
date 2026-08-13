@@ -6,6 +6,11 @@ main: kit: entity: scheme: {
 
   fields: [
     {
+      name: "XYZ"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
       name: "cmyk"
       req: false
       type: "`$OBJECT`"
@@ -41,7 +46,7 @@ main: kit: entity: scheme: {
       type: "`$OBJECT`"
     }
     {
-      name: "link"
+      name: "links"
       req: false
       type: "`$OBJECT`"
     }
@@ -52,11 +57,6 @@ main: kit: entity: scheme: {
     }
     {
       name: "rgb"
-      req: false
-      type: "`$OBJECT`"
-    }
-    {
-      name: "xyz"
       req: false
       type: "`$OBJECT`"
     }

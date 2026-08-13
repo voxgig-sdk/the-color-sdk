@@ -94,6 +94,7 @@ local idn = client:Idn(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `table` | No |  |
 | `cmyk` | `table` | No |  |
 | `contrast` | `table` | No |  |
 | `embedded` | `table` | No |  |
@@ -101,10 +102,9 @@ local idn = client:Idn(nil)
 | `hsl` | `table` | No |  |
 | `hsv` | `table` | No |  |
 | `image` | `table` | No |  |
-| `link` | `table` | No |  |
+| `links` | `table` | No |  |
 | `name` | `table` | No |  |
 | `rgb` | `table` | No |  |
-| `xyz` | `table` | No |  |
 
 ### Operations
 
@@ -156,6 +156,7 @@ local scheme = client:Scheme(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `table` | No |  |
 | `cmyk` | `table` | No |  |
 | `contrast` | `table` | No |  |
 | `embedded` | `table` | No |  |
@@ -163,10 +164,9 @@ local scheme = client:Scheme(nil)
 | `hsl` | `table` | No |  |
 | `hsv` | `table` | No |  |
 | `image` | `table` | No |  |
-| `link` | `table` | No |  |
+| `links` | `table` | No |  |
 | `name` | `table` | No |  |
 | `rgb` | `table` | No |  |
-| `xyz` | `table` | No |  |
 
 ### Operations
 

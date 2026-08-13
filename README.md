@@ -38,9 +38,18 @@ network, and no credentials:
 ### TypeScript
 
 ```ts
-const client = TheColorSDK.test()
+// The offline mock starts EMPTY — seed it with the records the test needs.
+// Shape: { entity: { <entity-name>: { <id>: <record> } } }
+const client = TheColorSDK.test({
+  entity: {
+    idn: {
+      test01: { id: 'test01' },
+    },
+  },
+})
 const idn = await client.Idn().load()
-// idn is a bare Idn populated with mock data
+// idn is the Idn entity, populated with mock data
+// — call idn.data() for the record itself
 console.log(idn)
 ```
 
@@ -183,7 +192,7 @@ require_once 'thecolor_sdk.php';
 $client = new TheColorSDK();
 
 
-// Load a specific idn (returns the bare record; throws on error)
+// Load a specific idn (returns the ENTITY; call data_get() for the record; throws on error)
 $idn = $client->Idn()->load();
 print_r($idn);
 ```
@@ -211,7 +220,7 @@ require_relative "TheColor_sdk"
 client = TheColorSDK.new
 
 
-# Load a specific idn (returns the bare record; raises on error)
+# Load a specific idn (returns the ENTITY; call data_get for the record)
 idn = client.Idn.load()
 puts idn
 ```
@@ -345,6 +354,9 @@ Pass custom features via the `extend` option at construction time.
 
 This SDK is generated from the upstream OpenAPI specification. It is an
 unofficial client and is not affiliated with the API provider.
+
+The OpenAPI spec(s) this SDK was generated from are kept in the
+[`.sdk/def/`](.sdk/def/) folder.
 
 - Upstream API: [https://www.thecolorapi.com](https://www.thecolorapi.com)
 

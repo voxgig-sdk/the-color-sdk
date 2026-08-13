@@ -34,7 +34,7 @@ client = TheColorSDK.new
 
 ```ruby
 begin
-  # load returns the bare Idn record (raises on error).
+  # load returns the ENTITY — call data_get for the Idn record (raises on error).
   idn = client.Idn.load()
   puts idn
 rescue => err
@@ -117,7 +117,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = TheColorSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 idn = client.Idn.load()
 puts idn
 ```
@@ -236,6 +237,7 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -243,10 +245,9 @@ returns a result `Hash` with these keys:
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: Load.
 
@@ -256,6 +257,7 @@ API path: `/id`
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -263,10 +265,9 @@ API path: `/id`
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: List.
 
@@ -291,6 +292,7 @@ Create an instance: `idn = client.Idn`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `Hash` |  |
 | `cmyk` | `Hash` |  |
 | `contrast` | `Hash` |  |
 | `embedded` | `Hash` |  |
@@ -298,15 +300,14 @@ Create an instance: `idn = client.Idn`
 | `hsl` | `Hash` |  |
 | `hsv` | `Hash` |  |
 | `image` | `Hash` |  |
-| `link` | `Hash` |  |
+| `links` | `Hash` |  |
 | `name` | `Hash` |  |
 | `rgb` | `Hash` |  |
-| `xyz` | `Hash` |  |
 
 #### Example: Load
 
 ```ruby
-# load returns the bare Idn record (raises on error).
+# load returns the ENTITY — call data_get for the Idn record (raises on error).
 idn = client.Idn.load()
 ```
 
@@ -325,6 +326,7 @@ Create an instance: `scheme = client.Scheme`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `Hash` |  |
 | `cmyk` | `Hash` |  |
 | `contrast` | `Hash` |  |
 | `embedded` | `Hash` |  |
@@ -332,10 +334,9 @@ Create an instance: `scheme = client.Scheme`
 | `hsl` | `Hash` |  |
 | `hsv` | `Hash` |  |
 | `image` | `Hash` |  |
-| `link` | `Hash` |  |
+| `links` | `Hash` |  |
 | `name` | `Hash` |  |
 | `rgb` | `Hash` |  |
-| `xyz` | `Hash` |  |
 
 #### Example: List
 

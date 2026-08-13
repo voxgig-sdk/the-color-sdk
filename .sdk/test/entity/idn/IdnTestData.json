@@ -2,6 +2,7 @@
   "existing": {
     "idn": {
       "IDN00": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -9,13 +10,13 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
         "rgb": {},
-        "xyz": {},
         "id": "IDN00"
       },
       "IDN01": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -23,13 +24,13 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
         "rgb": {},
-        "xyz": {},
         "id": "IDN01"
       },
       "IDN02": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -37,10 +38,9 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
         "rgb": {},
-        "xyz": {},
         "id": "IDN02"
       }
     }
@@ -48,6 +48,7 @@
   "new": {
     "idn": {
       "idn_ref01": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -55,10 +56,9 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
-        "rgb": {},
-        "xyz": {}
+        "rgb": {}
       }
     }
   }

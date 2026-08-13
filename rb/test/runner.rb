@@ -23,8 +23,8 @@ module TheColorTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("THECOLOR_TEST_LIVE")
-    override = getenv("THECOLOR_TEST_OVERRIDE")
+    live = getenv("THE_COLOR_TEST_LIVE")
+    override = getenv("THE_COLOR_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module TheColorTestRunner
       end
     end
 
-    explain = getenv("THECOLOR_TEST_EXPLAIN")
-    m["THECOLOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("THE_COLOR_TEST_EXPLAIN")
+    m["THE_COLOR_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

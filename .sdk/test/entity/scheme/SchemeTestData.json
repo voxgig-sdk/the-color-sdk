@@ -2,6 +2,7 @@
   "existing": {
     "scheme": {
       "SCHEME00": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -9,12 +10,12 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
-        "rgb": {},
-        "xyz": {}
+        "rgb": {}
       },
       "SCHEME01": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -22,12 +23,12 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
-        "rgb": {},
-        "xyz": {}
+        "rgb": {}
       },
       "SCHEME02": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -35,16 +36,16 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
-        "rgb": {},
-        "xyz": {}
+        "rgb": {}
       }
     }
   },
   "new": {
     "scheme": {
       "scheme_ref01": {
+        "XYZ": {},
         "cmyk": {},
         "contrast": {},
         "embedded": {},
@@ -52,10 +53,9 @@
         "hsl": {},
         "hsv": {},
         "image": {},
-        "link": {},
+        "links": {},
         "name": {},
-        "rgb": {},
-        "xyz": {}
+        "rgb": {}
       }
     }
   }

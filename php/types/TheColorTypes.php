@@ -15,6 +15,7 @@ declare(strict_types=1);
 /** Idn entity data model. */
 class Idn
 {
+    public ?array $XYZ = null;
     public ?array $cmyk = null;
     public ?array $contrast = null;
     public ?array $embedded = null;
@@ -22,15 +23,15 @@ class Idn
     public ?array $hsl = null;
     public ?array $hsv = null;
     public ?array $image = null;
-    public ?array $link = null;
+    public ?array $links = null;
     public ?array $name = null;
     public ?array $rgb = null;
-    public ?array $xyz = null;
 }
 
 /** Request payload for Idn#load. */
 class IdnLoadMatch
 {
+    public ?array $XYZ = null;
     public ?array $cmyk = null;
     public ?array $contrast = null;
     public ?array $embedded = null;
@@ -38,15 +39,15 @@ class IdnLoadMatch
     public ?array $hsl = null;
     public ?array $hsv = null;
     public ?array $image = null;
-    public ?array $link = null;
+    public ?array $links = null;
     public ?array $name = null;
     public ?array $rgb = null;
-    public ?array $xyz = null;
 }
 
 /** Scheme entity data model. */
 class Scheme
 {
+    public ?array $XYZ = null;
     public ?array $cmyk = null;
     public ?array $contrast = null;
     public ?array $embedded = null;
@@ -54,15 +55,15 @@ class Scheme
     public ?array $hsl = null;
     public ?array $hsv = null;
     public ?array $image = null;
-    public ?array $link = null;
+    public ?array $links = null;
     public ?array $name = null;
     public ?array $rgb = null;
-    public ?array $xyz = null;
 }
 
 /** Request payload for Scheme#list. */
 class SchemeListMatch
 {
+    public ?array $XYZ = null;
     public ?array $cmyk = null;
     public ?array $contrast = null;
     public ?array $embedded = null;
@@ -70,9 +71,8 @@ class SchemeListMatch
     public ?array $hsl = null;
     public ?array $hsv = null;
     public ?array $image = null;
-    public ?array $link = null;
+    public ?array $links = null;
     public ?array $name = null;
     public ?array $rgb = null;
-    public ?array $xyz = null;
 }
 

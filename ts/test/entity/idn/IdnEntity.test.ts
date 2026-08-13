@@ -26,8 +26,8 @@ import {
 describe('IdnEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when THECOLOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('THECOLOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when THE_COLOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('THE_COLOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = TheColorSDK.test()
@@ -62,7 +62,7 @@ describe('IdnEntity', async () => {
     // LOAD
     const idn_ref01_ent = client.Idn()
     const idn_ref01_match_dt0: any = {}
-    const idn_ref01_data_dt0 = await idn_ref01_ent.load(idn_ref01_match_dt0)
+    const idn_ref01_data_dt0 = (await idn_ref01_ent.load(idn_ref01_match_dt0)).data()
     assert(null != idn_ref01_data_dt0)
 
 

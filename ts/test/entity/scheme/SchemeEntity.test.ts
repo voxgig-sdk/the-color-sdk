@@ -26,8 +26,8 @@ import {
 describe('SchemeEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when THECOLOR_TEST_LIVE=TRUE.
-  afterEach(liveDelay('THECOLOR_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when THE_COLOR_TEST_LIVE=TRUE.
+  afterEach(liveDelay('THE_COLOR_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = TheColorSDK.test()
@@ -63,7 +63,7 @@ describe('SchemeEntity', async () => {
     const scheme_ref01_ent = client.Scheme()
     const scheme_ref01_match: any = {}
 
-    const scheme_ref01_list = await scheme_ref01_ent.list(scheme_ref01_match)
+    const scheme_ref01_list = (await scheme_ref01_ent.list(scheme_ref01_match)).map((e: any) => e.data())
 
 
   })

@@ -97,6 +97,7 @@ idn = client.Idn
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `Hash` | No |  |
 | `cmyk` | `Hash` | No |  |
 | `contrast` | `Hash` | No |  |
 | `embedded` | `Hash` | No |  |
@@ -104,10 +105,9 @@ idn = client.Idn
 | `hsl` | `Hash` | No |  |
 | `hsv` | `Hash` | No |  |
 | `image` | `Hash` | No |  |
-| `link` | `Hash` | No |  |
+| `links` | `Hash` | No |  |
 | `name` | `Hash` | No |  |
 | `rgb` | `Hash` | No |  |
-| `xyz` | `Hash` | No |  |
 
 ### Operations
 
@@ -159,6 +159,7 @@ scheme = client.Scheme
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `Hash` | No |  |
 | `cmyk` | `Hash` | No |  |
 | `contrast` | `Hash` | No |  |
 | `embedded` | `Hash` | No |  |
@@ -166,10 +167,9 @@ scheme = client.Scheme
 | `hsl` | `Hash` | No |  |
 | `hsv` | `Hash` | No |  |
 | `image` | `Hash` | No |  |
-| `link` | `Hash` | No |  |
+| `links` | `Hash` | No |  |
 | `name` | `Hash` | No |  |
 | `rgb` | `Hash` | No |  |
-| `xyz` | `Hash` | No |  |
 
 ### Operations
 

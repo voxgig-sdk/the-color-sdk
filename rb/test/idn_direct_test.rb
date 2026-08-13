@@ -59,11 +59,11 @@ def idn_direct_setup(mockres)
   calls = []
 
   env = Runner.env_override({
-    "THECOLOR_TEST_IDN_ENTID" => {},
-    "THECOLOR_TEST_LIVE" => "FALSE",
+    "THE_COLOR_TEST_IDN_ENTID" => {},
+    "THE_COLOR_TEST_LIVE" => "FALSE",
   })
 
-  live = env["THECOLOR_TEST_LIVE"] == "TRUE"
+  live = env["THE_COLOR_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {

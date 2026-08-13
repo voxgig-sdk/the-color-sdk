@@ -38,7 +38,7 @@ client = TheColorSDK()
 
 ### 3. Load an idn
 
-`load()` returns the bare record (a `dict`) and raises on error.
+`load()` returns the ENTITY — call data_get() for the record — and raises on error.
 
 ```python
 try:
@@ -122,7 +122,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = TheColorSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 idn = client.Idn().load()
 # idn contains the mock response record
 ```
@@ -220,7 +221,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -242,6 +243,7 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -249,10 +251,9 @@ On error, `ok` is `False` and `err` contains the error value.
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: Load.
 
@@ -262,6 +263,7 @@ API path: `/id`
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -269,10 +271,9 @@ API path: `/id`
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: List.
 
@@ -297,6 +298,7 @@ Create an instance: `idn = client.Idn()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `dict` |  |
 | `cmyk` | `dict` |  |
 | `contrast` | `dict` |  |
 | `embedded` | `dict` |  |
@@ -304,10 +306,9 @@ Create an instance: `idn = client.Idn()`
 | `hsl` | `dict` |  |
 | `hsv` | `dict` |  |
 | `image` | `dict` |  |
-| `link` | `dict` |  |
+| `links` | `dict` |  |
 | `name` | `dict` |  |
 | `rgb` | `dict` |  |
-| `xyz` | `dict` |  |
 
 #### Example: Load
 
@@ -330,6 +331,7 @@ Create an instance: `scheme = client.Scheme()`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `dict` |  |
 | `cmyk` | `dict` |  |
 | `contrast` | `dict` |  |
 | `embedded` | `dict` |  |
@@ -337,10 +339,9 @@ Create an instance: `scheme = client.Scheme()`
 | `hsl` | `dict` |  |
 | `hsv` | `dict` |  |
 | `image` | `dict` |  |
-| `link` | `dict` |  |
+| `links` | `dict` |  |
 | `name` | `dict` |  |
 | `rgb` | `dict` |  |
-| `xyz` | `dict` |  |
 
 #### Example: List
 

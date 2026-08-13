@@ -91,6 +91,7 @@ idn = client.Idn()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `dict` | No |  |
 | `cmyk` | `dict` | No |  |
 | `contrast` | `dict` | No |  |
 | `embedded` | `dict` | No |  |
@@ -98,10 +99,9 @@ idn = client.Idn()
 | `hsl` | `dict` | No |  |
 | `hsv` | `dict` | No |  |
 | `image` | `dict` | No |  |
-| `link` | `dict` | No |  |
+| `links` | `dict` | No |  |
 | `name` | `dict` | No |  |
 | `rgb` | `dict` | No |  |
-| `xyz` | `dict` | No |  |
 
 ### Operations
 
@@ -152,6 +152,7 @@ scheme = client.Scheme()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
+| `XYZ` | `dict` | No |  |
 | `cmyk` | `dict` | No |  |
 | `contrast` | `dict` | No |  |
 | `embedded` | `dict` | No |  |
@@ -159,10 +160,9 @@ scheme = client.Scheme()
 | `hsl` | `dict` | No |  |
 | `hsv` | `dict` | No |  |
 | `image` | `dict` | No |  |
-| `link` | `dict` | No |  |
+| `links` | `dict` | No |  |
 | `name` | `dict` | No |  |
 | `rgb` | `dict` | No |  |
-| `xyz` | `dict` | No |  |
 
 ### Operations
 

@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import TheColorControl
-from core.error import TheColorError
-from core.result import TheColorResult
-from core.spec import TheColorSpec
+from projectname_sdk.config import make_config
+from projectname_sdk.features import _make_feature
+from projectname_sdk.core.control import TheColorControl
+from projectname_sdk.core.error import TheColorError
+from projectname_sdk.core.result import TheColorResult
+from projectname_sdk.core.spec import TheColorSpec
 
 
 # True when this SDK was generated with the named feature.

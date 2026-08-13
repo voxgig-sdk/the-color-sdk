@@ -228,6 +228,7 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -235,10 +236,9 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: Load.
 
@@ -248,6 +248,7 @@ API path: `/id`
 
 | Field | Description |
 | --- | --- |
+| `XYZ` |  |
 | `cmyk` |  |
 | `contrast` |  |
 | `embedded` |  |
@@ -255,10 +256,9 @@ API path: `/id`
 | `hsl` |  |
 | `hsv` |  |
 | `image` |  |
-| `link` |  |
+| `links` |  |
 | `name` |  |
 | `rgb` |  |
-| `xyz` |  |
 
 Operations: List.
 
@@ -283,6 +283,7 @@ Create an instance: `local idn = client:Idn(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `table` |  |
 | `cmyk` | `table` |  |
 | `contrast` | `table` |  |
 | `embedded` | `table` |  |
@@ -290,10 +291,9 @@ Create an instance: `local idn = client:Idn(nil)`
 | `hsl` | `table` |  |
 | `hsv` | `table` |  |
 | `image` | `table` |  |
-| `link` | `table` |  |
+| `links` | `table` |  |
 | `name` | `table` |  |
 | `rgb` | `table` |  |
-| `xyz` | `table` |  |
 
 #### Example: Load
 
@@ -316,6 +316,7 @@ Create an instance: `local scheme = client:Scheme(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
+| `XYZ` | `table` |  |
 | `cmyk` | `table` |  |
 | `contrast` | `table` |  |
 | `embedded` | `table` |  |
@@ -323,10 +324,9 @@ Create an instance: `local scheme = client:Scheme(nil)`
 | `hsl` | `table` |  |
 | `hsv` | `table` |  |
 | `image` | `table` |  |
-| `link` | `table` |  |
+| `links` | `table` |  |
 | `name` | `table` |  |
 | `rgb` | `table` |  |
-| `xyz` | `table` |  |
 
 #### Example: List
 

@@ -16,11 +16,11 @@
 import pytest
 
 from thecolor_sdk import TheColorSDK
-from core.error import TheColorError
-from core.result import TheColorResult
-from core.response import TheColorResponse
-from core.spec import TheColorSpec
-from feature.base_feature import TheColorBaseFeature
+from thecolor_sdk.core.error import TheColorError
+from thecolor_sdk.core.result import TheColorResult
+from thecolor_sdk.core.response import TheColorResponse
+from thecolor_sdk.core.spec import TheColorSpec
+from thecolor_sdk.feature.base_feature import TheColorBaseFeature
 
 
 def _client():
