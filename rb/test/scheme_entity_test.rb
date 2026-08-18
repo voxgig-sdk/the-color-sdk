@@ -33,7 +33,7 @@ class SchemeEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = TheColorConfig.make_config
+    cfg = TheColorConfig.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = TheColorSDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []

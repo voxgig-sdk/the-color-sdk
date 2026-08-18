@@ -40,7 +40,7 @@ class TheColorSDK
         $utility = new TheColorUtility();
         $this->_utility = $utility;
 
-        $config = TheColorConfig::make_config();
+        $config = TheColorConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

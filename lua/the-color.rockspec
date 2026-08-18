@@ -23,6 +23,7 @@ build = {
   modules = {
     ["the-color_sdk"] = "the-color_sdk.lua",
     ["config"] = "config.lua",
+    ["config_shared"] = "config_shared.lua",
     ["features"] = "features.lua",
   }
 }

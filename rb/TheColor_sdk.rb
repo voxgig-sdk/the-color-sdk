@@ -28,7 +28,7 @@ class TheColorSDK
     utility = TheColorUtility.new
     @_utility = utility
 
-    config = TheColorConfig.make_config
+    config = TheColorConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
