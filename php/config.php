@@ -33,6 +33,9 @@ class TheColorConfig
         return [
             "main" => [
                 "name" => "TheColor",
+                "slug" => "the-color",
+                "version" => "0.0.1",
+                "target" => "php",
             ],
             "feature" => [
                 "test" => [

@@ -19,6 +19,9 @@ module TheColorConfig
     {
       "main" => {
         "name" => "TheColor",
+        "slug" => "the-color",
+        "version" => "0.0.1",
+        "target" => "rb",
       },
       "feature" => {
         "test" => {
