@@ -28,6 +28,7 @@ module TheColorConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
