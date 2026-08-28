@@ -31,17 +31,14 @@ class Idn
 /** Request payload for Idn#load. */
 class IdnLoadMatch
 {
-    public ?array $XYZ = null;
-    public ?array $cmyk = null;
-    public ?array $contrast = null;
-    public ?array $embedded = null;
-    public ?array $hex = null;
-    public ?array $hsl = null;
-    public ?array $hsv = null;
-    public ?array $image = null;
-    public ?array $links = null;
-    public ?array $name = null;
-    public ?array $rgb = null;
+    public ?string $callback = null;
+    public ?string $cmyk = null;
+    public ?string $format = null;
+    public ?string $hex = null;
+    public ?string $hsl = null;
+    public ?bool $named = null;
+    public ?string $rgb = null;
+    public ?int $w = null;
 }
 
 /** Scheme entity data model. */
@@ -63,16 +60,15 @@ class Scheme
 /** Request payload for Scheme#list. */
 class SchemeListMatch
 {
-    public ?array $XYZ = null;
-    public ?array $cmyk = null;
-    public ?array $contrast = null;
-    public ?array $embedded = null;
-    public ?array $hex = null;
-    public ?array $hsl = null;
-    public ?array $hsv = null;
-    public ?array $image = null;
-    public ?array $links = null;
-    public ?array $name = null;
-    public ?array $rgb = null;
+    public ?string $callback = null;
+    public ?string $cmyk = null;
+    public ?int $count = null;
+    public ?string $format = null;
+    public ?string $hex = null;
+    public ?string $hsl = null;
+    public ?string $mode = null;
+    public ?bool $named = null;
+    public ?string $rgb = null;
+    public ?int $w = null;
 }
 

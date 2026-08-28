@@ -29,17 +29,14 @@ type Idn struct {
 
 // IdnLoadMatch is the typed request payload for Idn.LoadTyped.
 type IdnLoadMatch struct {
-	XYZ *map[string]any `json:"XYZ,omitempty"`
-	Cmyk *map[string]any `json:"cmyk,omitempty"`
-	Contrast *map[string]any `json:"contrast,omitempty"`
-	Embedded *map[string]any `json:"embedded,omitempty"`
-	Hex *map[string]any `json:"hex,omitempty"`
-	Hsl *map[string]any `json:"hsl,omitempty"`
-	Hsv *map[string]any `json:"hsv,omitempty"`
-	Image *map[string]any `json:"image,omitempty"`
-	Links *map[string]any `json:"links,omitempty"`
-	Name *map[string]any `json:"name,omitempty"`
-	Rgb *map[string]any `json:"rgb,omitempty"`
+	Callback *string `json:"callback,omitempty"`
+	Cmyk *string `json:"cmyk,omitempty"`
+	Format *string `json:"format,omitempty"`
+	Hex *string `json:"hex,omitempty"`
+	Hsl *string `json:"hsl,omitempty"`
+	Named *bool `json:"named,omitempty"`
+	Rgb *string `json:"rgb,omitempty"`
+	W *int `json:"w,omitempty"`
 }
 
 // Scheme is the typed data model for the scheme entity.
@@ -59,17 +56,16 @@ type Scheme struct {
 
 // SchemeListMatch is the typed request payload for Scheme.ListTyped.
 type SchemeListMatch struct {
-	XYZ *map[string]any `json:"XYZ,omitempty"`
-	Cmyk *map[string]any `json:"cmyk,omitempty"`
-	Contrast *map[string]any `json:"contrast,omitempty"`
-	Embedded *map[string]any `json:"embedded,omitempty"`
-	Hex *map[string]any `json:"hex,omitempty"`
-	Hsl *map[string]any `json:"hsl,omitempty"`
-	Hsv *map[string]any `json:"hsv,omitempty"`
-	Image *map[string]any `json:"image,omitempty"`
-	Links *map[string]any `json:"links,omitempty"`
-	Name *map[string]any `json:"name,omitempty"`
-	Rgb *map[string]any `json:"rgb,omitempty"`
+	Callback *string `json:"callback,omitempty"`
+	Cmyk *string `json:"cmyk,omitempty"`
+	Count *int `json:"count,omitempty"`
+	Format *string `json:"format,omitempty"`
+	Hex *string `json:"hex,omitempty"`
+	Hsl *string `json:"hsl,omitempty"`
+	Mode *string `json:"mode,omitempty"`
+	Named *bool `json:"named,omitempty"`
+	Rgb *string `json:"rgb,omitempty"`
+	W *int `json:"w,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

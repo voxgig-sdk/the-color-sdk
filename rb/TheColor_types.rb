@@ -59,50 +59,38 @@ Idn = Struct.new(
 
 # Request payload for Idn#load.
 #
-# @!attribute [rw] XYZ
-#   @return [Hash, nil]
+# @!attribute [rw] callback
+#   @return [String, nil]
 #
 # @!attribute [rw] cmyk
-#   @return [Hash, nil]
+#   @return [String, nil]
 #
-# @!attribute [rw] contrast
-#   @return [Hash, nil]
-#
-# @!attribute [rw] embedded
-#   @return [Hash, nil]
+# @!attribute [rw] format
+#   @return [String, nil]
 #
 # @!attribute [rw] hex
-#   @return [Hash, nil]
+#   @return [String, nil]
 #
 # @!attribute [rw] hsl
-#   @return [Hash, nil]
+#   @return [String, nil]
 #
-# @!attribute [rw] hsv
-#   @return [Hash, nil]
-#
-# @!attribute [rw] image
-#   @return [Hash, nil]
-#
-# @!attribute [rw] links
-#   @return [Hash, nil]
-#
-# @!attribute [rw] name
-#   @return [Hash, nil]
+# @!attribute [rw] named
+#   @return [Boolean, nil]
 #
 # @!attribute [rw] rgb
-#   @return [Hash, nil]
+#   @return [String, nil]
+#
+# @!attribute [rw] w
+#   @return [Integer, nil]
 IdnLoadMatch = Struct.new(
-  :XYZ,
+  :callback,
   :cmyk,
-  :contrast,
-  :embedded,
+  :format,
   :hex,
   :hsl,
-  :hsv,
-  :image,
-  :links,
-  :name,
+  :named,
   :rgb,
+  :w,
   keyword_init: true
 )
 
@@ -157,50 +145,46 @@ Scheme = Struct.new(
 
 # Request payload for Scheme#list.
 #
-# @!attribute [rw] XYZ
-#   @return [Hash, nil]
+# @!attribute [rw] callback
+#   @return [String, nil]
 #
 # @!attribute [rw] cmyk
-#   @return [Hash, nil]
+#   @return [String, nil]
 #
-# @!attribute [rw] contrast
-#   @return [Hash, nil]
+# @!attribute [rw] count
+#   @return [Integer, nil]
 #
-# @!attribute [rw] embedded
-#   @return [Hash, nil]
+# @!attribute [rw] format
+#   @return [String, nil]
 #
 # @!attribute [rw] hex
-#   @return [Hash, nil]
+#   @return [String, nil]
 #
 # @!attribute [rw] hsl
-#   @return [Hash, nil]
+#   @return [String, nil]
 #
-# @!attribute [rw] hsv
-#   @return [Hash, nil]
+# @!attribute [rw] mode
+#   @return [String, nil]
 #
-# @!attribute [rw] image
-#   @return [Hash, nil]
-#
-# @!attribute [rw] links
-#   @return [Hash, nil]
-#
-# @!attribute [rw] name
-#   @return [Hash, nil]
+# @!attribute [rw] named
+#   @return [Boolean, nil]
 #
 # @!attribute [rw] rgb
-#   @return [Hash, nil]
+#   @return [String, nil]
+#
+# @!attribute [rw] w
+#   @return [Integer, nil]
 SchemeListMatch = Struct.new(
-  :XYZ,
+  :callback,
   :cmyk,
-  :contrast,
-  :embedded,
+  :count,
+  :format,
   :hex,
   :hsl,
-  :hsv,
-  :image,
-  :links,
-  :name,
+  :mode,
+  :named,
   :rgb,
+  :w,
   keyword_init: true
 )
 

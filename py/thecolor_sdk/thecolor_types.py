@@ -31,17 +31,14 @@ class Idn(TypedDict, total=False):
 
 
 class IdnLoadMatch(TypedDict, total=False):
-    XYZ: dict
-    cmyk: dict
-    contrast: dict
-    embedded: dict
-    hex: dict
-    hsl: dict
-    hsv: dict
-    image: dict
-    links: dict
-    name: dict
-    rgb: dict
+    callback: str
+    cmyk: str
+    format: str
+    hex: str
+    hsl: str
+    named: bool
+    rgb: str
+    w: int
 
 
 class Scheme(TypedDict, total=False):
@@ -59,14 +56,13 @@ class Scheme(TypedDict, total=False):
 
 
 class SchemeListMatch(TypedDict, total=False):
-    XYZ: dict
-    cmyk: dict
-    contrast: dict
-    embedded: dict
-    hex: dict
-    hsl: dict
-    hsv: dict
-    image: dict
-    links: dict
-    name: dict
-    rgb: dict
+    callback: str
+    cmyk: str
+    count: int
+    format: str
+    hex: str
+    hsl: str
+    mode: str
+    named: bool
+    rgb: str
+    w: int
