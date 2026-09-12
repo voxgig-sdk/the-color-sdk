@@ -137,8 +137,10 @@ main: kit: entity: idn: {
           }
           method: "GET"
           orig: "/id"
-          parts: [
-            "id"
+          segments: [
+            {
+              lit: "id"
+            }
           ]
           select: {
             exist: [

@@ -153,8 +153,10 @@ main: kit: entity: scheme: {
           }
           method: "GET"
           orig: "/scheme"
-          parts: [
-            "scheme"
+          segments: [
+            {
+              lit: "scheme"
+            }
           ]
           select: {
             exist: [

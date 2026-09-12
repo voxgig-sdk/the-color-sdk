@@ -146,8 +146,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/id",
-                ["parts"] = {
-                  "id",
+                ["segments"] = {
+                  {
+                    ["lit"] = "id",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -164,6 +166,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "id",
                 },
               },
             },
@@ -303,8 +308,10 @@ local function make_config()
                 ["kind"] = "http",
                 ["method"] = "GET",
                 ["orig"] = "/scheme",
-                ["parts"] = {
-                  "scheme",
+                ["segments"] = {
+                  {
+                    ["lit"] = "scheme",
+                  },
                 },
                 ["select"] = {
                   ["exist"] = {
@@ -323,6 +330,9 @@ local function make_config()
                 ["transform"] = {
                   ["req"] = "`reqdata`",
                   ["res"] = "`body`",
+                },
+                ["parts"] = {
+                  "scheme",
                 },
               },
             },

@@ -172,8 +172,10 @@ class TheColorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/id',
-                  'parts' => [
-                    'id',
+                  'segments' => [
+                    [
+                      'lit' => 'id',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -190,6 +192,9 @@ class TheColorConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'id',
                   ],
                 ],
               ],
@@ -329,8 +334,10 @@ class TheColorConfig
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/scheme',
-                  'parts' => [
-                    'scheme',
+                  'segments' => [
+                    [
+                      'lit' => 'scheme',
+                    ],
                   ],
                   'select' => [
                     'exist' => [
@@ -349,6 +356,9 @@ class TheColorConfig
                   'transform' => [
                     'req' => '`reqdata`',
                     'res' => '`body`',
+                  ],
+                  'parts' => [
+                    'scheme',
                   ],
                 ],
               ],
