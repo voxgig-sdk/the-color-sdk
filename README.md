@@ -105,7 +105,7 @@ local result, err = client:Idn():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
+| TypeScript | `@voxgig-sdk/the-color-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
 | Python | `voxgig-sdk-the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
 | PHP | `voxgig-sdk/the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/the-color-sdk/go` | `go get github.com/voxgig-sdk/the-color-sdk/go@latest` |
@@ -119,7 +119,7 @@ local result, err = client:Idn():load()
 ### TypeScript
 
 ```ts
-import { TheColorSDK } from '@voxgig-sdk/the-color'
+import { TheColorSDK } from '@voxgig-sdk/the-color-sdk'
 
 const client = new TheColorSDK()
 

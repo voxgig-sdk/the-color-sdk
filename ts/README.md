@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { TheColorSDK } from '@voxgig-sdk/the-color'
+import { TheColorSDK } from '@voxgig-sdk/the-color-sdk'
 
 const client = new TheColorSDK()
 ```
@@ -478,7 +478,7 @@ the-color/
 Import the SDK from the package root:
 
 ```ts
-import { TheColorSDK } from '@voxgig-sdk/the-color'
+import { TheColorSDK } from '@voxgig-sdk/the-color-sdk'
 ```
 
 ### Entity state
