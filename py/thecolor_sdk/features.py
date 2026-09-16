@@ -1,12 +1,18 @@
 # TheColor SDK feature factory
 
 from thecolor_sdk.feature.base_feature import TheColorBaseFeature
+from thecolor_sdk.feature.ratelimit_feature import TheColorRatelimitFeature
+from thecolor_sdk.feature.retry_feature import TheColorRetryFeature
 from thecolor_sdk.feature.test_feature import TheColorTestFeature
+from thecolor_sdk.feature.timeout_feature import TheColorTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: TheColorBaseFeature(),
+    "ratelimit": lambda: TheColorRatelimitFeature(),
+    "retry": lambda: TheColorRetryFeature(),
     "test": lambda: TheColorTestFeature(),
+    "timeout": lambda: TheColorTimeoutFeature(),
 }
 
 

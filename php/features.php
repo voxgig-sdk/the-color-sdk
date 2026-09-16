@@ -4,7 +4,10 @@ declare(strict_types=1);
 // TheColor SDK feature factory
 
 require_once __DIR__ . '/feature/BaseFeature.php';
+require_once __DIR__ . '/feature/RatelimitFeature.php';
+require_once __DIR__ . '/feature/RetryFeature.php';
 require_once __DIR__ . '/feature/TestFeature.php';
+require_once __DIR__ . '/feature/TimeoutFeature.php';
 
 
 class TheColorFeatures
@@ -14,8 +17,14 @@ class TheColorFeatures
         switch ($name) {
             case "base":
                 return new TheColorBaseFeature();
+            case "ratelimit":
+                return new TheColorRatelimitFeature();
+            case "retry":
+                return new TheColorRetryFeature();
             case "test":
                 return new TheColorTestFeature();
+            case "timeout":
+                return new TheColorTimeoutFeature();
             default:
                 return new TheColorBaseFeature();
         }
@@ -31,7 +40,10 @@ class TheColorFeatures
     {
         switch ($name) {
             case "base":
+            case "ratelimit":
+            case "retry":
             case "test":
+            case "timeout":
                 return true;
             default:
                 return false;

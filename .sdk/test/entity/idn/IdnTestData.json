@@ -61,5 +61,479 @@
         "rgb": {}
       }
     }
+  },
+  "requests": {
+    "GET /id": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getColorById",
+        "parameters": [
+          {
+            "description": "Valid hex code",
+            "in": "query",
+            "name": "hex",
+            "required": false,
+            "schema": {
+              "example": "0047AB",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Valid rgb color, also rgb(0,71,171)",
+            "in": "query",
+            "name": "rgb",
+            "required": false,
+            "schema": {
+              "example": "0,71,171",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Valid hsl color, also hsl(215,100%,34%)",
+            "in": "query",
+            "name": "hsl",
+            "required": false,
+            "schema": {
+              "example": "215,100%,34%",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Valid cmyk color, also cmyk(100,58,0,33)",
+            "in": "query",
+            "name": "cmyk",
+            "required": false,
+            "schema": {
+              "example": "100,58,0,33",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Return results as JSON, SVG or HTML page",
+            "in": "query",
+            "name": "format",
+            "required": false,
+            "schema": {
+              "default": "json",
+              "enum": [
+                "json",
+                "html",
+                "svg"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Height of resulting image, only applicable on SVG format",
+            "in": "query",
+            "name": "w",
+            "required": false,
+            "schema": {
+              "default": 100,
+              "example": 350,
+              "type": "integer"
+            }
+          },
+          {
+            "description": "Whether to print the color names on resulting image, only applicable on SVG format",
+            "in": "query",
+            "name": "named",
+            "required": false,
+            "schema": {
+              "default": true,
+              "example": false,
+              "type": "boolean"
+            }
+          },
+          {
+            "description": "JSONP callback function name",
+            "in": "query",
+            "name": "callback",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "XYZ": {
+                    "X": 22,
+                    "Y": 25,
+                    "Z": 67,
+                    "fraction": {
+                      "X": 0.22060823529411763,
+                      "Y": 0.2475505882352941,
+                      "Z": 0.6705831372549019
+                    },
+                    "value": "XYZ(22, 25, 67)"
+                  },
+                  "_embedded": {},
+                  "_links": {
+                    "self": {
+                      "href": "/id?hex=0047AB"
+                    }
+                  },
+                  "cmyk": {
+                    "c": 100,
+                    "fraction": {
+                      "c": 1,
+                      "k": 0.3294117647058824,
+                      "m": 0.5847953216374269,
+                      "y": 0
+                    },
+                    "k": 33,
+                    "m": 58,
+                    "value": "cmyk(100, 58, 0, 33)",
+                    "y": 0
+                  },
+                  "contrast": {
+                    "value": "#000000"
+                  },
+                  "hex": {
+                    "clean": "0047AB",
+                    "value": "#0047AB"
+                  },
+                  "hsl": {
+                    "fraction": {
+                      "h": 0.5974658869395711,
+                      "l": 0.3352941176470588,
+                      "s": 1
+                    },
+                    "h": 215,
+                    "l": 34,
+                    "s": 100,
+                    "value": "hsl(215, 100%, 34%)"
+                  },
+                  "hsv": {
+                    "fraction": {
+                      "h": 0.5974658869395711,
+                      "s": 1,
+                      "v": 0.6705882352941176
+                    },
+                    "h": 215,
+                    "s": 100,
+                    "v": 67,
+                    "value": "hsv(215, 100%, 67%)"
+                  },
+                  "image": {
+                    "bare": "http://placehold.it/300x300.png/0047AB/000000",
+                    "named": "http://placehold.it/300x300.png/0047AB/000000&text=Cobalt"
+                  },
+                  "name": {
+                    "closest_named_hex": "#0047AB",
+                    "distance": 0,
+                    "exact_match_name": true,
+                    "value": "Cobalt"
+                  },
+                  "rgb": {
+                    "b": 171,
+                    "fraction": {
+                      "b": 0.6705882352941176,
+                      "g": 0.2784313725490196,
+                      "r": 0
+                    },
+                    "g": 71,
+                    "r": 0,
+                    "value": "rgb(0, 71, 171)"
+                  }
+                },
+                "schema": {
+                  "properties": {
+                    "XYZ": {
+                      "properties": {
+                        "X": {
+                          "type": "integer"
+                        },
+                        "Y": {
+                          "type": "integer"
+                        },
+                        "Z": {
+                          "type": "integer"
+                        },
+                        "fraction": {
+                          "properties": {
+                            "X": {
+                              "type": "number"
+                            },
+                            "Y": {
+                              "type": "number"
+                            },
+                            "Z": {
+                              "type": "number"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "_embedded": {
+                      "type": "object"
+                    },
+                    "_links": {
+                      "properties": {
+                        "self": {
+                          "properties": {
+                            "href": {
+                              "type": "string"
+                            }
+                          },
+                          "type": "object"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "cmyk": {
+                      "properties": {
+                        "c": {
+                          "type": "integer"
+                        },
+                        "fraction": {
+                          "properties": {
+                            "c": {
+                              "type": "number"
+                            },
+                            "k": {
+                              "type": "number"
+                            },
+                            "m": {
+                              "type": "number"
+                            },
+                            "y": {
+                              "type": "number"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "k": {
+                          "type": "integer"
+                        },
+                        "m": {
+                          "type": "integer"
+                        },
+                        "value": {
+                          "type": "string"
+                        },
+                        "y": {
+                          "type": "integer"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "contrast": {
+                      "properties": {
+                        "value": {
+                          "description": "Contrasting color hex value",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "hex": {
+                      "properties": {
+                        "clean": {
+                          "description": "Hex color value without hash prefix",
+                          "type": "string"
+                        },
+                        "value": {
+                          "description": "Hex color value with hash prefix",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "hsl": {
+                      "properties": {
+                        "fraction": {
+                          "properties": {
+                            "h": {
+                              "type": "number"
+                            },
+                            "l": {
+                              "type": "number"
+                            },
+                            "s": {
+                              "type": "number"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "h": {
+                          "type": "integer"
+                        },
+                        "l": {
+                          "type": "integer"
+                        },
+                        "s": {
+                          "type": "integer"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "hsv": {
+                      "properties": {
+                        "fraction": {
+                          "properties": {
+                            "h": {
+                              "type": "number"
+                            },
+                            "s": {
+                              "type": "number"
+                            },
+                            "v": {
+                              "type": "number"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "h": {
+                          "type": "integer"
+                        },
+                        "s": {
+                          "type": "integer"
+                        },
+                        "v": {
+                          "type": "integer"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "image": {
+                      "properties": {
+                        "bare": {
+                          "description": "URL to placeholder image without text",
+                          "type": "string"
+                        },
+                        "named": {
+                          "description": "URL to placeholder image with color name",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "name": {
+                      "properties": {
+                        "closest_named_hex": {
+                          "description": "Hex value of the closest named color",
+                          "type": "string"
+                        },
+                        "distance": {
+                          "description": "Distance from the closest named color",
+                          "type": "integer"
+                        },
+                        "exact_match_name": {
+                          "description": "Whether the name is an exact match",
+                          "type": "boolean"
+                        },
+                        "value": {
+                          "description": "Human-readable color name",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    },
+                    "rgb": {
+                      "properties": {
+                        "b": {
+                          "type": "integer"
+                        },
+                        "fraction": {
+                          "properties": {
+                            "b": {
+                              "type": "number"
+                            },
+                            "g": {
+                              "type": "number"
+                            },
+                            "r": {
+                              "type": "number"
+                            }
+                          },
+                          "type": "object"
+                        },
+                        "g": {
+                          "type": "integer"
+                        },
+                        "r": {
+                          "type": "integer"
+                        },
+                        "value": {
+                          "type": "string"
+                        }
+                      },
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with color information"
+          },
+          "400": {
+            "content": {
+              "application/json": {
+                "example": {
+                  "code": 400,
+                  "example": "/id?hex=a674D3",
+                  "message": "The Color API doesn't understand what you mean. Please supply a query parameter of `rgb`, `hsl`, `cmyk` or `hex`.",
+                  "params": [],
+                  "path": "/id",
+                  "query": {}
+                },
+                "schema": {
+                  "properties": {
+                    "code": {
+                      "description": "HTTP error code",
+                      "type": "integer"
+                    },
+                    "example": {
+                      "description": "Example of a correct API call",
+                      "type": "string"
+                    },
+                    "message": {
+                      "description": "Error message description",
+                      "type": "string"
+                    },
+                    "params": {
+                      "description": "Parameters that were processed",
+                      "items": {
+                        "type": "string"
+                      },
+                      "type": "array"
+                    },
+                    "path": {
+                      "description": "API path that was called",
+                      "type": "string"
+                    },
+                    "query": {
+                      "description": "Query parameters received",
+                      "type": "object"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Bad request - Invalid or missing color parameter"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

@@ -24,7 +24,71 @@
         "repr": "auto"
       },
       "contributor": {},
-      "docs": {},
+      "doc": {
+        "active": true,
+        "assets": {
+          "path": ".sdk/doc/assets"
+        },
+        "brand": {
+          "label": "",
+          "notice": "",
+          "shortNotice": "",
+          "url": ""
+        },
+        "ci": {
+          "active": true,
+          "branch": "main"
+        },
+        "content": {
+          "path": ".sdk/doc/content"
+        },
+        "edition": {
+          "summary": {
+            "active": true,
+            "base": "node_modules/@voxgig/docgen/project/.sdk",
+            "brand": {},
+            "filter": {
+              "entities": [],
+              "features": [],
+              "targets": []
+            },
+            "kind": "summary",
+            "name": "summary",
+            "origname": "",
+            "output": {
+              "path": "SUMMARY.md"
+            },
+            "package": "@voxgig/docgen",
+            "site": {
+              "active": true
+            },
+            "style": {},
+            "title": ""
+          }
+        },
+        "qa": {
+          "vocabulary": []
+        },
+        "style": {
+          "color": {
+            "accent": "#00c6d8",
+            "background": "#f5f5f9",
+            "darkBackground": "#0f1117",
+            "darkText": "#e6edf3",
+            "primary": "#e70042",
+            "text": "#0a0a0a"
+          },
+          "font": "Nunito, system-ui, sans-serif",
+          "fontFile": "",
+          "headingFont": "Nunito, system-ui, sans-serif",
+          "headingFontFile": "",
+          "logo": "",
+          "mode": "light",
+          "mono": "ui-monospace, monospace",
+          "monoFile": ""
+        },
+        "target": {}
+      },
       "entity": {
         "idn": {
           "active": true,
@@ -181,6 +245,12 @@
                         "type": "`$INTEGER`"
                       }
                     ]
+                  },
+                  "contract": {
+                    "id": "GET /id",
+                    "json": "{\"operationId\":\"getColorById\",\"parameters\":[{\"description\":\"Valid hex code\",\"in\":\"query\",\"name\":\"hex\",\"required\":false,\"schema\":{\"example\":\"0047AB\",\"type\":\"string\"}},{\"description\":\"Valid rgb color, also rgb(0,71,171)\",\"in\":\"query\",\"name\":\"rgb\",\"required\":false,\"schema\":{\"example\":\"0,71,171\",\"type\":\"string\"}},{\"description\":\"Valid hsl color, also hsl(215,100%,34%)\",\"in\":\"query\",\"name\":\"hsl\",\"required\":false,\"schema\":{\"example\":\"215,100%,34%\",\"type\":\"string\"}},{\"description\":\"Valid cmyk color, also cmyk(100,58,0,33)\",\"in\":\"query\",\"name\":\"cmyk\",\"required\":false,\"schema\":{\"example\":\"100,58,0,33\",\"type\":\"string\"}},{\"description\":\"Return results as JSON, SVG or HTML page\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"html\",\"svg\"],\"type\":\"string\"}},{\"description\":\"Height of resulting image, only applicable on SVG format\",\"in\":\"query\",\"name\":\"w\",\"required\":false,\"schema\":{\"default\":100,\"example\":350,\"type\":\"integer\"}},{\"description\":\"Whether to print the color names on resulting image, only applicable on SVG format\",\"in\":\"query\",\"name\":\"named\",\"required\":false,\"schema\":{\"default\":true,\"example\":false,\"type\":\"boolean\"}},{\"description\":\"JSONP callback function name\",\"in\":\"query\",\"name\":\"callback\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"XYZ\":{\"X\":22,\"Y\":25,\"Z\":67,\"fraction\":{\"X\":0.22060823529411763,\"Y\":0.2475505882352941,\"Z\":0.6705831372549019},\"value\":\"XYZ(22, 25, 67)\"},\"_embedded\":{},\"_links\":{\"self\":{\"href\":\"/id?hex=0047AB\"}},\"cmyk\":{\"c\":100,\"fraction\":{\"c\":1,\"k\":0.3294117647058824,\"m\":0.5847953216374269,\"y\":0},\"k\":33,\"m\":58,\"value\":\"cmyk(100, 58, 0, 33)\",\"y\":0},\"contrast\":{\"value\":\"#000000\"},\"hex\":{\"clean\":\"0047AB\",\"value\":\"#0047AB\"},\"hsl\":{\"fraction\":{\"h\":0.5974658869395711,\"l\":0.3352941176470588,\"s\":1},\"h\":215,\"l\":34,\"s\":100,\"value\":\"hsl(215, 100%, 34%)\"},\"hsv\":{\"fraction\":{\"h\":0.5974658869395711,\"s\":1,\"v\":0.6705882352941176},\"h\":215,\"s\":100,\"v\":67,\"value\":\"hsv(215, 100%, 67%)\"},\"image\":{\"bare\":\"http://placehold.it/300x300.png/0047AB/000000\",\"named\":\"http://placehold.it/300x300.png/0047AB/000000&text=Cobalt\"},\"name\":{\"closest_named_hex\":\"#0047AB\",\"distance\":0,\"exact_match_name\":true,\"value\":\"Cobalt\"},\"rgb\":{\"b\":171,\"fraction\":{\"b\":0.6705882352941176,\"g\":0.2784313725490196,\"r\":0},\"g\":71,\"r\":0,\"value\":\"rgb(0, 71, 171)\"}},\"schema\":{\"properties\":{\"XYZ\":{\"properties\":{\"X\":{\"type\":\"integer\"},\"Y\":{\"type\":\"integer\"},\"Z\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"X\":{\"type\":\"number\"},\"Y\":{\"type\":\"number\"},\"Z\":{\"type\":\"number\"}},\"type\":\"object\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"_embedded\":{\"type\":\"object\"},\"_links\":{\"properties\":{\"self\":{\"properties\":{\"href\":{\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"cmyk\":{\"properties\":{\"c\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"c\":{\"type\":\"number\"},\"k\":{\"type\":\"number\"},\"m\":{\"type\":\"number\"},\"y\":{\"type\":\"number\"}},\"type\":\"object\"},\"k\":{\"type\":\"integer\"},\"m\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"},\"y\":{\"type\":\"integer\"}},\"type\":\"object\"},\"contrast\":{\"properties\":{\"value\":{\"description\":\"Contrasting color hex value\",\"type\":\"string\"}},\"type\":\"object\"},\"hex\":{\"properties\":{\"clean\":{\"description\":\"Hex color value without hash prefix\",\"type\":\"string\"},\"value\":{\"description\":\"Hex color value with hash prefix\",\"type\":\"string\"}},\"type\":\"object\"},\"hsl\":{\"properties\":{\"fraction\":{\"properties\":{\"h\":{\"type\":\"number\"},\"l\":{\"type\":\"number\"},\"s\":{\"type\":\"number\"}},\"type\":\"object\"},\"h\":{\"type\":\"integer\"},\"l\":{\"type\":\"integer\"},\"s\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"hsv\":{\"properties\":{\"fraction\":{\"properties\":{\"h\":{\"type\":\"number\"},\"s\":{\"type\":\"number\"},\"v\":{\"type\":\"number\"}},\"type\":\"object\"},\"h\":{\"type\":\"integer\"},\"s\":{\"type\":\"integer\"},\"v\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"image\":{\"properties\":{\"bare\":{\"description\":\"URL to placeholder image without text\",\"type\":\"string\"},\"named\":{\"description\":\"URL to placeholder image with color name\",\"type\":\"string\"}},\"type\":\"object\"},\"name\":{\"properties\":{\"closest_named_hex\":{\"description\":\"Hex value of the closest named color\",\"type\":\"string\"},\"distance\":{\"description\":\"Distance from the closest named color\",\"type\":\"integer\"},\"exact_match_name\":{\"description\":\"Whether the name is an exact match\",\"type\":\"boolean\"},\"value\":{\"description\":\"Human-readable color name\",\"type\":\"string\"}},\"type\":\"object\"},\"rgb\":{\"properties\":{\"b\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"b\":{\"type\":\"number\"},\"g\":{\"type\":\"number\"},\"r\":{\"type\":\"number\"}},\"type\":\"object\"},\"g\":{\"type\":\"integer\"},\"r\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Successful response with color information\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"code\":400,\"example\":\"/id?hex=a674D3\",\"message\":\"The Color API doesn't understand what you mean. Please supply a query parameter of `rgb`, `hsl`, `cmyk` or `hex`.\",\"params\":[],\"path\":\"/id\",\"query\":{}},\"schema\":{\"properties\":{\"code\":{\"description\":\"HTTP error code\",\"type\":\"integer\"},\"example\":{\"description\":\"Example of a correct API call\",\"type\":\"string\"},\"message\":{\"description\":\"Error message description\",\"type\":\"string\"},\"params\":{\"description\":\"Parameters that were processed\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"path\":{\"description\":\"API path that was called\",\"type\":\"string\"},\"query\":{\"description\":\"Query parameters received\",\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid or missing color parameter\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
                   },
                   "kind": "http",
                   "method": "GET",
@@ -388,6 +458,12 @@
                       }
                     ]
                   },
+                  "contract": {
+                    "id": "GET /scheme",
+                    "json": "{\"operationId\":\"getColorScheme\",\"parameters\":[{\"description\":\"Valid hex code\",\"in\":\"query\",\"name\":\"hex\",\"required\":false,\"schema\":{\"example\":\"0047AB\",\"type\":\"string\"}},{\"description\":\"Valid rgb color, also rgb(0,71,171)\",\"in\":\"query\",\"name\":\"rgb\",\"required\":false,\"schema\":{\"example\":\"0,71,171\",\"type\":\"string\"}},{\"description\":\"Valid hsl color, also hsl(215,100%,34%)\",\"in\":\"query\",\"name\":\"hsl\",\"required\":false,\"schema\":{\"example\":\"215,100%,34%\",\"type\":\"string\"}},{\"description\":\"Valid cmyk color, also cmyk(100,58,0,33)\",\"in\":\"query\",\"name\":\"cmyk\",\"required\":false,\"schema\":{\"example\":\"100,58,0,33\",\"type\":\"string\"}},{\"description\":\"Return results as JSON, SVG or HTML page of results\",\"in\":\"query\",\"name\":\"format\",\"required\":false,\"schema\":{\"default\":\"json\",\"enum\":[\"json\",\"html\",\"svg\"],\"type\":\"string\"}},{\"description\":\"Define mode by which to generate the scheme from the seed color\",\"in\":\"query\",\"name\":\"mode\",\"required\":false,\"schema\":{\"default\":\"monochrome\",\"enum\":[\"monochrome\",\"monochrome-dark\",\"monochrome-light\",\"analogic\",\"complement\",\"analogic-complement\",\"triad\",\"quad\"],\"type\":\"string\"}},{\"description\":\"Number of colors to return\",\"in\":\"query\",\"name\":\"count\",\"required\":false,\"schema\":{\"default\":5,\"example\":6,\"type\":\"integer\"}},{\"description\":\"Height of resulting image, only applicable on SVG format\",\"in\":\"query\",\"name\":\"w\",\"required\":false,\"schema\":{\"default\":100,\"example\":350,\"type\":\"integer\"}},{\"description\":\"Whether to print the color names on resulting image, only applicable on SVG format\",\"in\":\"query\",\"name\":\"named\",\"required\":false,\"schema\":{\"default\":true,\"example\":false,\"type\":\"boolean\"}},{\"description\":\"JSONP callback function name\",\"in\":\"query\",\"name\":\"callback\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"example\":{\"_embedded\":{},\"_links\":{\"schemes\":{\"analogic\":\"/scheme?hex=0047AB&mode=analogic&count=2\",\"analogic-complement\":\"/scheme?hex=0047AB&mode=analogic-complement&count=2\",\"complement\":\"/scheme?hex=0047AB&mode=complement&count=2\",\"monochrome\":\"/scheme?hex=0047AB&mode=monochrome&count=2\",\"monochrome-dark\":\"/scheme?hex=0047AB&mode=monochrome-dark&count=2\",\"monochrome-light\":\"/scheme?hex=0047AB&mode=monochrome-light&count=2\",\"quad\":\"/scheme?hex=0047AB&mode=quad&count=2\",\"triad\":\"/scheme?hex=0047AB&mode=triad&count=2\"},\"self\":\"/scheme?hex=0047AB&mode=monochrome&count=2\"},\"colors\":[{\"XYZ\":{\"X\":6,\"Y\":6,\"Z\":17,\"fraction\":{\"X\":0.056589019607843134,\"Y\":0.06321019607843137,\"Z\":0.1650427450980392},\"value\":\"XYZ(6, 6, 17)\"},\"_embedded\":{},\"_links\":{\"self\":{\"href\":\"/id?hex=01122A\"}},\"cmyk\":{\"c\":98,\"fraction\":{\"c\":0.9761904761904763,\"k\":0.8352941176470589,\"m\":0.5714285714285715,\"y\":0},\"k\":84,\"m\":57,\"value\":\"cmyk(98, 57, 0, 84)\",\"y\":0},\"contrast\":{\"value\":\"#FFFFFF\"},\"hex\":{\"clean\":\"01122A\",\"value\":\"#01122A\"},\"hsl\":{\"fraction\":{\"h\":0.597560975609756,\"l\":0.08431372549019608,\"s\":0.9534883720930231},\"h\":215,\"l\":8,\"s\":95,\"value\":\"hsl(215, 95%, 8%)\"},\"hsv\":{\"fraction\":{\"h\":0.597560975609756,\"s\":0.976190476190476,\"v\":0.16470588235294117},\"h\":215,\"s\":98,\"v\":16,\"value\":\"hsv(215, 98%, 16%)\"},\"image\":{\"bare\":\"http://placehold.it/300x300.png/01122A/FFFFFF\",\"named\":\"http://placehold.it/300x300.png/01122A/FFFFFF&text=Midnight\"},\"name\":{\"closest_named_hex\":\"#011635\",\"distance\":217,\"exact_match_name\":false,\"value\":\"Midnight\"},\"rgb\":{\"b\":42,\"fraction\":{\"b\":0.16470588235294117,\"g\":0.07058823529411765,\"r\":0.00392156862745098},\"g\":18,\"r\":1,\"value\":\"rgb(1, 18, 42)\"}}],\"count\":\"2\",\"mode\":\"monochrome\",\"seed\":{\"hex\":{\"clean\":\"0047AB\",\"value\":\"#0047AB\"},\"name\":{\"closest_named_hex\":\"#0047AB\",\"distance\":0,\"exact_match_name\":true,\"value\":\"Cobalt\"},\"rgb\":{\"b\":171,\"fraction\":{\"b\":0.6705882352941176,\"g\":0.2784313725490196,\"r\":0},\"g\":71,\"r\":0,\"value\":\"rgb(0, 71, 171)\"}}},\"schema\":{\"properties\":{\"_embedded\":{\"type\":\"object\"},\"_links\":{\"properties\":{\"schemes\":{\"properties\":{\"analogic\":{\"type\":\"string\"},\"analogic-complement\":{\"type\":\"string\"},\"complement\":{\"type\":\"string\"},\"monochrome\":{\"type\":\"string\"},\"monochrome-dark\":{\"type\":\"string\"},\"monochrome-light\":{\"type\":\"string\"},\"quad\":{\"type\":\"string\"},\"triad\":{\"type\":\"string\"}},\"type\":\"object\"},\"self\":{\"type\":\"string\"}},\"type\":\"object\"},\"colors\":{\"items\":{\"properties\":{\"XYZ\":{\"properties\":{\"X\":{\"type\":\"integer\"},\"Y\":{\"type\":\"integer\"},\"Z\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"X\":{\"type\":\"number\"},\"Y\":{\"type\":\"number\"},\"Z\":{\"type\":\"number\"}},\"type\":\"object\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"_embedded\":{\"type\":\"object\"},\"_links\":{\"properties\":{\"self\":{\"properties\":{\"href\":{\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"cmyk\":{\"properties\":{\"c\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"c\":{\"type\":\"number\"},\"k\":{\"type\":\"number\"},\"m\":{\"type\":\"number\"},\"y\":{\"type\":\"number\"}},\"type\":\"object\"},\"k\":{\"type\":\"integer\"},\"m\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"},\"y\":{\"type\":\"integer\"}},\"type\":\"object\"},\"contrast\":{\"properties\":{\"value\":{\"description\":\"Contrasting color hex value\",\"type\":\"string\"}},\"type\":\"object\"},\"hex\":{\"properties\":{\"clean\":{\"description\":\"Hex color value without hash prefix\",\"type\":\"string\"},\"value\":{\"description\":\"Hex color value with hash prefix\",\"type\":\"string\"}},\"type\":\"object\"},\"hsl\":{\"properties\":{\"fraction\":{\"properties\":{\"h\":{\"type\":\"number\"},\"l\":{\"type\":\"number\"},\"s\":{\"type\":\"number\"}},\"type\":\"object\"},\"h\":{\"type\":\"integer\"},\"l\":{\"type\":\"integer\"},\"s\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"hsv\":{\"properties\":{\"fraction\":{\"properties\":{\"h\":{\"type\":\"number\"},\"s\":{\"type\":\"number\"},\"v\":{\"type\":\"number\"}},\"type\":\"object\"},\"h\":{\"type\":\"integer\"},\"s\":{\"type\":\"integer\"},\"v\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"image\":{\"properties\":{\"bare\":{\"description\":\"URL to placeholder image without text\",\"type\":\"string\"},\"named\":{\"description\":\"URL to placeholder image with color name\",\"type\":\"string\"}},\"type\":\"object\"},\"name\":{\"properties\":{\"closest_named_hex\":{\"description\":\"Hex value of the closest named color\",\"type\":\"string\"},\"distance\":{\"description\":\"Distance from the closest named color\",\"type\":\"integer\"},\"exact_match_name\":{\"description\":\"Whether the name is an exact match\",\"type\":\"boolean\"},\"value\":{\"description\":\"Human-readable color name\",\"type\":\"string\"}},\"type\":\"object\"},\"rgb\":{\"properties\":{\"b\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"b\":{\"type\":\"number\"},\"g\":{\"type\":\"number\"},\"r\":{\"type\":\"number\"}},\"type\":\"object\"},\"g\":{\"type\":\"integer\"},\"r\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"type\":\"array\"},\"count\":{\"description\":\"Number of colors in the scheme\",\"type\":\"string\"},\"mode\":{\"description\":\"The scheme mode used to generate colors\",\"type\":\"string\"},\"seed\":{\"properties\":{\"XYZ\":{\"properties\":{\"X\":{\"type\":\"integer\"},\"Y\":{\"type\":\"integer\"},\"Z\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"X\":{\"type\":\"number\"},\"Y\":{\"type\":\"number\"},\"Z\":{\"type\":\"number\"}},\"type\":\"object\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"_embedded\":{\"type\":\"object\"},\"_links\":{\"properties\":{\"self\":{\"properties\":{\"href\":{\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"},\"cmyk\":{\"properties\":{\"c\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"c\":{\"type\":\"number\"},\"k\":{\"type\":\"number\"},\"m\":{\"type\":\"number\"},\"y\":{\"type\":\"number\"}},\"type\":\"object\"},\"k\":{\"type\":\"integer\"},\"m\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"},\"y\":{\"type\":\"integer\"}},\"type\":\"object\"},\"contrast\":{\"properties\":{\"value\":{\"description\":\"Contrasting color hex value\",\"type\":\"string\"}},\"type\":\"object\"},\"hex\":{\"properties\":{\"clean\":{\"description\":\"Hex color value without hash prefix\",\"type\":\"string\"},\"value\":{\"description\":\"Hex color value with hash prefix\",\"type\":\"string\"}},\"type\":\"object\"},\"hsl\":{\"properties\":{\"fraction\":{\"properties\":{\"h\":{\"type\":\"number\"},\"l\":{\"type\":\"number\"},\"s\":{\"type\":\"number\"}},\"type\":\"object\"},\"h\":{\"type\":\"integer\"},\"l\":{\"type\":\"integer\"},\"s\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"hsv\":{\"properties\":{\"fraction\":{\"properties\":{\"h\":{\"type\":\"number\"},\"s\":{\"type\":\"number\"},\"v\":{\"type\":\"number\"}},\"type\":\"object\"},\"h\":{\"type\":\"integer\"},\"s\":{\"type\":\"integer\"},\"v\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"},\"image\":{\"properties\":{\"bare\":{\"description\":\"URL to placeholder image without text\",\"type\":\"string\"},\"named\":{\"description\":\"URL to placeholder image with color name\",\"type\":\"string\"}},\"type\":\"object\"},\"name\":{\"properties\":{\"closest_named_hex\":{\"description\":\"Hex value of the closest named color\",\"type\":\"string\"},\"distance\":{\"description\":\"Distance from the closest named color\",\"type\":\"integer\"},\"exact_match_name\":{\"description\":\"Whether the name is an exact match\",\"type\":\"boolean\"},\"value\":{\"description\":\"Human-readable color name\",\"type\":\"string\"}},\"type\":\"object\"},\"rgb\":{\"properties\":{\"b\":{\"type\":\"integer\"},\"fraction\":{\"properties\":{\"b\":{\"type\":\"number\"},\"g\":{\"type\":\"number\"},\"r\":{\"type\":\"number\"}},\"type\":\"object\"},\"g\":{\"type\":\"integer\"},\"r\":{\"type\":\"integer\"},\"value\":{\"type\":\"string\"}},\"type\":\"object\"}},\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Successful response with color scheme\"},\"400\":{\"content\":{\"application/json\":{\"example\":{\"code\":400,\"example\":\"/scheme?hex=FF0&mode=monochrome&count=5\",\"message\":\"The Color API doesn't understand what you mean. Please supply a query parameter of `rgb`, `hsl`, `cmyk` or `hex`.\",\"params\":[],\"path\":\"/scheme\",\"query\":{}},\"schema\":{\"properties\":{\"code\":{\"description\":\"HTTP error code\",\"type\":\"integer\"},\"example\":{\"description\":\"Example of a correct API call\",\"type\":\"string\"},\"message\":{\"description\":\"Error message description\",\"type\":\"string\"},\"params\":{\"description\":\"Parameters that were processed\",\"items\":{\"type\":\"string\"},\"type\":\"array\"},\"path\":{\"description\":\"API path that was called\",\"type\":\"string\"},\"query\":{\"description\":\"Query parameters received\",\"type\":\"object\"}},\"type\":\"object\"}}},\"description\":\"Bad request - Invalid or missing color parameter\"}},\"securitySource\":\"unspecified\"}",
+                    "source": "openapi3",
+                    "version": 1
+                  },
                   "kind": "http",
                   "method": "GET",
                   "orig": "/scheme",
@@ -424,13 +500,223 @@
         }
       },
       "feature": {
+        "ratelimit": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "burst": 5,
+              "rate": 5
+            },
+            "optspec": {
+              "now": "`$FUNCTION`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "ratelimit",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Client-side rate limiting via a token bucket",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
+        "retry": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "factor": 2,
+              "maxDelay": 2000,
+              "minDelay": 50,
+              "retries": 2,
+              "statuses": [
+                408,
+                425,
+                429,
+                500,
+                502,
+                503,
+                504
+              ]
+            },
+            "optspec": {
+              "jitter": "`$BOOLEAN`",
+              "sleep": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "retry",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Automatic retry of transient failures with exponential backoff",
+          "transport": "wrap",
+          "version": "0.0.1"
+        },
         "test": {
           "active": true,
           "base": "node_modules/@voxgig/sdkgen/project/.sdk",
           "config": {
             "options": {
               "active": false
-            }
+            },
+            "optspec": {
+              "entity": "`$MAP`",
+              "net": "`$MAP`"
+            },
+            "strict": false
           },
           "hook": {
             "GetData": {
@@ -521,6 +807,102 @@
           "title": "In-memory mock transport for testing without a live server",
           "transport": "base",
           "version": "0.0.1"
+        },
+        "timeout": {
+          "active": true,
+          "base": "node_modules/@voxgig/sdkgen/project/.sdk",
+          "config": {
+            "options": {
+              "active": false,
+              "ms": 30000
+            },
+            "optspec": {
+              "clearTimer": "`$FUNCTION`",
+              "setTimer": "`$FUNCTION`"
+            },
+            "strict": false
+          },
+          "hook": {
+            "GetData": {
+              "active": false,
+              "await": false
+            },
+            "GetMatch": {
+              "active": false,
+              "await": false
+            },
+            "PostConstruct": {
+              "active": false,
+              "await": false
+            },
+            "PostConstructEntity": {
+              "active": false,
+              "await": false
+            },
+            "PostOperation": {
+              "active": false,
+              "await": false
+            },
+            "PreRequest": {
+              "active": false,
+              "await": false
+            },
+            "PreResponse": {
+              "active": false,
+              "await": false
+            },
+            "PreResult": {
+              "active": false,
+              "await": false
+            },
+            "PreSpec": {
+              "active": false,
+              "await": false
+            },
+            "PreTarget": {
+              "active": false,
+              "await": false
+            },
+            "SetData": {
+              "active": false,
+              "await": false
+            }
+          },
+          "name": "timeout",
+          "needs": {},
+          "origname": "",
+          "package": "@voxgig/sdkgen",
+          "plugin": {},
+          "spec": {},
+          "target": {
+            "go": {
+              "deps": {}
+            },
+            "go-cli": {
+              "deps": {}
+            },
+            "go-mcp": {
+              "deps": {}
+            },
+            "lua": {
+              "deps": {}
+            },
+            "php": {
+              "deps": {}
+            },
+            "py": {
+              "deps": {}
+            },
+            "rb": {
+              "deps": {}
+            },
+            "ts": {
+              "deps": {}
+            }
+          },
+          "title": "Per-request timeout with transport abort",
+          "transport": "wrap",
+          "version": "0.0.1"
         }
       },
       "flow": {
@@ -600,6 +982,48 @@
         "website": "https://thecolorapi.com"
       },
       "option": {},
+      "optspec": {
+        "allow": {
+          "method": "GET,PUT,POST,PATCH,DELETE,OPTIONS",
+          "op": "create,update,load,list,remove,command,direct,graphql"
+        },
+        "apikey": "",
+        "auth": {
+          "basic": false,
+          "prefix": ""
+        },
+        "base": "http://localhost:8000",
+        "clean": {
+          "keys": "key,token,id"
+        },
+        "entity": {
+          "`$CHILD`": {
+            "`$OPEN`": true,
+            "active": false,
+            "alias": {}
+          }
+        },
+        "extend": "`$ANY`",
+        "headers": {
+          "`$CHILD`": "`$STRING`"
+        },
+        "prefix": "",
+        "secret": "",
+        "server": {
+          "`$CHILD`": ""
+        },
+        "suffix": "",
+        "system": {
+          "fetch": "`$ANY`"
+        },
+        "test": {
+          "active": false,
+          "entity": {
+            "`$OPEN`": true
+          }
+        },
+        "utility": {}
+      },
       "repo": {
         "host": "github.com",
         "path": ""
@@ -1154,6 +1578,7 @@
           },
           "package": "@voxgig/sdkgen",
           "provides": {
+            "schema": true,
             "sekreto": true
           },
           "publish": {
@@ -1195,7 +1620,7 @@
         "live": {
           "app": false,
           "base": "",
-          "strict": false
+          "strict": true
         }
       }
     }
