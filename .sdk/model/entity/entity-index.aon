@@ -1,4 +1,4 @@
 # Entity Models
 
-@"idn.aon"
-@"scheme.aon"
+@"./idn.aon"
+@"./scheme.aon"

@@ -105,12 +105,12 @@ local result, err = client:Idn():load()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/the-color-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
-| Python | `voxgig-sdk-the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
-| PHP | `voxgig-sdk/the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
+| TypeScript | `@voxgig-sdk/the-color-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/tags) |
+| Python | `voxgig-sdk-the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/tags) |
+| PHP | `voxgig-sdk/the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/the-color-sdk/go` | `go get github.com/voxgig-sdk/the-color-sdk/go@latest` |
-| Ruby | `voxgig-sdk-the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
-| Lua | `voxgig-sdk-the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/releases) |
+| Ruby | `voxgig-sdk-the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/tags) |
+| Lua | `voxgig-sdk-the-color` | publish pending — [install from git tag](https://github.com/voxgig-sdk/the-color-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/the-color-sdk/go-cli` | `go install github.com/voxgig-sdk/the-color-sdk/go-cli/cmd/the-color@latest` |
 | Go MCP server | `github.com/voxgig-sdk/the-color-sdk/go-mcp` | `go get github.com/voxgig-sdk/the-color-sdk/go-mcp@latest` |
 

@@ -1,4 +1,4 @@
 # Flows
 
-@"BasicIdnFlow.aon"
-@"BasicSchemeFlow.aon"
+@"./BasicIdnFlow.aon"
+@"./BasicSchemeFlow.aon"
