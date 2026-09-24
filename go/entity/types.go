@@ -1,7 +1,7 @@
 // Typed models for the TheColor SDK.
 //
-// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
-// params (op.<name>.points[].args.params[]). Field/param types come from the
+// GENERATED from the API model: main.kit.entity.<e>.fields{} and per-op
+// params (op.<name>.points[].g.params[]). Field/param types come from the
 // canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 package entity
@@ -14,17 +14,6 @@ import (
 
 // Idn is the typed data model for the idn entity.
 type Idn struct {
-	XYZ *map[string]any `json:"XYZ,omitempty"`
-	Cmyk *map[string]any `json:"cmyk,omitempty"`
-	Contrast *map[string]any `json:"contrast,omitempty"`
-	Embedded *map[string]any `json:"embedded,omitempty"`
-	Hex *map[string]any `json:"hex,omitempty"`
-	Hsl *map[string]any `json:"hsl,omitempty"`
-	Hsv *map[string]any `json:"hsv,omitempty"`
-	Image *map[string]any `json:"image,omitempty"`
-	Links *map[string]any `json:"links,omitempty"`
-	Name *map[string]any `json:"name,omitempty"`
-	Rgb *map[string]any `json:"rgb,omitempty"`
 }
 
 // IdnLoadMatch is the typed request payload for Idn.LoadTyped.
@@ -41,17 +30,6 @@ type IdnLoadMatch struct {
 
 // Scheme is the typed data model for the scheme entity.
 type Scheme struct {
-	XYZ *map[string]any `json:"XYZ,omitempty"`
-	Cmyk *map[string]any `json:"cmyk,omitempty"`
-	Contrast *map[string]any `json:"contrast,omitempty"`
-	Embedded *map[string]any `json:"embedded,omitempty"`
-	Hex *map[string]any `json:"hex,omitempty"`
-	Hsl *map[string]any `json:"hsl,omitempty"`
-	Hsv *map[string]any `json:"hsv,omitempty"`
-	Image *map[string]any `json:"image,omitempty"`
-	Links *map[string]any `json:"links,omitempty"`
-	Name *map[string]any `json:"name,omitempty"`
-	Rgb *map[string]any `json:"rgb,omitempty"`
 }
 
 // SchemeListMatch is the typed request payload for Scheme.ListTyped.

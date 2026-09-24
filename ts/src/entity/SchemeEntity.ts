@@ -19,7 +19,6 @@ import type {
   SchemeListMatch,
 } from '../TheColorTypes'
 
-// TODO: needs Entity superclass
 class SchemeEntity extends TheColorEntityBase<Scheme> {
 
   constructor(client: TheColorSDK, entopts: any) {

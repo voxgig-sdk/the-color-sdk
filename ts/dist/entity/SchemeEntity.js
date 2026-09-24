@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SchemeEntity = void 0;
 const TheColorEntityBase_1 = require("../TheColorEntityBase");
-// TODO: needs Entity superclass
 class SchemeEntity extends TheColorEntityBase_1.TheColorEntityBase {
     constructor(client, entopts) {
         super(client, entopts);

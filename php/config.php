@@ -114,46 +114,57 @@ class TheColorConfig
           'fields' => [
             [
               'name' => 'XYZ',
+              'title' => 'Xyz',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'cmyk',
+              'title' => 'Cmyk',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'contrast',
+              'title' => 'Contrast',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'embedded',
+              'title' => 'Embedded',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'hex',
+              'title' => 'Hex',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'hsl',
+              'title' => 'Hsl',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'hsv',
+              'title' => 'Hsv',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'image',
+              'title' => 'Image',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'links',
+              'title' => 'Links',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'name',
+              'title' => 'Name',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'rgb',
+              'title' => 'Rgb',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -164,71 +175,79 @@ class TheColorConfig
               'name' => 'load',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'callback',
-                        'orig' => 'callback',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => '100,58,0,33',
-                        'kind' => 'query',
-                        'name' => 'cmyk',
-                        'orig' => 'cmyk',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => 'json',
-                        'kind' => 'query',
-                        'name' => 'format',
-                        'orig' => 'format',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => '0047AB',
-                        'kind' => 'query',
-                        'name' => 'hex',
-                        'orig' => 'hex',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => '215,100%,34%',
-                        'kind' => 'query',
-                        'name' => 'hsl',
-                        'orig' => 'hsl',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => false,
-                        'kind' => 'query',
-                        'name' => 'named',
-                        'orig' => 'named',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'example' => '0,71,171',
-                        'kind' => 'query',
-                        'name' => 'rgb',
-                        'orig' => 'rgb',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => 350,
-                        'kind' => 'query',
-                        'name' => 'w',
-                        'orig' => 'w',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/id',
                   'segments' => [
                     [
                       'lit' => 'id',
+                    ],
+                  ],
+                  'parts' => [
+                    'id',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'callback',
+                        'orig' => 'callback',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'cmyk',
+                        'orig' => 'cmyk',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '100,58,0,33',
+                      ],
+                      [
+                        'name' => 'format',
+                        'orig' => 'format',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => 'json',
+                      ],
+                      [
+                        'name' => 'hex',
+                        'orig' => 'hex',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '0047AB',
+                      ],
+                      [
+                        'name' => 'hsl',
+                        'orig' => 'hsl',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '215,100%,34%',
+                      ],
+                      [
+                        'name' => 'named',
+                        'orig' => 'named',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                        'example' => false,
+                      ],
+                      [
+                        'name' => 'rgb',
+                        'orig' => 'rgb',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '0,71,171',
+                      ],
+                      [
+                        'name' => 'w',
+                        'orig' => 'w',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                        'example' => 350,
+                      ],
                     ],
                   ],
                   'select' => [
@@ -243,13 +262,6 @@ class TheColorConfig
                       'w',
                     ],
                   ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'id',
-                  ],
                 ],
               ],
             ],
@@ -262,46 +274,57 @@ class TheColorConfig
           'fields' => [
             [
               'name' => 'XYZ',
+              'title' => 'Xyz',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'cmyk',
+              'title' => 'Cmyk',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'contrast',
+              'title' => 'Contrast',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'embedded',
+              'title' => 'Embedded',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'hex',
+              'title' => 'Hex',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'hsl',
+              'title' => 'Hsl',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'hsv',
+              'title' => 'Hsv',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'image',
+              'title' => 'Image',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'links',
+              'title' => 'Links',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'name',
+              'title' => 'Name',
               'type' => '`$OBJECT`',
             ],
             [
               'name' => 'rgb',
+              'title' => 'Rgb',
               'type' => '`$OBJECT`',
             ],
           ],
@@ -312,85 +335,93 @@ class TheColorConfig
               'name' => 'list',
               'points' => [
                 [
-                  'args' => [
-                    'query' => [
-                      [
-                        'kind' => 'query',
-                        'name' => 'callback',
-                        'orig' => 'callback',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => '100,58,0,33',
-                        'kind' => 'query',
-                        'name' => 'cmyk',
-                        'orig' => 'cmyk',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => 6,
-                        'kind' => 'query',
-                        'name' => 'count',
-                        'orig' => 'count',
-                        'type' => '`$INTEGER`',
-                      ],
-                      [
-                        'example' => 'json',
-                        'kind' => 'query',
-                        'name' => 'format',
-                        'orig' => 'format',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => '0047AB',
-                        'kind' => 'query',
-                        'name' => 'hex',
-                        'orig' => 'hex',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => '215,100%,34%',
-                        'kind' => 'query',
-                        'name' => 'hsl',
-                        'orig' => 'hsl',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => 'monochrome',
-                        'kind' => 'query',
-                        'name' => 'mode',
-                        'orig' => 'mode',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => false,
-                        'kind' => 'query',
-                        'name' => 'named',
-                        'orig' => 'named',
-                        'type' => '`$BOOLEAN`',
-                      ],
-                      [
-                        'example' => '0,71,171',
-                        'kind' => 'query',
-                        'name' => 'rgb',
-                        'orig' => 'rgb',
-                        'type' => '`$STRING`',
-                      ],
-                      [
-                        'example' => 350,
-                        'kind' => 'query',
-                        'name' => 'w',
-                        'orig' => 'w',
-                        'type' => '`$INTEGER`',
-                      ],
-                    ],
-                  ],
                   'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/scheme',
                   'segments' => [
                     [
                       'lit' => 'scheme',
+                    ],
+                  ],
+                  'parts' => [
+                    'scheme',
+                  ],
+                  'rename' => [],
+                  'transform' => [
+                    'req' => '`reqdata`',
+                    'res' => '`body`',
+                  ],
+                  'args' => [
+                    'query' => [
+                      [
+                        'name' => 'callback',
+                        'orig' => 'callback',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                      ],
+                      [
+                        'name' => 'cmyk',
+                        'orig' => 'cmyk',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '100,58,0,33',
+                      ],
+                      [
+                        'name' => 'count',
+                        'orig' => 'count',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                        'example' => 6,
+                      ],
+                      [
+                        'name' => 'format',
+                        'orig' => 'format',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => 'json',
+                      ],
+                      [
+                        'name' => 'hex',
+                        'orig' => 'hex',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '0047AB',
+                      ],
+                      [
+                        'name' => 'hsl',
+                        'orig' => 'hsl',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '215,100%,34%',
+                      ],
+                      [
+                        'name' => 'mode',
+                        'orig' => 'mode',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => 'monochrome',
+                      ],
+                      [
+                        'name' => 'named',
+                        'orig' => 'named',
+                        'type' => '`$BOOLEAN`',
+                        'kind' => 'query',
+                        'example' => false,
+                      ],
+                      [
+                        'name' => 'rgb',
+                        'orig' => 'rgb',
+                        'type' => '`$STRING`',
+                        'kind' => 'query',
+                        'example' => '0,71,171',
+                      ],
+                      [
+                        'name' => 'w',
+                        'orig' => 'w',
+                        'type' => '`$INTEGER`',
+                        'kind' => 'query',
+                        'example' => 350,
+                      ],
                     ],
                   ],
                   'select' => [
@@ -406,13 +437,6 @@ class TheColorConfig
                       'rgb',
                       'w',
                     ],
-                  ],
-                  'transform' => [
-                    'req' => '`reqdata`',
-                    'res' => '`body`',
-                  ],
-                  'parts' => [
-                    'scheme',
                   ],
                 ],
               ],

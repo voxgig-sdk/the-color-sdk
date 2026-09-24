@@ -1,0 +1,184 @@
+# Entity: idn
+
+main: kit: entity: idn: {
+
+  alias: field: {}
+
+  fields: {
+    XYZ: {
+      h: "Xyz"
+      n: "XYZ"
+      r: false
+      t: "`$OBJECT`"
+    }
+    cmyk: {
+      h: "Cmyk"
+      n: "cmyk"
+      r: false
+      t: "`$OBJECT`"
+    }
+    contrast: {
+      h: "Contrast"
+      n: "contrast"
+      r: false
+      t: "`$OBJECT`"
+    }
+    embedded: {
+      h: "Embedded"
+      n: "embedded"
+      r: false
+      t: "`$OBJECT`"
+    }
+    hex: {
+      h: "Hex"
+      n: "hex"
+      r: false
+      t: "`$OBJECT`"
+    }
+    hsl: {
+      h: "Hsl"
+      n: "hsl"
+      r: false
+      t: "`$OBJECT`"
+    }
+    hsv: {
+      h: "Hsv"
+      n: "hsv"
+      r: false
+      t: "`$OBJECT`"
+    }
+    image: {
+      h: "Image"
+      n: "image"
+      r: false
+      t: "`$OBJECT`"
+    }
+    links: {
+      h: "Links"
+      n: "links"
+      r: false
+      t: "`$OBJECT`"
+    }
+    name: {
+      h: "Name"
+      n: "name"
+      r: false
+      t: "`$OBJECT`"
+    }
+    rgb: {
+      h: "Rgb"
+      n: "rgb"
+      r: false
+      t: "`$OBJECT`"
+    }
+  }
+
+  name: "idn"
+  op: {
+    load: {
+      name: "load"
+      points: [
+        {
+          co: {
+            id: "GET /id"
+            source: "openapi3"
+            version: 2
+          }
+          g: {
+            query: [
+              {
+                k: "query"
+                n: "callback"
+                or: "callback"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "100,58,0,33"
+                k: "query"
+                n: "cmyk"
+                or: "cmyk"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "json"
+                k: "query"
+                n: "format"
+                or: "format"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "0047AB"
+                k: "query"
+                n: "hex"
+                or: "hex"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: "215,100%,34%"
+                k: "query"
+                n: "hsl"
+                or: "hsl"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: false
+                k: "query"
+                n: "named"
+                or: "named"
+                r: false
+                t: "`$BOOLEAN`"
+              }
+              {
+                ex: "0,71,171"
+                k: "query"
+                n: "rgb"
+                or: "rgb"
+                r: false
+                t: "`$STRING`"
+              }
+              {
+                ex: 350
+                k: "query"
+                n: "w"
+                or: "w"
+                r: false
+                t: "`$INTEGER`"
+              }
+            ]
+          }
+          m: "GET"
+          o: "/id"
+          q: {
+            exist: [
+              "callback"
+              "cmyk"
+              "format"
+              "hex"
+              "hsl"
+              "named"
+              "rgb"
+              "w"
+            ]
+          }
+          s: [
+            {
+              lit: "id"
+            }
+          ]
+          t: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

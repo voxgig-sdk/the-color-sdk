@@ -92,46 +92,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "XYZ",
+						"title": "Xyz",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "cmyk",
+						"title": "Cmyk",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "contrast",
+						"title": "Contrast",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "embedded",
+						"title": "Embedded",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "hex",
+						"title": "Hex",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "hsl",
+						"title": "Hsl",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "hsv",
+						"title": "Hsv",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "image",
+						"title": "Image",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "links",
+						"title": "Links",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "name",
+						"title": "Name",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "rgb",
+						"title": "Rgb",
 						"type": "`$OBJECT`",
 					},
 				},
@@ -142,71 +153,79 @@ func MakeConfig() map[string]any {
 						"name": "load",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "callback",
-											"orig": "callback",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "100,58,0,33",
-											"kind": "query",
-											"name": "cmyk",
-											"orig": "cmyk",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "json",
-											"kind": "query",
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "0047AB",
-											"kind": "query",
-											"name": "hex",
-											"orig": "hex",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "215,100%,34%",
-											"kind": "query",
-											"name": "hsl",
-											"orig": "hsl",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": false,
-											"kind": "query",
-											"name": "named",
-											"orig": "named",
-											"type": "`$BOOLEAN`",
-										},
-										map[string]any{
-											"example": "0,71,171",
-											"kind": "query",
-											"name": "rgb",
-											"orig": "rgb",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 350,
-											"kind": "query",
-											"name": "w",
-											"orig": "w",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/id",
 								"segments": []any{
 									map[string]any{
 										"lit": "id",
+									},
+								},
+								"parts": []any{
+									"id",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "callback",
+											"orig": "callback",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "cmyk",
+											"orig": "cmyk",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "100,58,0,33",
+										},
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "hex",
+											"orig": "hex",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "0047AB",
+										},
+										map[string]any{
+											"name": "hsl",
+											"orig": "hsl",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "215,100%,34%",
+										},
+										map[string]any{
+											"name": "named",
+											"orig": "named",
+											"type": "`$BOOLEAN`",
+											"kind": "query",
+											"example": false,
+										},
+										map[string]any{
+											"name": "rgb",
+											"orig": "rgb",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "0,71,171",
+										},
+										map[string]any{
+											"name": "w",
+											"orig": "w",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 350,
+										},
 									},
 								},
 								"select": map[string]any{
@@ -221,13 +240,6 @@ func MakeConfig() map[string]any {
 										"w",
 									},
 								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"id",
-								},
 							},
 						},
 					},
@@ -240,46 +252,57 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"name": "XYZ",
+						"title": "Xyz",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "cmyk",
+						"title": "Cmyk",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "contrast",
+						"title": "Contrast",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "embedded",
+						"title": "Embedded",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "hex",
+						"title": "Hex",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "hsl",
+						"title": "Hsl",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "hsv",
+						"title": "Hsv",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "image",
+						"title": "Image",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "links",
+						"title": "Links",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "name",
+						"title": "Name",
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
 						"name": "rgb",
+						"title": "Rgb",
 						"type": "`$OBJECT`",
 					},
 				},
@@ -290,85 +313,93 @@ func MakeConfig() map[string]any {
 						"name": "list",
 						"points": []any{
 							map[string]any{
-								"args": map[string]any{
-									"query": []any{
-										map[string]any{
-											"kind": "query",
-											"name": "callback",
-											"orig": "callback",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "100,58,0,33",
-											"kind": "query",
-											"name": "cmyk",
-											"orig": "cmyk",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 6,
-											"kind": "query",
-											"name": "count",
-											"orig": "count",
-											"type": "`$INTEGER`",
-										},
-										map[string]any{
-											"example": "json",
-											"kind": "query",
-											"name": "format",
-											"orig": "format",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "0047AB",
-											"kind": "query",
-											"name": "hex",
-											"orig": "hex",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "215,100%,34%",
-											"kind": "query",
-											"name": "hsl",
-											"orig": "hsl",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": "monochrome",
-											"kind": "query",
-											"name": "mode",
-											"orig": "mode",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": false,
-											"kind": "query",
-											"name": "named",
-											"orig": "named",
-											"type": "`$BOOLEAN`",
-										},
-										map[string]any{
-											"example": "0,71,171",
-											"kind": "query",
-											"name": "rgb",
-											"orig": "rgb",
-											"type": "`$STRING`",
-										},
-										map[string]any{
-											"example": 350,
-											"kind": "query",
-											"name": "w",
-											"orig": "w",
-											"type": "`$INTEGER`",
-										},
-									},
-								},
 								"kind": "http",
 								"method": "GET",
 								"orig": "/scheme",
 								"segments": []any{
 									map[string]any{
 										"lit": "scheme",
+									},
+								},
+								"parts": []any{
+									"scheme",
+								},
+								"rename": map[string]any{},
+								"transform": map[string]any{
+									"req": "`reqdata`",
+									"res": "`body`",
+								},
+								"args": map[string]any{
+									"query": []any{
+										map[string]any{
+											"name": "callback",
+											"orig": "callback",
+											"type": "`$STRING`",
+											"kind": "query",
+										},
+										map[string]any{
+											"name": "cmyk",
+											"orig": "cmyk",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "100,58,0,33",
+										},
+										map[string]any{
+											"name": "count",
+											"orig": "count",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 6,
+										},
+										map[string]any{
+											"name": "format",
+											"orig": "format",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "json",
+										},
+										map[string]any{
+											"name": "hex",
+											"orig": "hex",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "0047AB",
+										},
+										map[string]any{
+											"name": "hsl",
+											"orig": "hsl",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "215,100%,34%",
+										},
+										map[string]any{
+											"name": "mode",
+											"orig": "mode",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "monochrome",
+										},
+										map[string]any{
+											"name": "named",
+											"orig": "named",
+											"type": "`$BOOLEAN`",
+											"kind": "query",
+											"example": false,
+										},
+										map[string]any{
+											"name": "rgb",
+											"orig": "rgb",
+											"type": "`$STRING`",
+											"kind": "query",
+											"example": "0,71,171",
+										},
+										map[string]any{
+											"name": "w",
+											"orig": "w",
+											"type": "`$INTEGER`",
+											"kind": "query",
+											"example": 350,
+										},
 									},
 								},
 								"select": map[string]any{
@@ -384,13 +415,6 @@ func MakeConfig() map[string]any {
 										"rgb",
 										"w",
 									},
-								},
-								"transform": map[string]any{
-									"req": "`reqdata`",
-									"res": "`body`",
-								},
-								"parts": []any{
-									"scheme",
 								},
 							},
 						},
